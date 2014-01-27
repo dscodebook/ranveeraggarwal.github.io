@@ -6,7 +6,7 @@ title: Ranveer Aggarwal | Blog
 <h1>My Blog</h1>
 <hr/>
 
-{% for blog in site.post %}
-  <small>{{ blog.date | date_to_string }}</small>
-  <h2><a href="{{ blog.url }}">{{ blog.title }}</a></h2>
+{% for post in site.post %}
+  <small>{{ post.date | date_to_string }}</small>
+  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
 {% endfor %}
