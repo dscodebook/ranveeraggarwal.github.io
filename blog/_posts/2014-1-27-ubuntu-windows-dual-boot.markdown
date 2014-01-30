@@ -23,13 +23,13 @@ Here are the steps (Assuming you have Windows running on UEFI):
 sudo add-apt-repository ppa:yannubuntu/boot-repair && sudo apt-get update
 
 ```
-and press <kbd>Enter</kbd>. And then type:
+     and press <kbd>Enter</kbd>. And then type:
 
 ```
 sudo apt-get install -y boot-repair && (boot-repair &)
 
 ```
-and press <kbd>Enter</kbd>.
+     and press <kbd>Enter</kbd>.
 
 And that's it! You now have a perfectly dual-booted Ubuntu-Windows system!
 
