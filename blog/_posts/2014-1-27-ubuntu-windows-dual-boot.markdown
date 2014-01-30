@@ -17,4 +17,9 @@ Here are the steps (Assuming you have Windows running on UEFI):
 * Next, boot from the Pen Drive you created.
 * After that install normally. Use the partition that you created in step one (**Ext4** file system and mount point **/**).
 * Now you have installed Ubuntu, the only thing remains is to fix the boot. Upon restart, you will see all options on the GRUB menu, but the Windows options won't work. For that you need to do something.
-* To fix your boot, you will need to install `boot-repair`.
+* To fix your boot, you will need to install **boot-repair**. To do this, fire up a terminal and type:
+`sudo add-apt-repository ppa:yannubuntu/boot-repair && sudo apt-get update`
+and press <kbd>Enter</kbd>. Then type:
+`sudo apt-get install -y boot-repair && (boot-repair &)`
+and press <kbd>Enter</kbd> again.
+
