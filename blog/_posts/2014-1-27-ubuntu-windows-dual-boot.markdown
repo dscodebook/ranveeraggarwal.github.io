@@ -24,6 +24,7 @@ sudo add-apt-repository ppa:yannubuntu/boot-repair && sudo apt-get update
 
 ```
 and press <kbd>Enter</kbd>. And then type:
+
 ```
 sudo apt-get install -y boot-repair && (boot-repair &)
 
