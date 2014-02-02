@@ -1,3 +1,3 @@
 # Minimal Theme
 ===
-Hopmepage of Ranveer Aggarwal.
+Homepage of Ranveer Aggarwal.
