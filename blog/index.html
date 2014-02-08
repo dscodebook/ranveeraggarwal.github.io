@@ -7,7 +7,16 @@ category: blog
 <h1>My Blog</h1>
 <hr/>
 
-{% for post in site.posts %}
-  <small>{{ post.date | date_to_string }}</small>
-  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+
+
+{% for post in paginator.posts %}
+
+
+          <small>{{ post.date | date_to_string }}</small>
+          <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+          <hr/>
+
+
 {% endfor %}
+
+{{ paginator | pager_links }}
