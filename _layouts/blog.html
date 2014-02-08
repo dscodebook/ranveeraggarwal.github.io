@@ -1,5 +1,5 @@
 ---
-layout: normal
+layout: default
 ---
 
 <article>
@@ -7,14 +7,9 @@ layout: normal
 <hr/>
 {% if page.hack_url %}
 <div style="text-align:right">
-<button type=button class=btn-primary onclick="window.open( '{{ page.hack_url }}' );">Visit Website</button>
+<button type=button class=btn-primary onclick="window.open( {{ page.hack_url }} );">Visit Website</button>
 </div>
 {% endif %}
-
+<p>{{ page.shortdescription }}</p>
 {{content}}
-
-{% if page.author %}
-    <h3>Built with love by:</h3>
-       {{ page.author | array_to_sentence_string }}
-{% endif %}
 </article>
