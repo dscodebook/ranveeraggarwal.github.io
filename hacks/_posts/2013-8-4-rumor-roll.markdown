@@ -17,18 +17,21 @@ The following APIs were used:
 * Youtube API
 * Twitter Bootstrap v3.0
 
+<script>
+$(document).ready(function() {
+    $('.pics').cycle({
+		fx: 'scrollDown',
+		speed:    300, 
+        timeout:  2000 
+	});
+});
+</script>
+
 <div class="pics"> 
     <img src="{{site.url}}/img/rr1.jpg" width="200" height="200" /> 
     <img src="{{site.url}}/img/rr2.jpg" width="200" height="200" /> 
     <img src="{{site.url}}/img/rr3.jpg" width="200" height="200" /> 
 </div> 
-<script>
-$('#s4').cycle({ 
-    fx:      'scrollDown', 
-    speed:    300, 
-    timeout:  2000 
-});
-</script>
 
 Find the working website [here][].
 
