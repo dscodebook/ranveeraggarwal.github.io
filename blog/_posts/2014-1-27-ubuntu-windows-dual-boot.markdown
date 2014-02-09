@@ -31,6 +31,8 @@ sudo apt-get install -y boot-repair && (boot-repair &)
 ```
 and press <kbd>Enter</kbd>.
 
+* And then do a **Recommended Repair**.
+
 And that's it! You now have a perfectly dual-booted Ubuntu-Windows system!
 
 
