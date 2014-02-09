@@ -17,6 +17,8 @@ The following APIs were used:
 * Youtube API
 * Twitter Bootstrap v3.0
 
+Here are a few snapshots:
+
 <script>
 $(document).ready(function() {
     $('.pics').cycle({
@@ -34,7 +36,3 @@ $(document).ready(function() {
     <img src="{{site.url}}/img/rr4.jpg" width="500" height="280" /> 
     <img src="{{site.url}}/img/rr5.jpg" width="500" height="280" /> 
 </div> 
-
-Find the working website [here][].
-
-[here]: http://home.iitb.ac.in/~ranveer
