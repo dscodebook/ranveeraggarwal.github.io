@@ -1,6 +1,7 @@
 ---
 layout: hacks
 title: Rumor Roll!
+subtitle: World's first rumor search engine!
 category: hacks
 zip_url: https://github.com/ranveeraggarwal/Rumor-Roll/archive/master.zip
 issue_url: https://github.com/ranveeraggarwal/Rumor-Roll/issues
