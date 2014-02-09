@@ -22,7 +22,7 @@ $(document).ready(function() {
     $('.pics').cycle({
 		fx: 'scrollDown',
 		speed:    300, 
-        timeout:  2000 
+                timeout:  2000 
 	});
 });
 </script>
