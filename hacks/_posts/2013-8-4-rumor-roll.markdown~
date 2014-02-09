@@ -23,6 +23,12 @@ The following APIs were used:
     <img src="img/rr3.jpg" width="200" height="200" /> 
 </div> 
 
+$('#s4').cycle({ 
+    fx:      'scrollDown', 
+    speed:    300, 
+    timeout:  2000 
+});
+
 Find the working website [here][].
 
 [here]: http://home.iitb.ac.in/~ranveer
