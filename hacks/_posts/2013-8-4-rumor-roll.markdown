@@ -28,9 +28,9 @@ $(document).ready(function() {
 </script>
 
 <div class="pics"> 
-    <img src="{{site.url}}/img/rr1.jpg" width="200" height="200" /> 
-    <img src="{{site.url}}/img/rr2.jpg" width="200" height="200" /> 
-    <img src="{{site.url}}/img/rr3.jpg" width="200" height="200" /> 
+    <img src="{{site.url}}/img/rr1.jpg" width="500" height="280" /> 
+    <img src="{{site.url}}/img/rr2.jpg" width="500" height="280" /> 
+    <img src="{{site.url}}/img/rr3.jpg" width="500" height="280" /> 
 </div> 
 
 Find the working website [here][].
