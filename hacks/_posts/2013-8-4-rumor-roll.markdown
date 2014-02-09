@@ -31,6 +31,8 @@ $(document).ready(function() {
     <img src="{{site.url}}/img/rr1.jpg" width="500" height="280" /> 
     <img src="{{site.url}}/img/rr2.jpg" width="500" height="280" /> 
     <img src="{{site.url}}/img/rr3.jpg" width="500" height="280" /> 
+    <img src="{{site.url}}/img/rr4.jpg" width="500" height="280" /> 
+    <img src="{{site.url}}/img/rr5.jpg" width="500" height="280" /> 
 </div> 
 
 Find the working website [here][].
