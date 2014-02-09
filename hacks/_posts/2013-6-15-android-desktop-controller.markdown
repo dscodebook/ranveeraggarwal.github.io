@@ -1,6 +1,7 @@
 ---
 layout: hacks
 title: Android Desktop Controller
+subtitle: The Bluetooth mobile to desktop remote
 category: hacks
 zip_url: https://github.com/ranveeraggarwal/Android-Desktop-Controller/archive/master.zip
 issue_url: https://github.com/ranveeraggarwal/Android-Desktop-Controller/issues
