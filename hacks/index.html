@@ -11,8 +11,8 @@ category: hacks
   {% if post.categories contains 'hacks' %}
   <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
 		<small>{{ post.date | date_to_string }}</small>
-		<small>
+		<!--small>
 			{{ post.content | strip_html | truncatewords: 100 }}
-		</small>
+		</small-->
   {% endif %}
 {% endfor %}
