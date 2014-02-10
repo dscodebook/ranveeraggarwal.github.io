@@ -23,7 +23,7 @@ Here are a few snapshots:
 $(document).ready(function() {
     $('.pics').cycle({
 		fx: 'scrollDown',
-		speed:    300, 
+		speed:    250, 
                 timeout:  2000 
 	});
 });
