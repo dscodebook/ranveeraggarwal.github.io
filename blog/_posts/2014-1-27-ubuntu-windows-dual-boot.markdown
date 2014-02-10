@@ -32,7 +32,9 @@ sudo apt-get install -y boot-repair && (boot-repair &)
 and press <kbd>Enter</kbd>.
 
 * And then do a **Recommended Repair**.
+<img src="{{site.url}}/img/uefi1.jpg" width="400" height="224" /> 
 
-And that's it! You now have a perfectly dual-booted Ubuntu-Windows system!
+And that's it! Check out your system by restarting and trying to boot into all your OSs. (Windows would most probably be labelled as *Windows UEFI Boot Loader*)
+This method works in most cases. In case it doesn't, mail me at ranveer[at]cse.iitb.ac.in
 
 
