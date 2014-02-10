@@ -6,7 +6,7 @@ category: blog
 
 Dual booting Windows and Ubuntu has always been a painful task. With the advent of UEFI (Unified Extensible Firmware Interface) this pain has now reached the next level. So what do we do? Using VM isn't an option thanks to performance issues.
 
-After numerous experimenting on my poor laptop (I guess I used to screw it up almost once a month) I finally found a foolproof (almost!) completely working method.
+After numerous experimenting on my poor laptop (I guess I used to screw it up almost once a month) I finally found a foolproof (almost!) working method.
 
 Here are the steps (Assuming you have Windows running on UEFI):
 
