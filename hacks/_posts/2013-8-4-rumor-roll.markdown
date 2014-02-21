@@ -6,7 +6,7 @@ category: hacks
 zip_url: https://github.com/ranveeraggarwal/Rumor-Roll/archive/master.zip
 issue_url: https://github.com/ranveeraggarwal/Rumor-Roll/issues
 repository_url: https://github.com/ranveeraggarwal/Rumor-Roll
-codevelopers: Nishant Kumar Singh, Adit Kabra and Bhargav Chippada
+codeveloper: Nishant Kumar Singh, Adit Kabra and Bhargav Chippada
 ---
 
 World's first rumor search engine, this hack makes the use of Yahoo! Boss API to search for rumors about the given search query. Type in the name of your favourite superstar or a company that you follow, and we'll filter out the pages, tweets and youtube videos related to the rumors reagarding that particular entity.
