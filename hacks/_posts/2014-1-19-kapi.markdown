@@ -6,7 +6,7 @@ category: hacks
 zip_url: https://github.com/Manishearth/Kapi/archive/master.zip
 issue_url: https://github.com/Manishearth/Kapi/issues
 repository_url: https://github.com/Manishearth/Kapi
-codevelopers: Manish Goregaokar, Mihir Kulkarni and Aditya Nambiar
+codeveloper: Manish Goregaokar, Mihir Kulkarni and Aditya Nambiar
 ---
 
 ###Kapi: Notes on the fly
