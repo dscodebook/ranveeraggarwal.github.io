@@ -14,7 +14,7 @@ We have implemented the classic game of Chess. By default, the game is supposed 
 
 ---
 ###How to run: 
-On the terminal, type drracket `ChessSubmission.scm &`. Hit <kbd>Ctrl+R</kbd>, and the GUI will show up. Click on new game image button, then the level 1 image button and start playing!
+On the terminal, type `drracket ChessSubmission.scm &`. Hit <kbd>Ctrl+R</kbd>, and the GUI will show up. Click on new game image button, then the level 1 image button and start playing!
 <!--
 Here are a few snapshots:
 
