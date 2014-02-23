@@ -1,6 +1,6 @@
 ---
 layout: hacks
-title: Chain Reaction
+title: E-Ball
 subtitle: A C++ based brick breaker game
 category: hacks
 zip_url: https://github.com/ranveeraggarwal/E-Ball/archive/master.zip
