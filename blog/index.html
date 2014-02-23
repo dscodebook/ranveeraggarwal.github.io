@@ -11,9 +11,9 @@ category: blog
   {% if post.categories contains 'blog' %}
   <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
 		<small>{{ post.date | date_to_string }}</small>
+		<hr/>
 		<!--small>
 			{{ post.content | strip_html | truncatewords: 100 }}
 		</small-->
   {% endif %}
 {% endfor %}
-<hr/>
