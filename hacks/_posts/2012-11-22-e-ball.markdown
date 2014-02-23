@@ -1,0 +1,65 @@
+---
+layout: hacks
+title: Chain Reaction
+subtitle: A C++ based brick breaker game
+category: hacks
+zip_url: https://github.com/ranveeraggarwal/E-Ball/archive/master.zip
+issue_url: https://github.com/ranveeraggarwal/E-Ball/issues
+repository_url: https://github.com/ranveeraggarwal/E-Ball
+codeveloper: Aditya Kumar Akash, Nishant Kumar Singh
+---
+
+###Destroy and Conquer
+The game, an updated version of an earlier series of Amiga games known as Megaball, is patterned after classic ball-and-paddle arcade games such as Breakout and Arkanoid.
+
+---
+###Gameplay:
+Baically, you bounce a ball off a paddle at the bottom hitting different color blocks on the top of the screen. Hitting all the blocks results in completing the level and going to the next. There are many randomly generating levels to complete.
+
+---
+###The Algorithm:
+For confinement of the ball within the game screen the condition of the distance of the center of 
+the ball being greater than radius has been used.
+And for the collision of the ball with the bricks again the distance of the center of the ball from 
+the sides of the bricks should be just less than the radius of the ball . As soon as the ball collides 
+with the bricks , they disappear and the ball gets new velocity accordingly. For the 
+disappearance of the bricks ,in the “struct brick” a hide function is declared which hides all the 
+component polygons. An array is also defined which serves the purpose of storing whether a 
+particular brick has been hit or not. The condition for the hit brick position is no longer 
+evaluated. A function called “levelsetter” decides how many bricks are there in a given level. It 
+also assigns the bricks a value of -1 which remains till the brick is hit by the ball. When all the 
+bricks are hit the user is said to have won the game and is eligible to proceed to the next level. 
+
+---
+###Libraries:
+`simplecpp`, a library given by IIT Bombay was used in making the graphical interface of the game.
+
+---
+###The Design:
+The bricks have been specially made using four polygons . And the color combinations for the 
+bricks have been selected so as to make the bricks appear as in 3D. There are eight different types 
+of bricks i.e of eight different colors.
+The striker has been presented as rectangular slab which can be controlled by the mouse scroll 
+button. The striker has the limitations to move within the screen along the X-axis at the bottom of 
+the screen only.
+
+<!--
+Here are a few snapshots:
+
+<script>
+$(document).ready(function() {
+    $('.pics').cycle({
+		fx: 'scrollDown',
+		speed:    250, 
+                timeout:  2000 
+	});
+});
+</script>
+
+<div class="pics"> 
+    <img src="{{site.url}}/img/rr1.jpg" width="400" height="224" /> 
+    <img src="{{site.url}}/img/rr2.jpg" width="400" height="224" /> 
+    <img src="{{site.url}}/img/rr3.jpg" width="400" height="224" /> 
+    <img src="{{site.url}}/img/rr4.jpg" width="400" height="224" /> 
+    <img src="{{site.url}}/img/rr5.jpg" width="400" height="224" /> 
+</div> -->
