@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: "Getting Started With Jekyll on Github Pages"
+title: "Getting Started With Jekyll on Github Pages "
 category: blog
 ---
 
