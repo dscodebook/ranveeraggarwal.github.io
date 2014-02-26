@@ -55,6 +55,7 @@ And you are done! Now, I'll tell you a little about the format of the above file
 ###index.html
 
 Here's what your landing page would look like:
+
 	---
 	layout: normal
 	title: My Homepage
