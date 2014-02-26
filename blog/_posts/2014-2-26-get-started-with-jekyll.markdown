@@ -108,3 +108,21 @@ A page on your site would behave in a way no different from **index.html**, but 
 {% endraw %}
 
 There's a lot of stuff that you can do with your pages, but as I said, this is the basic setup, so you should be fine with this for now.
+
+---
+
+###A Sample Post
+
+Here's how a blog post should look like:
+
+	---
+	layout: blog
+	title: "My Hello World Blog!"
+	category: blog
+	---
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+	ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+	reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+	culpa qui officia deserunt mollit anim id est laborum.
+
+After writing the above markdown and save it as *2014-02-26-my-hello-world-blog* and push it into **_posts** folder. And lo and behold! It'll render as a static HTML page.
