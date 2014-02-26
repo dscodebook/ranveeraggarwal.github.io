@@ -78,14 +78,16 @@ And that is it! Yes! This will take the format of your default page that you wou
 A page on your site would behave in a way no different from **index.html**, but here are a few qwerks you can add to it.
 
 * Post Loops: If you have multiple posts on your site (which you will) you will want to *show* them in a uniform manner. Here's how you can do so (paste the following in the content):
-<!--
-{% highlight html %}
+
+```
+{% raw %}
 {% for post in site.posts %}
     <h2>
       <a href="{{ post.url }}">{{ post.title }}</a>
     </h2>
 {% endfor %}
-{% endhighlight %}
+{% raw %}
+```
 
 * Categories and Multiple Blogs: If you want more than one blogs on your site, add a *category:<categoryname>* to the attributes of your posts (the space in between the two `---`'s) and the following in your post loops:
 
@@ -106,5 +108,5 @@ A page on your site would behave in a way no different from **index.html**, but 
 {% endif %}
 {% endfor %}
 ```
--->
+
 There's a lot of stuff that you can do with your pages, but as I said, this is the basic setup, so you should be fine with this for now.
