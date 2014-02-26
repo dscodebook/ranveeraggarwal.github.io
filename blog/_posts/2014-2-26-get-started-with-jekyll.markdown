@@ -29,4 +29,4 @@ So here are the brief steps you need to follow to create your blog/hack page on 
 		rdiscount:
 		extensions: [smart]
 
-and save it and push it in the main repo.
+	and save it and push it in the main repo.
