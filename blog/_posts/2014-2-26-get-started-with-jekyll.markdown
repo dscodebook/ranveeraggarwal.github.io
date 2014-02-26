@@ -79,26 +79,29 @@ A page on your site would behave in a way no different from **index.html**, but 
 
 * Post Loops: If you have multiple posts on your site (which you will) you will want to *show* them in a uniform manner. Here's how you can do so (paste the following in the content):
 
-```
 {% raw %}
+```
 {% for post in site.posts %}
     <h2>
       <a href="{{ post.url }}">{{ post.title }}</a>
     </h2>
 {% endfor %}
-{% raw %}
 ```
+{% endraw %}
 
 * Categories and Multiple Blogs: If you want more than one blogs on your site, add a *category:<categoryname>* to the attributes of your posts (the space in between the two `---`'s) and the following in your post loops:
 
+{% raw %}
 ```
 {% if post.categories contains '<categoryname>' %}
   content
 {% endif %}
 ```
+{% endraw %}
 
 	such that the net content looks like this:
 
+{% raw %}
 ```
 {% for post in site.posts %}
 {% if post.categories contains '<categoryname>' %}
@@ -108,5 +111,6 @@ A page on your site would behave in a way no different from **index.html**, but 
 {% endif %}
 {% endfor %}
 ```
+{% endraw %}
 
 There's a lot of stuff that you can do with your pages, but as I said, this is the basic setup, so you should be fine with this for now.
