@@ -21,6 +21,7 @@ So here are the brief steps you need to follow to create your blog/hack page on 
 
 * First, create a *repo* with the name *username.github.io*, where *username* is your username.
 * Next, create a file with the name **_config.yml**. This is a file that contains all the configuration variables for your site in the [YAML](http://en.wikipedia.org/wiki/YAML) format. You can use any text editor for this (I prefer Sublime Text 3). Now put the following content in your file:
+
 		markdown: rdiscount
 		permalink: /:title
 		pygments: true
