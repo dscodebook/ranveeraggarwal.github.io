@@ -128,3 +128,5 @@ Here's how a blog post should look like:
 	culpa qui officia deserunt mollit anim id est laborum.
 
 After writing the above markdown and save it as `2014-02-26-my-hello-world-blog.markdown` and push it into `_posts` folder. And lo and behold! It'll render as a static HTML page.
+
+<div class="fb-like" data-href="http://ranveeraggarwal.github.io/blog/get-started-with-jekyll/" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
