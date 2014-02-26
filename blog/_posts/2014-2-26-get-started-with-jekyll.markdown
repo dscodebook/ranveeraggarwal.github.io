@@ -16,6 +16,8 @@ Now, many people are confused as to where to get started. The first thing you ge
 
 and so on. All this isn't required on Github. It's already up and running there.
 
+---
+
 So here are the brief steps you need to follow to create your blog/hack page on Github pages:
 
 * First, create a *repo* with the name *username.github.io*, where *username* is your username.
@@ -46,3 +48,17 @@ So here's what your directory structure looks as of now:
 	|   └── 1995-02-20-some-random-blogpost.markdown
 	└── index.html
 
+And you are done! Now, I'll tell you a little about the format of the above files.
+
+---
+
+###index.html
+
+Here's what your landing page would look like:
+	---
+	layout: normal
+	title: My Homepage
+	---
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+And that is it! Yes! This will take the format of your default page that you would create in the **_layouts** folder. As simple as that.
