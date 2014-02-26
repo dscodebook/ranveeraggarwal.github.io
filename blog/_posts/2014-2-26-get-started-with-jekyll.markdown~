@@ -30,7 +30,7 @@ So here are the brief steps you need to follow to create your blog/hack page on 
 
 	and save it and push it in the main repo.
 * Create a directory and name it **_layouts**. As is apparent from the name, this folder stores the layout files for your site. Here, you can put your HTML files and these will be used when you post. I use a (more or less) uniform layout for my site and it is stored under the name of **normal.html**. You can have a look.
-* Next, you'll need to create a **_posts** folder. This is where your main content will go. Make this in the parent directory.
+* Next, you'll need to create a **_posts** folder. This is where your main content will go. Make this in the parent directory. The files you add here will have the format `yyyy-mm-dd-title-here.markdown` where `yyyy-mm-dd` is the date of publishing, `title-here` is the part of your url and markdown is the file extension (of course!).
 * There is also a **_includes** folder which you won't require as of now (since we are talking about a very basic site here).
 
 So here's what your directory structure looks as of now:
@@ -44,3 +44,4 @@ So here's what your directory structure looks as of now:
 	|   ├── 1970-01-01-the-first-date.markdown
 	|   └── 1995-02-20-some-random-blogpost.markdown
 	└── index.html
+

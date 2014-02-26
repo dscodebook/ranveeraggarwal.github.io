@@ -34,6 +34,7 @@ So here are the brief steps you need to follow to create your blog/hack page on 
 * There is also a **_includes** folder which you won't require as of now (since we are talking about a very basic site here).
 
 So here's what your directory structure looks as of now:
+
 	.
 	├── _config.yml
 	├── _includes
