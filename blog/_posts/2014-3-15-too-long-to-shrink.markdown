@@ -20,14 +20,13 @@ The above image shows the moment when you right-click on the disk you want to pa
 
 <img src="http://ranveeraggarwal.github.io/blog/img/too-long/2.png">
 
-This image is of that moment when you finally choose the shrink size and the process starts. This is the process that takes ages. Here, what happens is that the Defragmenter forst analyses the disk (again!), defragments it and then the actual shrinking happens. You can see all this happening in the Defragmenter window.
+This image is of that moment when you finally choose the shrink size and the process starts. This is the process that takes ages. Here, what happens is that the Defragmenter first analyses the disk (again!), defragments it and then the actual shrinking happens. You can see all this happening in the Defragmenter window.
 
 ---
 
 ###How to Stop it?
 
 Well, now at least you can rest in peace and watch the whole thing happening when your window has frozen. But what if you don't have enough time and you want to cancel?
-
 Simple! Just stop the Defragment process. And that stops your shrinking process too, without causing any harm to your PC. Here's what it looks like:
 
 <img src="http://ranveeraggarwal.github.io/blog/img/too-long/3.png">
