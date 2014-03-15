@@ -33,3 +33,5 @@ Simple! Just stop the Defragment process. And that stops your shrinking process 
 <img src="http://ranveeraggarwal.github.io/blog/img/too-long/3.png">
 
 So, it's not because Windows goes bonkers while shrinking that this happens, it's because of a sub-process.
+
+<div class="fb-like" data-href="http://ranveeraggarwal.github.io/blog/too-long-to-shrink/" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
