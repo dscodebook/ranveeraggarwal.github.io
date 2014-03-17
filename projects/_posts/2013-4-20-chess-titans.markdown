@@ -1,8 +1,8 @@
 ---
-layout: hacks
+layout: projects
 title: Chess Titans
 subtitle: Classic Chess game built on lisp with AI based on Minimax Algorithm
-category: hacks
+category: projects
 zip_url: https://github.com/ranveeraggarwal/Chess-Titans/archive/master.zip
 issue_url: https://github.com/ranveeraggarwal/Chess-Titans/issues
 repository_url: https://github.com/ranveeraggarwal/Chess-Titans

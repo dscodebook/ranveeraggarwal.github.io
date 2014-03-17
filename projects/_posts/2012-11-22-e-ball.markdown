@@ -1,8 +1,8 @@
 ---
-layout: hacks
+layout: projects
 title: E-Ball
 subtitle: A C++ based brick breaker game
-category: hacks
+category: projects
 zip_url: https://github.com/ranveeraggarwal/E-Ball/archive/master.zip
 issue_url: https://github.com/ranveeraggarwal/E-Ball/issues
 repository_url: https://github.com/ranveeraggarwal/E-Ball
