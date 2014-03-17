@@ -3,10 +3,8 @@ layout: blog
 title: "Shrinking a Volume Taking Too Long?"
 category: blog
 ---
-
-###The Problem
-
-Ever been in a situation where while shrinking your hard disk via Windows Partition Manager takes far to long? With that irritating blue cirle and it's never ending rotation and a grey titlebar? You think, "Ditch this shit! I don't wanna partition my drive. Gimme the cancel button!" But where is the cancel button? Nope, not on the current screen. Then you either wait long enough for the process to end or you simply force shutdown.
+ 
+Ever been in a situation where while shrinking your hard disk via Windows Partition Manager takes far to long? With that irritating blue circle and it's never ending rotation and a grey titlebar? You think, "Ditch this shit! I don't wanna partition my drive. Gimme the cancel button!" But where is the cancel button? Nope, not on the current screen. Then you either wait long enough for the process to end or you simply force shutdown.
 
 ---
 
