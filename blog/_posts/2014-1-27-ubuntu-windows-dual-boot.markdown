@@ -38,4 +38,4 @@ And that's it! Check out your system by restarting and trying to boot into all y
 
 This method works in most cases. In case it doesn't, mail me at ranveer[at]cse.iitb.ac.in
 
-
+<div class="fb-like" data-href="http://ranveeraggarwal.github.io/blog/ubuntu-windows-dual-boot/" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
