@@ -35,14 +35,14 @@ This is because the defaut release doesn't make a shared library.
     
         option(BUILD_SHARED_LIBS "Build shared libraries" ON)
         
-    and save.
+    and save
 5. Now do the following (same as above):
 
         cmake .
         make
         make install
         
-    Use root if your folder was in `/usr/local`.
+    Use root if your folder was in `/usr/local`
 
 And now your GLFW is successfully installed.
 
