@@ -28,14 +28,20 @@ This is because the defaut release doesn't make a shared library.
 2. Extract it again, preferably in nthe folder `/usr/local`
 3. Open it and open the file `CMakeLists.txt` in any editor (if your file is in `/usr/local`, you might need `sudo`)
 4. Look for build `options`. Change
+5. 
         option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
+
     to
+    
         option(BUILD_SHARED_LIBS "Build shared libraries" ON)
+        
     and save.
 5. Now do the following (same as above):
+
         cmake .
         make
         make install
+        
     Use root if your folder was in `/usr/local`.
 
 And now your GLFW is successfully installed.
