@@ -43,6 +43,9 @@ This is because the defaut release doesn't make a shared library.
         make install
         
     Use root if your folder was in `/usr/local`
+6. Lastly, run `ldconfig`. You can do this by 
+        
+        sudo ldconfig
 
 And now your GLFW is successfully installed.
 
