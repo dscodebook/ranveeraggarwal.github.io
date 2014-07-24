@@ -25,7 +25,7 @@ This is because the defaut release doesn't make a shared library.
 ##What to do?
 
 1. Delete your unzipped folder (if you unzipped it)
-2. Extract it again, preferably in nthe folder `/usr/local`
+2. Extract it again, preferably in the folder `/usr/local`
 3. Open it and open the file `CMakeLists.txt` in any editor (if your file is in `/usr/local`, you might need `sudo`)
 4. Look for build `options`. Change
 5. 
