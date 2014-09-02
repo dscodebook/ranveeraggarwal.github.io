@@ -24,11 +24,14 @@ The GUI was developed using the built-in DrRacket graphics toolkit.
 
 ---
 ###Snapshots
-Here are a few snapshots of how the game looks during gameplay:
-
+Here how the start screen looks like:
 <img src="../images/chess-titans-2.png">
-<img src="../images/chess-titans-1.png">
+
+The beginning of the game:
 <img src="../images/chess-titans-3.png">
+
+Gameplay:
+<img src="../images/chess-titans-1.png">
 
 ---
 ###How to run: 
