@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: "Monitoring Django Based Server with Munin"
+title: "Monitoring Django Based Website with Munin"
 category: blog
 ---
  
