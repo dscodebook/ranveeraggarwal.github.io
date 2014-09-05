@@ -1,0 +1,19 @@
+---
+layout: normal
+title: Ranveer Aggarwal | Mini-Tutorials
+category: minitut
+---
+
+<h1>Mini Tutorials</h1>
+<hr/>
+
+{% for post in site.posts %}
+  {% if post.categories contains 'minitut' %}
+  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+		<small>{{ post.date | date_to_string }}</small>
+		<hr/>
+		<small>
+			{{ post.content | strip_html | truncatewords: 100 }}
+		</small>
+  {% endif %}
+{% endfor %}
