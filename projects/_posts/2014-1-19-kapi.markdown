@@ -2,7 +2,7 @@
 layout: projects
 title: Kapi
 subtitle: Notes on the fly
-category: hacks
+category: projects
 zip_url: https://github.com/Manishearth/Kapi/archive/master.zip
 issue_url: https://github.com/Manishearth/Kapi/issues
 repository_url: https://github.com/Manishearth/Kapi
