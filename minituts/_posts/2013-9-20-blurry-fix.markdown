@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "Fix for Blurry, Hard-to-read text problem in Windows 8.1"
-category: minitut
+category: minituts
 ---
 
 Dual booting Windows and Ubuntu has always been a painful task. Recently came along the newer, faster, smoother and flashier Windows 8.1. With loads of customization features, it has fixed many bugs that existed in Windows 8. But, with new windows comes new issues. And here is one that is very common with users, especially with those having High Definition screens.
