@@ -12,11 +12,11 @@ title: Home
       </a>
     </h1>
 
-     <span class="post-date">{{ page.date | date_to_string }}</span>
+    <span class="post-date">{{ post.date | date_to_string }}</span>
 
     {{ post.content }}
   </div>
-  <hr style="height:8px;border:none;color:#333;background-color:#333;">
+  <hr style="height:5px;border:none;color:#333;background-color:#333;">
   {% endfor %}
 </div>
 
