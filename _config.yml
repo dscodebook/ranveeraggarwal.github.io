@@ -17,10 +17,10 @@ author:
   name:           'Ranveer Aggarwal'
   url:            https://twitter.com/ranveeraggarwal
 
-paginate:         5
+paginate:         3
 
 # Custom vars
-version:          2.1.0
+version:          1.0.1
 
 github:
   repo:           https://github.com/ranveeraggarwal/ranveeraggarwal.github.io
