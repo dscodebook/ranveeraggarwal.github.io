@@ -13,6 +13,7 @@ description:      'A Repository of Ideas and Thoughts.'
 url:              http://blog.ranveeraggarwal.com
 baseurl:          /
 tutorial:	  	  /tutorials/
+programming:	  /programming/
 
 author:
   name:           'Ranveer Aggarwal'
