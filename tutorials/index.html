@@ -10,7 +10,7 @@ title: Tutorials
 
 <div class="posts">
   {% for post in site.posts %} 
-    {% if post.category contains 'tut' %}
+    {% if post.categories contains 'tutorials' %}
     <div class="post">
       <h2 class="post-title">
         <a href="{{ post.url }}">

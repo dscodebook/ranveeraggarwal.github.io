@@ -3,9 +3,13 @@ layout: default
 title: Home
 ---
 
+<div class="page">
+  <h1 class="page-title">Recent Posts</h1>
+  <hr style="height:5px;border:none;color:#333;background-color:#333;">
+</div>
+
 <div class="posts">
   {% for post in paginator.posts %} 
-  {% if post.category contains 'tut' %}
     <div class="post">
       <h2 class="post-title">
         <a href="{{ post.url }}">
@@ -13,7 +17,7 @@ title: Home
         </a>
       </h2>
 
-      <span class="post-date">{{ post.date | date_to_string }}</span>
+      <span class="post-date">{{ post.date | date_to_string }} &middot; {% for cat in post.categories %}<a href="/{{ cat }}"> #{{ cat }} </a>{% endfor %}</span>
 
       {{ post.content | strip_html | truncatewords: 50 }}
       <br>
@@ -22,7 +26,6 @@ title: Home
         </a>
     </div>
     <hr style="height:5px;border:none;color:#333;background-color:#333;">
-    {% endif %}
   {% endfor %}
 </div>
 

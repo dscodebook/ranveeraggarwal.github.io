@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Getting Started With Jekyll on Github Pages "
-category: tut
+categories: tutorials
 ---
 
 ###Introduction
