@@ -12,12 +12,13 @@ tagline:          'A repository of ideas'
 description:      'A Repository of Ideas and Thoughts.'
 url:              http://blog.ranveeraggarwal.com
 baseurl:          /
+tutorial:	  	  /tutorials/
 
 author:
   name:           'Ranveer Aggarwal'
   url:            https://twitter.com/ranveeraggarwal
 
-paginate:         3
+paginate:         5
 
 # Custom vars
 version:          1.0.1
