@@ -2,7 +2,6 @@
 layout: post
 title: "Installing GLFW on Ubuntu"
 category: tut
-tag: ubuntu
 ---
  
 GLFW is a lightweight utility library for use with OpenGL. It provides programmers with the ability to create and manage windows and OpenGL contexts, as well as receive input from joystick, keyboard, mouse, time and clipboard. 
