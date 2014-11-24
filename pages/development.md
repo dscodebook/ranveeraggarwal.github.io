@@ -1,17 +1,13 @@
 ---
-layout: default
-title: Programming
+layout: page
+title: Development
 ---
-
-<div class="page">
-  <h1 class="page-title">Programming</h1>
-  <hr style="height:5px;border:none;color:#333;background-color:#333;">
-</div>
 
 <div class="posts">
   {% for post in site.posts %} 
-    {% if post.categories contains 'programming' %}
+    {% if post.categories contains 'development' %}
     <div class="post">
+    <hr style="height:5px;border:none;color:#333;background-color:#333;">
       <h2 class="post-title">
         <a href="{{ post.url }}">
           {{ post.title }}
@@ -26,7 +22,7 @@ title: Programming
           Read More &rarr;
         </a>
     </div>
-    <hr style="height:5px;border:none;color:#333;background-color:#333;">
     {% endif %}
   {% endfor %}
+  <hr style="height:5px;border:none;color:#333;background-color:#333;">
 </div>
