@@ -2,6 +2,7 @@
 layout: post
 title: "Dual Booting Windows with Ubuntu"
 category: tut
+tag: ubuntu
 ---
 
 Dual booting Windows and Ubuntu has always been a painful task. With the advent of **Secure Boot** this pain has now reached the next level. So what do we do? Using VM isn't an option thanks to performance issues.

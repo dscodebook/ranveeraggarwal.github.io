@@ -9,7 +9,7 @@ relative_permalinks: true
 # Setup
 title:            Ranveer Aggarwal | Blog
 tagline:          'A repository of ideas'
-description:      'There will be a description soon.'
+description:      'A Repository of Ideas and Thoughts.'
 url:              http://blog.ranveeraggarwal.com
 baseurl:          /
 
