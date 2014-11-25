@@ -5,7 +5,7 @@ title: Development
 
 <div class="posts">
   {% for post in site.posts %} 
-    {% if post.categories contains 'development' %}
+    {% if post.categories contains 'development' or post.categories contains 'kde' %}
     <div class="post">
     <hr style="height:5px;border:none;color:#333;background-color:#333;">
       <h2 class="post-title">
