@@ -16,6 +16,7 @@ baseurl:          /
 author:
   name:           'Ranveer Aggarwal'
   url:            https://twitter.com/ranveeraggarwal
+  email:		  ranveeraggarwal@gmail.com
 
 paginate:         5
 
