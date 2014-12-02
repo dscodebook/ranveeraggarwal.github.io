@@ -1,0 +1,26 @@
+---
+layout: post
+title: "Season of KDE 2014 Post #1"
+categories: kde
+---
+
+The journey with KDE till now has been great with lots of learning involved.
+
+This was my first step to Open Source and unlike many communities that seem intimidating to the beginners, KDE was pretty helpful. KDE works with a wide range of technologies, so you can be sure whatever be your forte, you'll definitely get something to work on.
+
+Also, one of the things you learn when working with Open Source is that despite a good Computer Science background, there are a lot of things out there that you don't know and unless you have exposure with working on real-life production-level code, your learning is incomplete.
+
+### My project
+I started off with something simple. My project is to rebuilt KDE's blog aggregator, PlanetKDE. I have two broad tasks:
+
+* Understand how the backend, `rawdog` is working and upgrade it to the latest version.
+* Build a clean, good-looking front end for PlanetKDE website.
+
+Apart from this, I'm supposed to add social networking feeds to it.
+
+### Progress
+Up till now I have understood how rawdog works (there is a configuration file that does almost everything for the end-user -- or in my case end-programmer). I'm yet to put up the upgraded version online.
+
+I have also decided upon a basic structure on how the page should look like. I'll add a screenshot as soon as I'm done wireframing it.
+
+Also, I have successfully managed to pull up feeds off twitter using its API.
