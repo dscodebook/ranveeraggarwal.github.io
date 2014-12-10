@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+custattr: side
 ---
 
 <p></p>>

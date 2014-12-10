@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Tutorials
+custattr: side
 ---
 
 <div class="posts">

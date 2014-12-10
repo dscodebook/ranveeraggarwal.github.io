@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Development
+custattr: side
 ---
 
 <div class="posts">
