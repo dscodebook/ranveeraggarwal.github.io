@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Season of KDE 2014 Post #0"
-categories: kde
+category: kde
 ---
 
 **Project Name:** Revamp planetkde.org
