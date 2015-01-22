@@ -31,11 +31,20 @@ Here are a few screenshots from the desktop version:
 
 Also, a few screenshots from the mobile version:  
 
-<img src="http://i.imgur.com/ZmDtsKu.png" style="height:25%; width:25%;">
-
-<img src="http://i.imgur.com/ABwp8hK.png" style="height:25%; width:25%;">
-
-<img src="http://i.imgur.com/vzkwMAD.png" style="height:25%; width:25%;">
+<table>
+	<tr>
+		<td>
+			<img src="http://i.imgur.com/ZmDtsKu.png" style="height:25%; width:25%;">			
+		</td>
+		<td>
+			<img src="http://i.imgur.com/ABwp8hK.png" style="height:25%; width:25%;">			
+		</td>
+		<td>
+			<img src="http://i.imgur.com/vzkwMAD.png" style="height:25%; width:25%;">	
+		</td>
+	</tr>
+	
+</table>
 
 Any reviews/suggestions would be appreciated :)
 
