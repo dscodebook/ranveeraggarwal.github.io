@@ -10,7 +10,7 @@ With the season nearing its end, the project I have been on for the past couple 
 I'm going to highlight the key changes I've made:
 
 * Flattened the design: Gradients? Marquees? Our friends of the 90's. It's the age of flat-ism and minimalism. Adapting the design philosophy compliant with today's, I have tried to keep things minimalistic, using CSS from several open-sourced sources (No, I do not wget!), and also writing some myself.
-* Mobile-first design: With the number of mobile internet users growing exponentially by the day, why not make something that looks good on your handset? Nobody likes to pinch and scroll in all sorts of directions possible to view the content they want. So, the new design takes care to remove the horizontal scroll to the extent possible and wrapping as much content as possible on your mobile screen. **Even the images!**. Yes, you heard it right. Your images contract with the device size. All this was made possible through the sincere efforts of the creators of CSS3 and also, the developers of Twitter Bootstrap.
+* Mobile-first design: With the number of mobile internet users growing exponentially by the day, why not make something that looks good on your handset? Nobody likes to pinch and scroll in all sorts of directions possible to view the content they want. So, the new design takes care to remove the horizontal scroll to the extent possible and wrapping as much content as possible on your mobile screen. **Even the images!** Yes, you heard it right. Your images contract with the device size. All this was made possible through the sincere efforts of the creators of CSS3 and also, the developers of Twitter Bootstrap.
 * Cards: Google+ does it. Material design has it. It looks good. Why not PlanetKDE. Well, your posts are now cards. Non-swipe-able, sadly, but they do a good job of separating content.
 * Popups: Not a very ingenious idea, it's been around for quite some time. The point being, group content of relevance - separate irrelevant content.
 
@@ -31,11 +31,11 @@ Here are a few screenshots from the desktop version:
 
 Also, a few screenshots from the mobile version:  
 
-<img src="http://i.imgur.com/ZmDtsKu.png">
+<img src="http://i.imgur.com/ZmDtsKu.png" style="height:25%; width:25%;">
 
-<img src="http://i.imgur.com/ABwp8hK.png">
+<img src="http://i.imgur.com/ABwp8hK.png" style="height:25%; width:25%;">
 
-<img src="http://i.imgur.com/vzkwMAD.png">
+<img src="http://i.imgur.com/vzkwMAD.png" style="height:25%; width:25%;">
 
 Any reviews/suggestions would be appreciated :)
 
