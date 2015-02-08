@@ -22,4 +22,4 @@ Hope you all like the new design.
 **PS:** You're probably viewing this on the new PlanetKDE, I just wanted people to get familiar with the website; so I waited for a week to post this.
 
 ##Bugs
-Any bug report/improvement/review would be appreciated. You can register the bugs, request features at the (KDE Bugtracking System)[https://bugs.kde.org/describecomponents.cgi?product=Planet%20KDE].
+Any bug report/improvement/review would be appreciated. You can register the bugs, request features at the [KDE Bugtracking System](https://bugs.kde.org/describecomponents.cgi?product=Planet%20KDE).
