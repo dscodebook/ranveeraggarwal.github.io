@@ -1,0 +1,2258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!--link rel="stylesheet" href="rawdog.css" type="text/css" title="Fixed Width" /-->
+    <link rel="stylesheet" href="bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="main.css" type="text/css" />
+    <!--link rel="alternate stylesheet" href="rawdog-variable.css" type="text/css" title="Variable Width" /-->
+    <title>Planet KDE</title>
+    <link rel="alternate" type="application/rss+xml" title="Planet KDE" href="http://planetKDE.org/rss20.xml" />
+
+    <!--[if IE 6]>
+	<style type="text/css">
+	#header, #content, #footer, #planetheader
+	{
+	background-image: none;
+	}
+	#header {  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bg-header.png', sizingMethod='crop'); }
+	#content {  padding-right: 13px; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bg-content.png', sizingMethod='scale') }
+
+	#footer { padding: 10px 25px 0 25px; width: 750px; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bg-footer.png', sizingMethod='scale'); }
+	</style>
+	<![endif]-->
+    <script language="javascript">
+        //In Mozilla, WebKit(?) Coming in IE9, in HTML5
+        if (document.addEventListener) {
+            document.addEventListener("DOMContentLoaded", applyConfig, false);
+        }
+
+        function createCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+d.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+        /*
+        function createCookie(name, value, days) {
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                var expires = "; expires=" + date.toGMTString();
+            } else var expires = "";
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+        */
+
+        function readCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1);
+                if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+            }
+            return "";
+        }
+
+        function eraseCookie(name) {
+            createCookie(name, "", -1);
+        }
+
+        function toggle() {
+            var ele = document.getElementById("feeddiv");
+            if (ele.style.display == "block") {
+                ele.style.display = "none";
+            } else {
+                ele.style.display = "block";
+            }
+        }
+
+        function toggleaddme() {
+            var ele = document.getElementById("addme");
+            if (ele.style.display == "block") {
+                ele.style.display = "none";
+            } else {
+                ele.style.display = "block";
+            }
+        }
+
+        function toggleconfig() {
+            var ele = document.getElementById("config");
+            if (ele.style.display == "block") {
+                ele.style.display = "none";
+            } else {
+                ele.style.display = "block";
+            }
+        }
+
+        function toggledot() {
+            var ele = document.getElementsByClassName("dot");
+            for (var i = 0, j = ele.length; i < j; i++)
+                if (ele[i].style.display == "block") {
+                    ele[i].style.display = "none";
+                    document.getElementById("toggledot").checked = false;
+                    createCookie("dot", "none", 360)
+                } else {
+                    ele[i].style.display = "block";
+                    document.getElementById("toggledot").checked = true;
+                    createCookie("dot", "block", 360)
+                }
+        }
+
+        function togglefrench() {
+            console.log("french");
+            var ele = document.getElementsByClassName("french");
+            for (var i = 0, j = ele.length; i < j; i++)
+                if (ele[i].style.display == "block") {
+                    ele[i].style.display = "none";
+                    document.getElementById("togglefrench").checked = false;
+                    createCookie("french", "none", 360)
+                } else {
+                    ele[i].style.display = "block";
+                    document.getElementById("togglefrench").checked = true;
+                    createCookie("french", "block", 360)
+                }
+        }
+
+        function togglespanish() {
+            var ele = document.getElementsByClassName("spanish");
+            for (var i = 0, j = ele.length; i < j; i++)
+                if (ele[i].style.display == "block") {
+                    ele[i].style.display = "none";
+                    document.getElementById("togglespanish").checked = false;
+                    createCookie("spanish", "none", 360)
+                } else {
+                    ele[i].style.display = "block";
+                    document.getElementById("togglespanish").checked = true;
+
+                    createCookie("spanish", "block", 360)
+                }
+        }
+
+        function togglepolish() {
+            var ele = document.getElementsByClassName("polish");
+            for (var i = 0, j = ele.length; i < j; i++)
+                if (ele[i].style.display == "block") {
+                    ele[i].style.display = "none";
+                    document.getElementById("togglepolish").checked = false;
+                    createCookie("polish", "none", 360)
+                } else {
+                    ele[i].style.display = "block";
+                    document.getElementById("togglepolish").checked = true;
+                    createCookie("polish", "block", 360)
+                }
+        }
+
+        function toggleportuguese() {
+            var ele = document.getElementsByClassName("portuguese");
+            for (var i = 0, j = ele.length; i < j; i++)
+                if (ele[i].style.display == "block") {
+                    ele[i].style.display = "none";
+                    document.getElementById("toggleportuguese").checked = false;
+                    createCookie("portuguese", "none", 360)
+                } else {
+                    ele[i].style.display = "block";
+                    document.getElementById("toggleportuguese").checked = true;
+                    createCookie("portuguese", "block", 360)
+                }
+        }
+
+        function toggleitalian() {
+            var ele = document.getElementsByClassName("italian");
+            for (var i = 0, j = ele.length; i < j; i++)
+                if (ele[i].style.display == "block") {
+                    ele[i].style.display = "none";
+                    document.getElementById("toggleitalian").checked = false;
+                    createCookie("italian", "none", 360)
+                } else {
+                    ele[i].style.display = "block";
+                    document.getElementById("toggleitalian").checked = true;
+                    createCookie("italian", "block", 360)
+                }
+        }
+
+        function togglechinese() {
+            var ele = document.getElementsByClassName("chinese");
+            for (var i = 0, j = ele.length; i < j; i++)
+                if (ele[i].style.display == "block") {
+                    ele[i].style.display = "none";
+                    document.getElementById("togglechinese").checked = false;
+                    createCookie("chinese", "none", 360)
+                } else {
+                    ele[i].style.display = "block";
+                    document.getElementById("togglechinese").checked = true;
+                    createCookie("chinese", "block", 360)
+                }
+        }
+
+        function togglenews() {
+            var ele = document.getElementsByClassName("news");
+            for (var i = 0, j = ele.length; i < j; i++)
+                if (ele[i].style.display == "block") {
+                    ele[i].style.display = "none";
+                    document.getElementById("togglenews").checked = false;
+                    createCookie("news", "none", 360)
+                } else {
+                    ele[i].style.display = "block";
+                    document.getElementById("togglenews").checked = true;
+                    createCookie("news", "block", 360)
+                }
+        }
+
+        function toggleuser() {
+            var ele = document.getElementsByClassName("user");
+            for (var i = 0, j = ele.length; i < j; i++)
+                if (ele[i].style.display == "block") {
+                    ele[i].style.display = "none";
+                    document.getElementById("toggleuser").checked = false;
+                    createCookie("user", "none", 360)
+                } else {
+                    ele[i].style.display = "block";
+                    document.getElementById("toggleuser").checked = true;
+                    createCookie("user", "block", 360)
+                }
+        }
+
+        /*onLoad show microblog block if it was shown before*/
+        function applyConfig() {
+            if (document.cookie === "") {
+                createCookie("dot", "block", 360);
+                createCookie("french", "none", 360);
+                createCookie("spanish", "none", 360);
+                createCookie("polish", "none", 360);
+                createCookie("portuguese", "none", 360);
+                createCookie("italian", "none", 360);
+                createCookie("chinese", "none", 360);
+                createCookie("news", "block", 360);
+                createCookie("user", "block", 360);
+            };
+
+            var ele = document.getElementsByClassName("dot");
+            var dot = readCookie("dot");
+            if (dot == "block") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "block");
+                document.getElementById("toggledot").checked = true;
+            };
+            if (dot == "none") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "none");
+                document.getElementById("toggledot").checked = false;
+            };
+            var ele = document.getElementsByClassName("french");
+            var french = readCookie("french");
+            if (french == "block") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "block");
+                document.getElementById("togglefrench").checked = true;
+            };
+            if (french == "none") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "none");
+                document.getElementById("togglefrench").checked = false;
+            };
+            var ele = document.getElementsByClassName("spanish");
+            var spanish = readCookie("spanish");
+            if (spanish == "block") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "block");
+                document.getElementById("togglespanish").checked = true;
+            };
+            if (spanish == "none") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "none");
+                document.getElementById("togglespanish").checked = false;
+            };
+            var ele = document.getElementsByClassName("polish");
+            var polish = readCookie("polish");
+            if (polish == "block") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "block");
+                document.getElementById("togglepolish").checked = true;
+            };
+            if (polish == "none") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "none");
+                document.getElementById("togglepolish").checked = false;
+            };
+            var ele = document.getElementsByClassName("portuguese");
+            var portuguese = readCookie("portuguese");
+            if (portuguese == "block") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "block");
+                document.getElementById("toggleportuguese").checked = true;
+            };
+            if (portuguese == "none") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "none");
+                document.getElementById("toggleportuguese").checked = false;
+            };
+            var ele = document.getElementsByClassName("italian");
+            var italian = readCookie("italian");
+            if (italian == "block") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "block");
+                document.getElementById("toggleitalian").checked = true;
+            };
+            if (italian == "none") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "none");
+                document.getElementById("toggleitalian").checked = false;
+            };
+            var ele = document.getElementsByClassName("news");
+            var news = readCookie("news");
+            if (news == "block") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "block");
+                document.getElementById("togglenews").checked = true;
+            };
+            if (news == "none") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "none");
+                document.getElementById("togglenews").checked = false;
+            };
+            var ele = document.getElementsByClassName("user");
+            var user = readCookie("user");
+            if (user == "block") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "block");
+                document.getElementById("toggleuser").checked = true;
+            };
+            if (user == "none") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "none");
+                document.getElementById("toggleuser").checked = false;
+            };
+            var ele = document.getElementsByClassName("chinese");
+            var chinese = readCookie("chinese");
+            if (chinese == "block") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "block");
+                document.getElementById("togglechinese").checked = true;
+            };
+            if (chinese == "none") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "none");
+                document.getElementById("togglechinese").checked = false;
+            };
+        }
+    </script>
+</head>
+
+
+<body onDOMContentLoaded="javascript:applyConfig();" onLoad="javascript:applyConfig();">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-kdeMenuIcon"></span>
+                </button>
+                <a class="navbar-brand" href="./index.html"><span class="icon-kdeLogo"></span> Planet KDE</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#peeps" data-toggle="modal" data-target="#peeps">People Aggregated</a>
+                    </li>
+                    <li><a href="#addmore" data-toggle="modal" data-target="#addmore">Add your Blog</a>
+                    </li>
+                    <li><a href="#socfeeds" data-toggle="modal" data-target="#socfeeds">Microblogging Feed</a>
+                    </li>
+                    <li><a href="http://dot.kde.org/">KDE Dot News</a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Configure Feed <span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="javascript:toggledot();"><input id="toggledot" type="checkbox">&nbsp; KDE.News</a></li>
+                        <li><a href="javascript:togglenews();"><input id="togglenews" type="checkbox">&nbsp; Project news</a></li>
+                        <li><a href="javascript:toggleuser();"><input id="toggleuser" type="checkbox">&nbsp; KDE user blogs</a></li>
+                        <li><a href="javascript:togglechinese();"><input id="togglechinese" type="checkbox">&nbsp; Chinese language blogs</a></li>
+                        <li><a href="javascript:toggleitalian();"><input id="toggleitalian" type="checkbox">&nbsp; Italian language blogs</a></li>
+                        <li><a href="javascript:togglepolish();"><input id="togglepolish" type="checkbox">&nbsp; Polish language blogs</a></li>
+                        <li><a href="javascript:toggleportuguese();"><input id="toggleportuguese" type="checkbox">&nbsp; Portuguese language blogs</a></li>
+                        <li><a href="javascript:togglespanish();"><input id="togglespanish" type="checkbox">&nbsp; Spanish language blogs</a></li>
+                        <li><a href="javascript:togglefrench();"><input id="togglefrench" type="checkbox">&nbsp; Les blogs en fran&#231;ais</a></li>
+                      </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="http://www.kde.org/community/donations/" id="donateLink">Donate</a>
+                    </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div class="container">
+        <!--div class="row">
+            <div class="col-lg-4 col-xs-offset-4">
+                <img src="images/header.png" class="img img-responsive">
+            </div>
+        </div>
+        <hr style="height:10px; background-color: #333;"-->
+         <div class="day">
+<h3 class="dayform">January 29, 2015</h3>
+<div class="channelgroup dot">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-096f0b4f feed-" id="item-b4eac5a4">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://dot.kde.org/frontpage">KDE Dot News </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://dot.kde.org/2015/01/28/meet-kde-fosdem-weekend">00:49, Thursday, 29 January UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://dot.kde.org/2015/01/28/meet-kde-fosdem-weekend">Meet KDE at FOSDEM this Weekend</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p><img align="right" height="124" src="https://fosdem.org/2015/assets/style/bg-visual-panel-73f1975ffc7435da092f7de492966249bd09606d7e9d6241cc31591203c5a2d6.png" width="126" /><br />
+KDE will be at Europe's largest gathering of free software developering this weekend, taking over the city of Brussels for FOSDEM.  We start with the traditional beer event on the Friday, sampling 100 flavours of beer while we mingle with old friends and new.  On Saturday we will have a stall showing off Plasma 5.2, our beautiful desktop launched only yesterday.  We will also show off upcoming ideas like KDE software on Android.  There will be t-shirts to buy for those who wants to show their support for the original and best free software desktop community.  Saturday evening sees the Kubuntu 10th anniversary party in Grand Place to which all KDE friends are welcome (but remember to book on first).  On Sunday we'll be running the <a href="https://fosdem.org/2015/schedule/track/desktops/">Desktop devroom</a> with our friends from other projects.  Bruno Coudoin will be talking about his port to Qt of GCompris.  Hope to see you there!</p>
+</div></div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">January 28, 2015</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-5fbe877a feed-" id="item-f9cc3db7">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/Utkarsh-Simha.jpg"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://thegreatercode.wordpress.com/feed/">Utkarsh Simha (usimha) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://thegreatercode.wordpress.com/2015/01/27/star-hopper-for-kstars/">00:27, Wednesday, 28 January UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://thegreatercode.wordpress.com/2015/01/27/star-hopper-for-kstars/">Star-Hopper for KStars</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Part of my project for Season of KDE was to make a UI for the existing Star-Hopper feature in KStars. I recently got to finishing it and decided to document it.</p>
+<p>The Star-Hopper is an amazing feature present in KStars which allows you to find a path between two points in the sky. It is very commonly used in astronomy. If you have a bright star as a reference and you want to find an object in its vicinity, you start&#160;from your reference star and trace a route to the destination traversing a sequence of stars/pattern of stars.</p>
+<p>The existing Starhopper backend present in KStars was showing the results on the terminal. So I worked on developing a frontend to display the results.</p>
+<p>Here are steps on how to use the Star-Hopper feature in KStars :</p>
+<p>1. Right click on your reference object on the Skymap to get a drop down menu. This object is your start point.</p>
+<p><a href="https://thegreatercode.files.wordpress.com/2015/01/ks-dropdownmenu.png"><img alt="KS-DropDownMenu" class="alignnone size-medium wp-image-23" height="169" src="https://thegreatercode.files.wordpress.com/2015/01/ks-dropdownmenu.png?w=300&#038;h=169" width="300" /></a></p>
+<p>2. In the drop down menu, select &#8220;Starhop from here to&#8221; option.</p>
+<p><a href="https://thegreatercode.files.wordpress.com/2015/01/ks-sh-option.png"><img alt="KS-SH-Option" class="alignnone size-medium wp-image-25" height="169" src="https://thegreatercode.files.wordpress.com/2015/01/ks-sh-option.png?w=300&#038;h=169" width="300" /></a></p>
+<p>3. A dotted line will appear. Move the mouse to your destination object and right click on it.</p>
+<p><a href="https://thegreatercode.files.wordpress.com/2015/01/ks-starhop-till.png"><img alt="KS-Starhop-till" class="alignnone size-medium wp-image-27" height="169" src="https://thegreatercode.files.wordpress.com/2015/01/ks-starhop-till.png?w=300&#038;h=169" width="300" /></a></p>
+<p>4. A dialog box requesting for FOV appears. If you have already selected FOV symbols. you will get a drop down menu to select within those FOV symbols. Otherwise you will be asked to enter the FOV in arcminutes.</p>
+<p><a href="https://thegreatercode.files.wordpress.com/2015/01/ks-fov-dialogbox.png"><img alt="KS-FOV-DialogBox" class="alignnone size-medium wp-image-24" height="169" src="https://thegreatercode.files.wordpress.com/2015/01/ks-fov-dialogbox.png?w=300&#038;h=169" width="300" /></a></p>
+<p>5. Upon entering the FOV and clicking okay, you will either be presented with a dialog box containing list of objects in the Starhop route or an error dialog box if the Starhop route couldn&#8217;t be computed (mostly because of small FOV)</p>
+<p><a href="https://thegreatercode.files.wordpress.com/2015/01/ks-sh-ui1.png"><img alt="KS-SH-UI" class="alignnone size-medium wp-image-30" height="169" src="https://thegreatercode.files.wordpress.com/2015/01/ks-sh-ui1.png?w=300&#038;h=169" width="300" /></a></p>
+<p>The dialog box has options to produce details of the object, center the object in the map and go to the next object and center it in the map. It also gives directions to the current selected object below the list of objects.</p>
+<p>Hope this blog post helps in using the Star-Hopper features. Any questions, feel free to drop into #kde-kstars</p>
+<p>Cheers! <span class="wp-smiley wp-emoji wp-emoji-smile" title=":)">:)</span></p><br />  <a href="http://feeds.wordpress.com/1.0/gocomments/thegreatercode.wordpress.com/21/" rel="nofollow"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/thegreatercode.wordpress.com/21/" /></a> <img alt="" border="0" height="1" src="https://pixel.wp.com/b.gif?host=thegreatercode.wordpress.com&#038;blog=79211679&#038;post=21&#038;subd=thegreatercode&#038;ref=&#038;feed=1" width="1" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">January 27, 2015</h3>
+<div class="channelgroup dot">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-096f0b4f feed-" id="item-ef93e2a5">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://dot.kde.org/frontpage">KDE Dot News </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://dot.kde.org/2015/01/27/plasma-52-beautiful-and-featureful">17:30, Tuesday, 27 January UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://dot.kde.org/2015/01/27/plasma-52-beautiful-and-featureful">Plasma 5.2 Is Beautiful and Featureful</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>
+Today KDE releases Plasma 5.2.  This release adds a number of new components, many new features and many more bugfixes.
+</p>
+<div style="text-align: center;">
+<a href="https://www.kde.org/announcements/plasma-5.2/full-screen.png"><br /><img alt="Plasma 5.2" height="451" src="https://www.kde.org/announcements/plasma-5.2/full-screen-wee.png" width="800" /><br /></a>
+</div>
+<!--break--><h2>New Components</h2>
+<div>
+<a href="https://www.kde.org/announcements/plasma-5.2/kscreen.png"><br /><img alt="Dual monitor setup" height="394" src="https://www.kde.org/announcements/plasma-5.2/kscreen-wee.png" style="border: 0px;" width="400" /><br /></a><br />
+KScreen dual monitor setup</div>
+<p>This release of Plasma comes with some new components to make your desktop even more complete:</p>
+<p><strong>BlueDevil</strong>: a range of desktop components to manage Bluetooth devices.  It'll set up your mouse, keyboard, send &amp; receive files and you can browse for devices.</p>
+<p><strong>KSSHAskPass</strong>: if you access computers with ssh keys but those keys have passwords this module will give you a graphical UI to enter those passwords.</p>
+<p><strong>Muon</strong>: install and manage software and other addons for your computer.</p>
+<p><strong>Login theme configuration (SDDM)</strong>: SDDM is now the login manager of choice for Plasma and this new System Settings module allows you to configure the theme.</p>
+<p><strong>KScreen</strong>: getting its first release for Plasma 5 is the System Settings module to set up multiple monitor support.</p>
+<p><strong>GTK Application Style</strong>: this new module lets you configure themeing of applications from Gnome.</p>
+<p><strong>KDecoration</strong>: this new library makes it easier and<br />
+more reliable to make themes for KWin, Plasma's window manager. It has<br />
+impressive memory, performance and stability improvements. If you are<br />
+missing a feature don't worry it'll be back in Plasma 5.3.</p>
+<h2>Other highlights</h2>
+<p><strong>Undo</strong> changes to Plasma desktop layout</p>
+<div>
+<img alt="Undo desktop changes" height="320" src="https://www.kde.org/announcements/plasma-5.2/output.gif" style="border: 0px;" width="608" /><br />
+Undo changes to desktop layout</div>
+<p>Smarter sorting of results in <strong>KRunner</strong>, press Alt-space to easily search through your computer</p>
+<div>
+<img alt="Smart sorting in KRunner" height="182" src="https://www.kde.org/announcements/plasma-5.2/krunner.png" style="border: 0px;" width="744" /><br />
+Smart sorting in KRunner</div>
+<p><strong>Breeze window decoration</strong> theme adds a new look to your desktop and is now used by default</p>
+<div>
+<img alt="New Breeze Window Decoration" height="56" src="https://www.kde.org/announcements/plasma-5.2/window_decoration.png" style="border: 0px;" width="720" /><br />
+New Breeze Window Decoration</div>
+<p>The artists in the visual design group have been hard at work on many new <strong>Breeze icons</strong></p>
+<div>
+<img alt="New Breeze Window Decoration" height="337" src="https://www.kde.org/announcements/plasma-5.2/icons.png" style="border: 0px;" width="552" /><br />
+More Breeze Icons</div>
+<p>They have added a new white mouse <strong>cursor theme</strong> for Breeze.</p>
+<p><strong>New plasma widgets</strong>: 15 puzzle, web browser, show desktop</p>
+<div>
+<img alt="Web browser plasmoid" height="316" src="https://www.kde.org/announcements/plasma-5.2/new_plasmoid.png" style="border: 0px;" width="563" /><br />
+Web browser plasmoid</div>
+<p><strong>Audio Player controls</strong> in KRunner, press Alt-Space and type next to change music track</p>
+<p>The Kicker alternative application menu can install applications from the menu and adds menu editing features.</p>
+<p>Our desktop search feature Baloo sees optimisations on startup. It now consumes 2-3x less CPU on startup.  The query parser supports "type" / "kind" properties, so you can type "kind:Audio" in krunner to filter out Audio results.</p>
+<p>In the screen locker we improved the integration with logind to ensure the screen is properly locked before suspend.  The background of the lock screen can be configured.  Internally this uses part of the Wayland protocol which is the future of the Linux desktop.</p>
+<p>There are improvements in the handling of multiple monitors. The detection code for multiple monitors got ported to use the XRandR extension directly and multiple bugs related to it were fixed.</p>
+<p><strong>Default applications in Kickoff</strong> panel menu have been updated to list Instant Messaging, Kontact and Kate.</p>
+<p>There is a welcome return to the touchpad enable/disable feature for laptop keypads with these keys.</p>
+<p>Breeze will <strong>set up GTK themes</strong> on first login to match.</p>
+<p>Over 300 bugs fixed throughout Plasma modules.</p>
+<p><a href="https://www.kde.org/announcements/plasma-5.1.2-5.2.0-changelog.php">Plasma modules 5.2 full changelog</a></p>
+<!-- // Boilerplate again --><h2>Live Images</h2>
+<p>
+The easiest way to try it out is the with a live image booted off a USB disk.  Images which use Plasma 5.2 beta are available for development versions of <a href="http://cdimage.ubuntu.com/kubuntu/releases/vivid/alpha-2/">Kubuntu Vivid Beta</a> and <a href="http://www.dvratil.cz/2015/01/plasma-5-2-beta-available-for-fedora-testers/">Fedora 21 remix</a>.  We expect Plasma 5 to be picked up as the default desktop in leading distributions in the coming months.
+</p>
+<h2>Package Downloads</h2>
+<p>Distributions have created, or are in the process of creating, packages listed on our wiki page.
+</p>
+<ul><li> <a href="https://community.kde.org/Plasma/Packages">Package download wiki page</a></li>
+</ul><h2>Source Downloads</h2>
+<p>You can install Plasma 5 directly from source. KDE's community wiki has <a href="http://community.kde.org/Frameworks/Building">instructions to compile it</a>. Note that Plasma 5 does not co-install with Plasma 4, you will need to uninstall older versions or install into a separate prefix.
+</p>
+<ul><li>
+<p><a href="https://www.kde.org/info/plasma-5.2.0.php">Source Info Page</a>
+</p></li>
+</ul><h2>Feedback</h2>
+<p>You can give us feedback and get updates on <a href="https://www.facebook.com/kde"><img height="32" src="https://www.kde.org/announcements/facebook.gif" style="border: 0px; padding: 0px; margin: 0px;" width="32" /></a> <a href="https://www.facebook.com/kde">Facebook</a> or <a href="https://twitter.com/kdecommunity"><img height="32" src="https://www.kde.org/announcements/twitter.png" style="border: 0px; padding: 0px; margin: 0px;" width="32" /></a> <a href="https://twitter.com/kdecommunity">Twitter</a> or <a href="https://plus.google.com/105126786256705328374/posts"><img height="30" src="https://www.kde.org/announcements/googleplus.png" style="border: 0px; padding: 0px; margin: 0px;" width="30" /></a> <a href="https://plus.google.com/105126786256705328374/posts">Google+</a>.</p>
+<p>
+Discuss Plasma 5 on the <a href="https://forum.kde.org/viewforum.php?f=289">KDE Forums Plasma 5 board</a>.
+</p>
+<p>You can provide feedback direct to the developers via the <a href="irc://#plasma@freenode.net">#Plasma IRC channel</a>, <a href="https://mail.kde.org/mailman/listinfo/plasma-devel">Plasma-devel mailing list</a> or report issues via <a href="https://bugs.kde.org/enter_bug.cgi?product=plasmashell&amp;format=guided">bugzilla</a>.  If you like what the team is doing, please let them know!</p>
+<p>Your feedback is greatly appreciated.</p>
+<h2>
+  Supporting KDE</h2>
+<p align="justify">
+ KDE is a <a href="http://www.gnu.org/philosophy/free-sw.html">Free Software</a> community that exists and grows only because of the help of many volunteers that donate their time and effort. KDE is always looking for new volunteers and contributions, whether it is help with coding, bug fixing or reporting, writing documentation, translations, promotion, money, etc. All contributions are gratefully appreciated and eagerly accepted. Please read through the <a href="https://dot.kde.org/community/donations/">Supporting KDE page</a> for further information or become a KDE e.V. supporting member through our <a href="https://relate.kde.org/civicrm/contribute/transact?id=5">Join the Game</a> initiative. </p>
+</div></div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">January 23, 2015</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-14eb29a7 feed-" id="item-59f86889">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/dmitripopov.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/144">Dimitri Popov </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/729">14:21, Friday, 23 January UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/729">digiKam Quick Tip: Transfer Photos from digiKam Directly to a Mobile Device</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Provided that you use KDE, you can&#160;push photos from digiKam directly to a mobile device that supports the MTP protocol (e.g., most Android devices) using the KioImportExport&#160;Kipi plugin.</p>
+<p><img alt="mtp_export" height="376" src="https://scribblesandsnaps.files.wordpress.com/2015/01/mtp_export.png" width="473" /></p>
+<p><a href="http://scribblesandsnaps.com/2015/01/23/digikam-quick-tip-transfer-photos-from-digikam-directly-to-a-mobile-device/">Continue to read</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">January 20, 2015</h3>
+<div class="channelgroup dot">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-096f0b4f feed-" id="item-54950b16">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://dot.kde.org/frontpage">KDE Dot News </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://dot.kde.org/2015/01/20/akademy-2015-coru%C3%B1a-spain-25-31-july">22:14, Tuesday, 20 January UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://dot.kde.org/2015/01/20/akademy-2015-coru%C3%B1a-spain-25-31-july">Akademy 2015 - A Coru&#241;a, Spain - 25-31 July</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><div style="float: right; padding: 1ex; margin: 1ex;"><img src="https://dot.kde.org/sites/dot.kde.org/files/akademyLogo4Dot.png" /></div>
+<p>For more than 1800 years, the <a href="http://en.wikipedia.org/wiki/Tower_of_Hercules">Tower of Hercules</a> has guided ships sailing near A Coru&#241;a. Soon it will beckon KDE users and contributors, when <a href="https://akademy.kde.org/2015">Akademy</a>&#8212;the annual KDE community meeting&#8212;is held in <a href="http://en.wikipedia.org/wiki/A_Coru%C3%B1a">A Coru&#241;a</a> (Galicia, Spain) 25&#8211;31 July. The conference is expected to draw hundreds of attendees from the global KDE Community to discuss and plan the future of the Community and its technology. Many participants from the broad free and open source software community, local organizations and software companies will also attend.</p>
+<div style="float: right; padding: 1ex; margin: 1ex;"><img src="https://dot.kde.org/sites/dot.kde.org/files/GPULGroupPhoto750.jpg" /><br />Free software user group GPUL is the local team</div>
+<!--break--><h2>What is the local connection?</h2>
+<p><a href="http://gpul.org/">GPUL</a> (Grupo de Programadores y Usuarios de Linux) is the local organization that is working with the KDE Akademy Team to produce the conference. GPUL is formed by students, professors, IT professionals and people in general who share a passion for free and open software. There is a common view that society should own the software that people use, a practical philosophy that is actively promoted. So GPUL organizes activities to inform people and help them make the change to free and open software. GPUL has produced or helped to produce other free and open technology events, because working with the free software community is quite satisfying. There is always an awesome atmosphere; there have been really great experiences collaborating with free software communities in managing events like <a href="http://www.kde-espana.org/akademy-es2008/">Akademy-es 2008</a> and <a href="http://2012.guadec.org">GUADEC 2012</a> (the Gnome Users and Developers European Conference). KDE is one of the largest and most effective communities of free software users and developers in the world. Many GPUL members use KDE software. So holding Akademy in A Coru&#241;a is something that the Group totally wants to do. GPUL members are honored to be host to Akademy 2015.</p>
+<div style="float: right; padding: 1ex; margin: 1ex;"><img src="https://dot.kde.org/sites/dot.kde.org/files/ACorunaAerialPhoto750_0.jpg" /><br />Photo courtesy of <a href="http://triatlonsindrafting.com/">Triatlon Sin Drafting</a></div>
+<h2>A Coru&#241;a and Akademy</h2>
+<p>A Coru&#241;a is the second largest city in Galicia with about 250,000 inhabitants. Located in the northwestern corner of the Iberian Peninsula, it's a city&#8212;surrounded by ocean&#8212;that has attracted diverse peoples and cultures for over 2000 years. They have left a legacy of legends, myths and history in every corner of the town. It's a <a href="http://www.tourspain.org/coruna/">feast for the senses</a>. The city has many sights, such as <a href="http://en.wikipedia.org/wiki/Tower_of_Hercules">Tower of Hercules</a> (World Heritage Site), <a href="http://www.tourspain.org/coruna/monuments/san-anton.asp">Castle of San Anton</a>, <a href="http://www.galiciaguide.com/Coruna-harbour.html">the Promenade</a>, <a href="http://www.spain.info/en/que-quieres/arte/museos/coruna_a/casa_de_las_ciencias_museo_de_ciencia_y_tecnologia.html">Coru&#241;a Museum of Sciences</a>, <a href="http://www.galiciaguide.com/Maria-Pita-square.html">Maria Pita Square</a>, <a href="http://www.galiciaguide.com/John-moore.html">Garden of San Carlos</a> and <a href="http://www.turismocoruna.com/web/corTurServer.php?idSecweb=245&amp;id_secPadre=217&amp;idInfo=104">San Pedro Park</a> &amp; Ascensor Panor&#225;mico (magnifique views of the Rias Altas coast), wonderful <a href="http://www.theguardian.com/travel/2012/aug/26/la-coruna-beach-food-culture">beaches</a> such as <a href="http://www.galiciaguide.com/Coruna-beaches.html">Riazor and Orz&#225;n</a>, and some of the <a href="http://sunshineandsiestas.com/2013/08/15/eating-coruna-the-citys-best-eats/">best seafood</a> in the world.</p>
+<p>The Venue at the Faculty of Computer Science of the Universidade da Coru&#241;a (FIC) is perfectly suited for hacking, presentations, BoFs and working together.  Free software events have been held here since 1998. The recommended accommodation near the Venue has enough room for all attendees and free transportation to the city.</p>
+<p>The combination of the Faculty of Computer Science, the accommodation, the KDE community, the local free software community and the city itself is a perfect match for Akademy.</p>
+<h2>About GPUL</h2>
+<p>GPUL is a Free Software user group based in the Faculty of Computer Science in A Coru&#241;a. The group has been working to promote free software in our university and in the local society since 1998 (in fact GPUL is celebrating its 2^2^2 anniversary). There are currently more than 400 members.</p>
+<h2>About Akademy</h2>
+<p>For most of the year, KDE&#8212;one of the largest free and open software  communities in the world&#8212;works online by email, IRC, forums and mailing  lists. Akademy provides all KDE contributors the opportunity to meet in  person to foster social bonds, work on concrete technology issues,  consider new ideas, and reinforce the innovative, dynamic culture of  KDE. Akademy brings together artists, designers, developers,  translators, users, writers, sponsors and many other types of KDE  contributors to celebrate the achievements of the past year and help  determine the direction for the next year. Intense workshops at the  conference bring those plans to reality. The KDE Community welcomes  companies building on KDE technology, and those that are exploring  possibilities involving free and open source technologies.</p>
+<p>In 2015, once again a few hundred Free Software enthusiasts will gather for 2 days of talks and 5 days of workshops and coding sessions. For more information, please contact <a href="mailto:akademy-team@kde.org">the Akademy team</a>.</p>
+</div></div></div><div class="field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-above clearfix"><h3 class="field-label">Dot Categories: </h3><ul class="links"><li class="taxonomy-term-reference-0"><a href="https://dot.kde.org/category/dot-categories/community-and-events">Community and Events</a></li></ul></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">January 19, 2015</h3>
+<div class="channelgroup dot">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-096f0b4f feed-" id="item-5ec8c1f5">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://dot.kde.org/frontpage">KDE Dot News </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://dot.kde.org/2015/01/19/kde-commit-digest-16th-november-2014">14:14, Monday, 19 January UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://dot.kde.org/2015/01/19/kde-commit-digest-16th-november-2014">KDE Commit-Digest for 16th November 2014</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>In <a href="http://commit-digest.org/issues/2014-11-16/">this week's KDE Commit-Digest</a>:</p>
+<ul><li><a href="https://userbase.kde.org/Gwenview">Gwenview</a> gains "Recent Files" option</li>
+<li>Cantor sees multiple backends (R, Lua, KAlgebra/analitza, Maxima, Qalculate) and KLetters ported to Qt5/KF5</li>
+<li>Refactoring in of the custom defines and includes plugins in <a href="http://www.kdevelop.org/">KDevelop</a>: the compiler provider is a library now</li>
+<li>Skrooge adds new advice detecting scheduled operations having date not aligned with the last inserted operation</li>
+<li>Heavy development including introducting a base class Resource; also bugfixes.</li>
+</ul><p><a href="http://commit-digest.org/issues/2014-11-16/">Read the rest of the Digest here</a>.</p>
+</div></div></div><div class="field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-above clearfix"><h3 class="field-label">Dot Categories: </h3><ul class="links"><li class="taxonomy-term-reference-0"><a href="https://dot.kde.org/category/dot-categories/developer">Developer</a></li></ul></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">January 17, 2015</h3>
+<div class="channelgroup spanish">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-908dfc29 feed-" id="item-b85c6f06">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/anum.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="http://anu-mittal.blogspot.com/feeds/posts/default">Anu Mittal (anuM) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="http://anu-mittal.blogspot.com/2015/01/january-time-to-pull-up-my-socks.html">13:11, Saturday, 17 January UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="http://anu-mittal.blogspot.com/2015/01/january-time-to-pull-up-my-socks.html">January- Time to pull up my socks.</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<div dir="ltr" style="text-align: left;">I have successfully generated CMake Configuration and have added the code to the kde review board (https://git.reviewboard.kde.org/r/121758/) , corrections asked were made accordingly. Now finally the main task is to port all .cpp files, which i have been working on for a while.<br /><div>Initially got stuck at few places and also had my university examination going on due to which there was a fall in my contribution but now as i am through all these, its time to gear up the application porting task under the guidance of my mentor.<br /><div>Hoping for a good luck.</div></div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">January 15, 2015</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-e036d124 feed-" id="item-31f730ca">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/pinak.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="http://pinak.github.io">Pinak Ahuja (pinak) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="http://pinak.github.io/kde/sok/2015/01/15/SoK-Status-Report-part-2.html">05:30, Thursday, 15 January UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="http://pinak.github.io/kde/sok/2015/01/15/SoK-Status-Report-part-2.html">Sok Status Report Part 2</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Been a while since my last post. Exams came in and threw my momentum off. But now I'm back on track.
+I've been working on porting Baloo to use lucene instead of Xapain using <a href="https://github.com/luceneplusplus/LucenePlusPlus">Lucene++</a>.
+Lucene++ is a C++ port of the java <a href="http://lucene.apache.org/">Lucene</a>.</p>
+
+<p>The first challenge I faced was adding the lucenePlusPlus library to the project. Which I first solved by adding static paths to the library and include directories. This was the wrong approach as told by my mentor Vishesh Handa, as this would only work on my system. The correct way to do this was to use a cmake finder module for LucenePlusPlus. I'm using one from <a href="https://github.com/emjotde/lucenept/blob/master/cmake/FindLucenePlusPlus.cmake">here</a>.</p>
+
+<p>To use lucene++ a lot of string and other datatype conversions were required between formats Lucene++ uses and their Qt counterparts. (Mainly std::wstring &lt;-&gt; QString) So I decided to write a wrapper to provide clean API's which will be used in my port (using the current Xapian wrapper we have as a reference). I'll be adding more features to this wrapper as I need them going forward. Currently I've ported basicindexingjob in the baloo file component and written a test verify its working, there is a long way yet to go. My working code can be found in lucene branch of baloo's <a href="http://quickgit.kde.org/?p=baloo.git&amp;a=shortlog&amp;h=694548c7248eb7e03d963225d54ef78fa12f5602">git repo</a>.</p>
+
+<p>Edit (19th January 2015):</p>
+
+<p>As Kais Hassan mentions that I should probably add an explanation as to how lucene can be utilized by baloo which is primarily
+a desktop searching solution, here It is:
+Baloo requires full text indexing and searching capabilities, for which we currently use xapian, but there are some problems with it as I previously stated in my <a href="http://pinak.github.io/kde/sok/2014/11/29/SoK-Status-Report-part-1.html">Status report 1</a>.</p>
+
+<p>Lucene, which is primarily used for internet search solutions, can easily be used for desktop searching suites.
+It uses documents which are the basic unit for searching and indexing. A document consists of Terms which simply map
+Field -&gt; value. Queries retrieve documents which contain the specified value for a field (Queries can be more complex
+though and involve many fields). We create a document for every file, when we index the files.
+These documents contain appropriate values (URL, name, type, content etc) for the file.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">January 13, 2015</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-d282bf7c feed-" id="item-f3256dae">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/Souvik-Das.jpg"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://dassouvik.wordpress.com/feed/">Souvik Das (sd__) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://dassouvik.wordpress.com/2015/01/13/kanagram-is-now-2-player/">23:16, Tuesday, 13 January UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://dassouvik.wordpress.com/2015/01/13/kanagram-is-now-2-player/">Kanagram is now 2-player</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>I am glad to say that I have managed to implement the feature as proposed by me in Season of KDE. I am yet to update my code in the main Kanagram repository.</p>
+<p>The code can be viewed at: <a href="https://git.reviewboard.kde.org/r/122041/" rel="nofollow">https://git.reviewboard.kde.org/r/122041/</a><br />
+The git can be cloned from: git://anongit.kde.org/clones/kanagram/souvikdas/kanagram.git</p>
+<p>It was great being a part of SoK. I look forward continuing to contribute to the open source community.<br />
+Special thanks to my mentor Jeremy Whiting, who helped me throughout the season and helped me with all my doubts.</p><br />  <a href="http://feeds.wordpress.com/1.0/gocomments/dassouvik.wordpress.com/17/" rel="nofollow"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/dassouvik.wordpress.com/17/" /></a> <img alt="" border="0" height="1" src="https://pixel.wp.com/b.gif?host=dassouvik.wordpress.com&#038;blog=80059610&#038;post=17&#038;subd=dassouvik&#038;ref=&#038;feed=1" width="1" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><div class="channelgroup dot">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-096f0b4f feed-" id="item-c7f6f6ec">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://dot.kde.org/frontpage">KDE Dot News </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://dot.kde.org/2015/01/13/plasma-52-beta-out-testing">19:40, Tuesday, 13 January UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://dot.kde.org/2015/01/13/plasma-52-beta-out-testing">Plasma 5.2 Beta out for Testing</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Today KDE releases a beta for Plasma 5.2.  This release adds a number of new components and improves the existing desktop.  We welcome all testers to find and help fix the bugs before our stable release in two weeks' time.</p>
+<div style="text-align: center;">
+<a href="https://www.kde.org/announcements/plasma-5.2/full-screen.png"><br /><img alt="Plasma 5.2" height="451" src="https://www.kde.org/announcements/plasma-5.2/full-screen-wee.png" width="800" /><br /></a>
+</div>
+<!--break--><h2>New Components</h2>
+<div>
+<a href="https://www.kde.org/announcements/plasma-5.2/kscreen.png"><br /><img alt="Dual monitor setup" height="394" src="https://www.kde.org/announcements/plasma-5.2/kscreen-wee.png" style="border: 0px;" width="400" /><br /></a><br />
+KScreen dual monitor setup
+</div>
+<p>This release of Plasma comes with some new components to make your desktop even more complete:</p>
+<p><strong>BlueDevil</strong>: a range of desktop components to manage Bluetooth devices.  It'll set up your mouse, keyboard, send &amp; receive files and you can browse for devices.</p>
+<p><strong>KSSHAskPass</strong>: if you access computers with ssh keys but those keys have passwords this module will give you a graphical UI to enter those passwords.</p>
+<p><strong>Muon</strong>: install and manage software and other addons for your computer.</p>
+<p><strong>Login theme configuration (SDDM)</strong>: SDDM is now the login manager of choice for Plasma and this new System Settings module allows you to configure the theme.</p>
+<p><strong>KScreen</strong>: getting its first release for Plasma 5 is the System Settings module to set up multiple monitor support.</p>
+<p><strong>GTK Application Style</strong>: this new module lets you configure themeing of applications from Gnome.</p>
+<p><strong>KDecoration</strong>: this new library makes it easier and more reliable to make themes for KWin, Plasma's window manager.</p>
+<h2>Work in Progress</h2>
+<p>These modules have problem which makes it unlikely they will be in the stable release but we welcome testing.</p>
+<p><strong>Touchpad settings</strong>: feeling left handed? You can use this new System Settings module to set up your touchpad however you like.</p>
+<p><strong>User Manager</strong>: a module for System Settings to create and administer user accounts.</p>
+<h2>Other highlights</h2>
+<p>Undo changes to Plasma desktop layout</p>
+<div>
+<img alt="Undo desktop changes" height="384" src="https://www.kde.org/announcements/plasma-5.2/output.gif" style="border: 0px;" width="608" /><br />
+Undo changes to desktop layout
+</div>
+<p>Smarter sorting of results in KRunner, press Alt-space to easily search through your computer</p>
+<div>
+<img alt="Smart sorting in KRunner" height="182" src="https://www.kde.org/announcements/plasma-5.2/krunner.png" style="border: 0px;" width="744" /><br />
+Smart sorting in KRunner
+</div>
+<p>Breeze window decoration theme adds a new look to your desktop and is now used by default</p>
+<div>
+<img alt="New Breeze Window Decoration" height="56" src="https://www.kde.org/announcements/plasma-5.2/window_decoration.png" style="border: 0px;" width="720" /><br />
+New Breeze Window Decoration
+</div>
+<p>The artists in the visual design group have been hard at work on many new Breeze icons</p>
+<p>They are have added a new white mouse cursor theme for Breeze.</p>
+<p>New plasma widgets: 15 puzzle, web browser, show desktop</p>
+<div>
+<img alt="Web browser plasmoid" height="316" src="https://www.kde.org/announcements/plasma-5.2/new_plasmoid.png" style="border: 0px;" width="563" /><br />
+Web browser plasmoid
+</div>
+<p>Audio Player controls in KRunner, press Alt-Space and type next to change music track</p>
+<p>The Kicker alternative application menu can install applications from the menu and adds menu editing features.</p>
+<p>Over 300 bugs fixed throughout Plasma modules.</p>
+<p><a href="https://www.kde.org/announcements/plasma-5.1.2-5.1.95-changelog.php">5.2 beta full changelog</a></p>
+<h2>Package Downloads</h2>
+<p>Distributions have created, or are in the process<br />
+of creating, packages listed on our wiki page.
+</p>
+<ul><li>
+<a href="https://community.kde.org/Plasma/Packages">Package download wiki page</a></li>
+</ul><h2>Source Downloads</h2>
+<p>You can install Plasma 5 directly from source. KDE's community wiki has <a href="http://community.kde.org/Frameworks/Building">instructions to compile it</a>.<br />
+Note that Plasma 5 does not co-install with Plasma 4, you will need to uninstall older versions or install into a separate prefix.
+</p>
+<ul><li>
+<p><a href="https://dot.kde.org/../info/plasma-5.1.95.php">Source Info Page</a>
+</p></li>
+</ul><h2>Feedback</h2>
+<p>You can provide feedback either via the <a href="irc://#plasma@freenode.net">#Plasma IRC channel</a>, <a href="https://mail.kde.org/mailman/listinfo/plasma-devel">Plasma-devel mailing list</a> or report issues via <a href="https://bugs.kde.org/enter_bug.cgi?product=plasmashell&amp;format=guided">bugzilla</a>. Plasma<br />
+5 is also <a href="http://forum.kde.org/viewforum.php?f=289">discussed on the KDE Forums</a>. Your feedback is greatly appreciated. If you like what the team is doing, please let them know!</p>
+</div></div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">January 12, 2015</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-14eb29a7 feed-" id="item-6a7d48be">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/dmitripopov.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/144">Dimitri Popov </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/728">15:08, Monday, 12 January UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/728">digiKam Quick Tip: Group Photos by Format</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Using the <strong>View -> Group Images -> By Format</strong>&#160;command, you can group photos in albums by format. This feature can come in useful for managing&#160;albums containing photos in different formats: JPEG, TIFF, RAW and video files, etc.</p>
+<p><img alt="group_by_format" height="446" src="https://scribblesandsnaps.files.wordpress.com/2015/01/group_by_format.png?w=605" width="605" /></p>
+<p><a href="http://scribblesandsnaps.com/2015/01/12/digikam-quick-tip-group-photos-by-format/">Continue reading</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">January 11, 2015</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-4d446983 feed-" id="item-4b3593ad">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="http://ianda.eu/tag/planetkde/feed/">Christian D&#225;vid (chris_hd) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://ianda.eu/2015/01/online-banking-with-kmymoney/">18:15, Sunday, 11 January UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://ianda.eu/2015/01/online-banking-with-kmymoney/">Online banking with KMyMoney</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Hello Planet,</p>
+<p><a href="http://kmymoney.org" title="KMyMoney -&#8239;KDE Personal Finance Manager">KMyMoney</a> learned to send credit transfers to your (German) bank <img alt=":)" class="wp-smiley" src="http://ianda.eu/wp-includes/images/smilies/icon_smile.gif" /></p>
+<p>For many years KMyMoney could do the other way round; download transactions from your bank using <abbr title="Homebanking Computer Interface">HBCI,</abbr> <abbr title="Financial Transaction Services">FinTS</abbr> and <abbr title="Open Financial Exchange">OFX</abbr>. But to transfer money it was required to visit the bank&#8217;s web site again &#8212; a usability nightmare.</p>
+<p>The current developer branch allows users to create <abbr title="Single Euro Payments Area">SEPA</abbr> credit transfers, store and send them &#8212; thanks to <a href="http://aqbanking.de">aqBanking</a> (website is in German). Some basic features are available already, so the IBAN is validated and you get suggestions for BICs. Also an address book of account numbers was added to the payees. But that is not used for auto-completion, yet.</p>
+<p><img alt="Screenshot of credit transfer in KMyMoney" class="alignnone wp-image-49 size-full" height="587" src="https://ianda.eu/wp-content/uploads/2015/01/credit-transfer-window.png" width="828" /></p>
+<p>My vision is a program that helps you to do ordinary tasks. Did you ever pay overdraft interests because you overdrew an account while another account was well-stuffed? With KMyMoney it should be able do fix that problem with a minimal amount of clicks. Even better, for years KMyMoney creates a forecast based on scheduled transactions. So it can make suggestions to move your money from the saving accounts even before an account drops into the red zone.</p>
+<p>Sadly only a small amount of users will profit from the credit transfers: only German banks are supported. Everything was created in a very flexible way. Hopefully somebody else will use that to add support for more protocols.</p>
+<p>Greetings,<br />
+Chris</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">January 03, 2015</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-5fbe877a feed-" id="item-bf741b75">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/Utkarsh-Simha.jpg"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://thegreatercode.wordpress.com/feed/">Utkarsh Simha (usimha) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://thegreatercode.wordpress.com/2015/01/03/season-of-kde-december/">15:59, Saturday, 03 January UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://thegreatercode.wordpress.com/2015/01/03/season-of-kde-december/">Season of KDE &#8211; December</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>After quite a lot of code review and corrections (and some profanity), I completed the UI for Star-Hopper.</p>
+<p>Here are&#160;the additions :</p>
+<ul>
+<li>The UI now displays directions for star-hopping.</li>
+<li>The next button also centers the object in the map.</li>
+<li>The skymap refreshes itself after drawing the path to star-hop.</li>
+<li>Double clicking the star in the UI list centers the object.</li>
+<li>Single clicking the star in the UI provides directions to star-hop to that particular star.</li>
+</ul>
+<p>Screenshot :</p>
+<p><a href="https://thegreatercode.files.wordpress.com/2015/01/kstars2.png"><img alt="Kstars2" class="alignnone size-medium wp-image-18" height="169" src="https://thegreatercode.files.wordpress.com/2015/01/kstars2.png?w=300&#038;h=169" width="300" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p><br />  <a href="http://feeds.wordpress.com/1.0/gocomments/thegreatercode.wordpress.com/15/" rel="nofollow"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/thegreatercode.wordpress.com/15/" /></a> <img alt="" border="0" height="1" src="https://pixel.wp.com/b.gif?host=thegreatercode.wordpress.com&#038;blog=79211679&#038;post=15&#038;subd=thegreatercode&#038;ref=&#038;feed=1" width="1" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">January 02, 2015</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-14eb29a7 feed-" id="item-7f98c72c">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/dmitripopov.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/144">Dimitri Popov </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/727">14:23, Friday, 02 January UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/727">digiKam Recipes 4.3.1 Released</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>I ring in the new year with&#160;a&#160;<a href="http://dmpop.dhcp.io/#!digikamrecipes.md">digiKam Recipes</a>&#160;update. This version features&#160;two new recipes:&#160;<em>Remove Keywords from Photos</em> and&#160;<em>Add Web Interface to digiKam with digiKamWebUi</em>. In addition to that, the updated and expanded&#160;<em>Deal with Bugs in digiKam</em>&#160;recipe now explains how to generate backtraces.</p>
+<p><a href="http://dmpop.dhcp.io/#!digikamrecipes.md"><img alt="digikamrecipes-4.3.1" src="https://scribblesandsnaps.files.wordpress.com/2015/01/digikamrecipes-4-3-1.png" width="375" /></a></p>
+<p><a href="http://scribblesandsnaps.com/2015/01/02/digikam-recipes-4-3-1-released/">Continue to read</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">December 31, 2014</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-a1ef4016 feed-" id="item-adf9d292">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/subhajitmukherjee.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="http://subhajitmukherjee.wordpress.com/feed/">Subhajit Mukherjee (bukai) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="http://subhajitmukherjee.wordpress.com/2014/12/31/round-2/">22:50, Wednesday, 31 December UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="http://subhajitmukherjee.wordpress.com/2014/12/31/round-2/">Round 2</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Well the first two laps of my first SoK is over and now I finally enter into the final lap. In the first month I had finished with the design of the site but it was just plain and simple HTML/CSS and as we all know that is not enough. So the next question that arises is &#8211; what do we need ? And the answer to that will be a framework.</p>
+<p>As my aim is to make a site that will be used for a long time and to enable that editing and updating information should me made easy and hence I have used wordpress to enable the same.</p>
+<p>This months main challenge was to convert my HTML/CSS webpage into a wordpress theme. As I am a newbie to wordpress hence it was quite a humongous task for me but I as successful at the end. I converted my theme and imported all the old news on to my wordpress instance. </p>
+<p>Click <a href="http://test2.kubuntu.co.uk/wordpress/">here </a>to get a look at the site now. </p>
+<p>As you might correctly notice that there are some images missing in the latest article section. That is the area I am currently working on. Once that is done then 99% of my task will be completed.</p>
+<p>My only regret is the lack of communication between me and my mentors this month. When I am stuck at certain issue I remain stuck for a long time till I somehow complete it.</p><br />  <a href="http://feeds.wordpress.com/1.0/gocomments/subhajitmukherjee.wordpress.com/31/" rel="nofollow"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/subhajitmukherjee.wordpress.com/31/" /></a> <img alt="" border="0" height="1" src="http://pixel.wp.com/b.gif?host=subhajitmukherjee.wordpress.com&#038;blog=78612081&#038;post=31&#038;subd=subhajitmukherjee&#038;ref=&#038;feed=1" width="1" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">December 30, 2014</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-24a1afe5 feed-" id="item-9d6eea02">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/garvit-khatri.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="http://garvitdelhi.blogspot.com/feeds/posts/default">Garvit Khatri (garvitdelhi) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="http://garvitdelhi.blogspot.com/2014/12/knetwalk-running-on-kf5.html">22:45, Tuesday, 30 December UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="http://garvitdelhi.blogspot.com/2014/12/knetwalk-running-on-kf5.html">Knetwalk running on KF5 :)</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<div dir="ltr" style="text-align: left;">With this screen shot i think my work of porting knetwalk is complete. I would like other kde members to test knetwalk's framework branch and report if they are experiencing any issue installing it on kf5. I will try and fix that error on my part.<br /><br />And now i will be working on porting KSudoku to kf5 :) <br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-bUAL59AZ9jY/VKK0GC4oLqI/AAAAAAAABn8/Z620IhCNaq8/s1600/Selection_012.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="173" src="http://3.bp.blogspot.com/-bUAL59AZ9jY/VKK0GC4oLqI/AAAAAAAABn8/Z620IhCNaq8/s1600/Selection_012.png" width="320" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/--qrvMDQzp9g/VKK0Glv8c_I/AAAAAAAABoA/PwzxzKgSXSs/s1600/Selection_013.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="175" src="http://2.bp.blogspot.com/--qrvMDQzp9g/VKK0Glv8c_I/AAAAAAAABoA/PwzxzKgSXSs/s1600/Selection_013.png" width="320" /></a></div><br /></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-d282bf7c feed-" id="item-d188568e">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/Souvik-Das.jpg"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://dassouvik.wordpress.com/feed/">Souvik Das (sd__) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://dassouvik.wordpress.com/2014/12/30/sok-project-kanagram-introducing-2-player-option-3/">19:26, Tuesday, 30 December UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://dassouvik.wordpress.com/2014/12/30/sok-project-kanagram-introducing-2-player-option-3/">SOK Project &#8211; Kanagram-Introducing 2-player option #3</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Well, It&#8217;s almost been a month working on the application, and its been an amazing experience.<br />
+There has been changes made to the UI, like adding icons and texts so as to aide the user to interchange between the modes.<br />
+Also, the coding for it is done, but it needs to be worked on, as it is not working as supposed to. Mentor Jeremy Whiting, has been very helpful, and it feels great to work with him on this project.<br />
+What remains to be done is to keep track of the scores, when in the new mode.<br />
+I have my own clone of the main repository where I push my changes which is at: <a href="http://quickgit.kde.org/?p=clones/kanagram/souvikdas/kanagram.git" rel="nofollow">http://quickgit.kde.org/?p=clones/kanagram/souvikdas/kanagram.git</a></p>
+<p>Next update soon. Till then.</p><br />  <a href="http://feeds.wordpress.com/1.0/gocomments/dassouvik.wordpress.com/14/" rel="nofollow"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/dassouvik.wordpress.com/14/" /></a> <img alt="" border="0" height="1" src="https://pixel.wp.com/b.gif?host=dassouvik.wordpress.com&#038;blog=80059610&#038;post=14&#038;subd=dassouvik&#038;ref=&#038;feed=1" width="1" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">December 29, 2014</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-14eb29a7 feed-" id="item-affe8113">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/dmitripopov.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/144">Dimitri Popov </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/726">17:48, Monday, 29 December UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/726">Processed in digiKam Call for Submissions</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Sharing is caring, right? So if you use digiKam for processing photos, why not share your photo editing techniques and tips with other users and showcase your best photos? I invite you to participate in the new Processed in digiKam feature on the Scribbles and Snaps blog. <a href="http://scribblesandsnaps.com/2014/12/29/processed-in-digikam-call-for-submissions/">Continue to read</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">December 23, 2014</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-f8f6b715 feed-" id="item-14a8c1e2">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="http://davidrosca.blogspot.com/feeds/posts/default">David Rosca (nowrep) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="http://davidrosca.blogspot.com/2014/12/bluedevil-21-released.html">18:00, Tuesday, 23 December UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="http://davidrosca.blogspot.com/2014/12/bluedevil-21-released.html">Bluedevil 2.1 released</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>I am happy to announce that new version of Bluedevil is out!<br /><br />On 3rd December, I have released Bluedevil 2.0. It was a first stable release that supported Bluez 5 and it contained mainly crash fixes over 2.0-rc1. Unfortunately, there was also a big regression.<br />Libbluedevil was automatically enabling (power on) all adapters that have been found. However, this behavior was causing issues  that even if the user disabled Bluetooth, it was enabled again after reboot. So the libbluedevil was adjusted not to automatically change powered state of any adapters. The problem is that Bluez is not enabling adapters at startup, so as a result, Bluetooth was now always disabled on startup.<br /><br />In the new 2.1 release, powered state of all adapters is saved and restored in Bluedevil daemon. Another change is that the alias of adapter will be used in every place where name of adapter is displayed. It was always possible to change alias of adapter in KCM, but it wasn't actually used anywhere.<br /><br />There is also one small improvement in kio_obexftp. It will show icons of storage types in root folder of obexftp filesystem. It should work correctly with Nokia (S40, Symbian) and Android (KitKat, Lollipop) devices. If you find any issue with the icons, please let me know.<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-kx6waXDCzOI/VJlb55KizGI/AAAAAAAAAVk/N7EstoYmkJE/s1600/obexftp-rootfolders.png" style="margin-left: auto; margin-right: auto;"><img border="0" height="218" src="http://1.bp.blogspot.com/-kx6waXDCzOI/VJlb55KizGI/AAAAAAAAAVk/N7EstoYmkJE/s1600/obexftp-rootfolders.png" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Storage icons on Android phone</td></tr></tbody></table><br /><b>Bugs fixed in 2.1:</b><br /><ul><li>remember powered state of all adapters <a href="https://bugs.kde.org/show_bug.cgi?id=337193">#337193</a></li><li>monolithic (Bluetooth icon) will now be correctly hidden in system tray  when all adapters are powered off <a href="https://bugs.kde.org/show_bug.cgi?id=341768">#341768</a></li><li>monolithic will now be removed from system tray when there are no adapters</li><li>action to send files over Bluetooth will now be shown only for file that can actually be sent (only local files)</li><li>PIN in pairing wizard will now be accepted only after clicking "Matches" button </li><li>kio_obexftp should now better handle errors and correctly reconnect after losing connection <a href="https://bugs.kde.org/show_bug.cgi?id=321560">#321560</a></li><li>kio_bluetooth will not crash when trying to access invalid device</li></ul><br /><b>Download:</b><br />bluedevil: <a href="http://download.kde.org/stable/bluedevil/2.1/src/bluedevil-2.1.tar.xz.mirrorlist">bluedevil-2.1.tar.xz</a><br />libbluedevil: <a href="http://download.kde.org/stable/libbluedevil/2.1/src/libbluedevil-2.1.tar.xz.mirrorlist">libbluedevil-2.1.tar.xz</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">December 21, 2014</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-24a1afe5 feed-" id="item-ec93193e">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/garvit-khatri.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="http://garvitdelhi.blogspot.com/feeds/posts/default">Garvit Khatri (garvitdelhi) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="http://garvitdelhi.blogspot.com/2014/12/this-month-so-far-was-full-of-shocking.html">15:20, Sunday, 21 December UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="http://garvitdelhi.blogspot.com/2014/12/this-month-so-far-was-full-of-shocking.html">Link</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<div dir="ltr" style="text-align: left;">This month so far was full of shocking news. My mentor Anuj pahuja informed me that someone has already ported app kturtle which i had to port during the SoK duration. He said that this work was done when i was busy in my annual examination. But i thank alot to my mentor that he stood with me and helped me get another app so that i can port it. So now i am working on porting app KNetWalk that belong to Kde Games.<br /><br />So far i have ported the build system and it has already bean pushed to the frameworks branch of KNetWalk. You can have a look at my progress at <a href="http://quickgit.kde.org/?p=knetwalk.git">http://quickgit.kde.org/?p=knetwalk.git</a> on frameworks branch.<br /><br />App is able to build and install successfully on kf5 on my local system. I will push other changes soon.<br /><br />Now I am looking forward to port ui as now app is crashing because ui is not ported.<br /><br />Cmake Log:<br /><br />garvit@beast:~/dev/sok/knetwalk/build$ cmake ../<br />-- The C compiler identification is GNU 4.9.1<br />-- The CXX compiler identification is GNU 4.9.1<br />-- Check for working C compiler: /usr/bin/cc<br />-- Check for working C compiler: /usr/bin/cc -- works<br />-- Detecting C compiler ABI info<br />-- Detecting C compiler ABI info - done<br />-- Check for working CXX compiler: /usr/bin/c++<br />-- Check for working CXX compiler: /usr/bin/c++ -- works<br />-- Detecting CXX compiler ABI info<br />-- Detecting CXX compiler ABI info - done<br />-- Found KF5CoreAddons: /usr/lib/x86_64-linux-gnu/cmake/KF5CoreAddons/KF5CoreAddonsConfig.cmake (found version "5.3.0") <br />-- Found KF5Config: /usr/lib/x86_64-linux-gnu/cmake/KF5Config/KF5ConfigConfig.cmake (found version "5.3.0") <br />-- Found KF5ItemModels: /usr/lib/x86_64-linux-gnu/cmake/KF5ItemModels/KF5ItemModelsConfig.cmake (found version "5.3.0") <br />-- Found KF5WidgetsAddons: /usr/lib/x86_64-linux-gnu/cmake/KF5WidgetsAddons/KF5WidgetsAddonsConfig.cmake (found version "5.3.0") <br />-- Found KF5WindowSystem: /usr/lib/x86_64-linux-gnu/cmake/KF5WindowSystem/KF5WindowSystemConfig.cmake (found version "5.3.0") <br />-- Found KF5Codecs: /usr/lib/x86_64-linux-gnu/cmake/KF5Codecs/KF5CodecsConfig.cmake (found version "5.3.0") <br />-- Found KF5Archive: /usr/lib/x86_64-linux-gnu/cmake/KF5Archive/KF5ArchiveConfig.cmake (found version "5.3.0") <br />-- Found KF5DBusAddons: /usr/lib/x86_64-linux-gnu/cmake/KF5DBusAddons/KF5DBusAddonsConfig.cmake (found version "5.3.0") <br />-- Found KF5DNSSD: /usr/lib/x86_64-linux-gnu/cmake/KF5DNSSD/KF5DNSSDConfig.cmake (found version "5.3.0") <br />-- Found Gettext: /usr/bin/msgmerge (found version "0.19.2") <br />-- Found PythonInterp: /usr/bin/python (found version "2.7.8") <br />-- Found KF5Declarative: /usr/lib/x86_64-linux-gnu/cmake/KF5Declarative/KF5DeclarativeConfig.cmake (found version "5.3.0") <br />-- Found KF5I18n: /usr/lib/x86_64-linux-gnu/cmake/KF5I18n/KF5I18nConfig.cmake (found version "5.3.0") <br />-- Found KF5GuiAddons: /usr/lib/x86_64-linux-gnu/cmake/KF5GuiAddons/KF5GuiAddonsConfig.cmake (found version "5.3.0") <br />-- Found KF5Service: /usr/lib/x86_64-linux-gnu/cmake/KF5Service/KF5ServiceConfig.cmake (found version "5.3.0") <br />-- Found KF5ConfigWidgets: /usr/lib/x86_64-linux-gnu/cmake/KF5ConfigWidgets/KF5ConfigWidgetsConfig.cmake (found version "5.3.0") <br />-- Found KF5ItemViews: /usr/lib/x86_64-linux-gnu/cmake/KF5ItemViews/KF5ItemViewsConfig.cmake (found version "5.3.0") <br />-- Found KF5IconThemes: /usr/lib/x86_64-linux-gnu/cmake/KF5IconThemes/KF5IconThemesConfig.cmake (found version "5.3.0") <br />-- Found KF5Completion: /usr/lib/x86_64-linux-gnu/cmake/KF5Completion/KF5CompletionConfig.cmake (found version "5.3.0") <br />-- Found KF5JobWidgets: /usr/lib/x86_64-linux-gnu/cmake/KF5JobWidgets/KF5JobWidgetsConfig.cmake (found version "5.3.0") <br />-- Found KF5TextWidgets: /usr/lib/x86_64-linux-gnu/cmake/KF5TextWidgets/KF5TextWidgetsConfig.cmake (found version "5.3.0") <br />-- Found KF5GlobalAccel: /usr/lib/x86_64-linux-gnu/cmake/KF5GlobalAccel/KF5GlobalAccelConfig.cmake (found version "5.3.0") <br />-- Found KF5XmlGui: /usr/lib/x86_64-linux-gnu/cmake/KF5XmlGui/KF5XmlGuiConfig.cmake (found version "5.3.0") <br />-- Found KF5Crash: /usr/lib/x86_64-linux-gnu/cmake/KF5Crash/KF5CrashConfig.cmake (found version "5.3.0") <br />-- Found KF5Bookmarks: /usr/lib/x86_64-linux-gnu/cmake/KF5Bookmarks/KF5BookmarksConfig.cmake (found version "5.3.0") <br />-- Found KF5KIO: /usr/lib/x86_64-linux-gnu/cmake/KF5KIO/KF5KIOConfig.cmake (found version "5.3.0") <br />-- Found KF5NotifyConfig: /usr/lib/x86_64-linux-gnu/cmake/KF5NotifyConfig/KF5NotifyConfigConfig.cmake (found version "5.3.0") <br />-- Found KF5NewStuff: /usr/lib/x86_64-linux-gnu/cmake/KF5NewStuff/KF5NewStuffConfig.cmake (found version "5.3.0") <br />-- Found KF5KDELibs4Support: /usr/lib/x86_64-linux-gnu/cmake/KF5KDELibs4Support/KF5KDELibs4SupportConfig.cmake (found version "5.3.0") <br />-- Found KF5: success (found version "5.3.0") found components:&nbsp; CoreAddons Config ItemModels WidgetsAddons WindowSystem Codecs Archive Config DBusAddons DNSSD Declarative I18n GuiAddons Service ConfigWidgets ItemViews IconThemes Completion JobWidgets TextWidgets GlobalAccel XmlGui Crash Bookmarks KIO NotifyConfig NewStuff KDELibs4Support <br />-- Looking for __GLIBC__<br />-- Looking for __GLIBC__ - found<br />-- Performing Test _OFFT_IS_64BIT<br />-- Performing Test _OFFT_IS_64BIT - Success<br />-- Configuring done<br />-- Generating done<br />-- Build files have been written to: /home/garvit/dev/sok/knetwalk/build<br /><br /><br />Make Log can be find here : <a href="https://gist.github.com/garvitdelhi/0e21a095dcfc8cfef170">https://gist.github.com/garvitdelhi/0e21a095dcfc8cfef170</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">December 18, 2014</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-0c02bacb feed-" id="item-8be06041">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/cgilles.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/3">Gilles Caulier (cgilles) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/725">20:50, Thursday, 18 December UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/725">digiKam Software Collection 4.6.0 released...</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p><a href="https://www.flickr.com/photos/digikam/16002729706" title="digikam4.6.0 by Caulier Gilles, on Flickr"><img alt="digikam4.6.0" height="238" src="https://farm9.staticflickr.com/8652/16002729706_938fd41235_c.jpg" width="800" /></a>
+
+<p>Dear digiKam fans and users,</p>
+
+<p>
+The digiKam Team is proud to announce the release of digiKam Software Collection 4.6.0. This release includes many bugs fixes in Image Editor and Batch Queue Mananger. Thanks to <b>Maik Qualmann</b> and <b>Jan Wolter</b> to propose patches in KDE bugzilla.
+</p><p><a href="https://www.digikam.org/node/725" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><div class="channelgroup dot">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-096f0b4f feed-" id="item-b6af1e58">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://dot.kde.org/frontpage">KDE Dot News </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://dot.kde.org/2014/12/17/kde-applications-1412-new-features-frameworks-ports">03:07, Thursday, 18 December UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://dot.kde.org/2014/12/17/kde-applications-1412-new-features-frameworks-ports">KDE Applications 14.12 - New Features, Frameworks Ports</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>Today KDE released KDE Applications 14.12, delivering new features and bug fixes to more than a hundred applications. Most of these applications are based on KDE Development Platform 4 but the first applications have been ported to <a href="https://dot.kde.org/2013/09/25/frameworks-5">KDE Frameworks 5</a>. Frameworks is a set of modularized libraries providing additional functionality for Qt5, the latest version of the popular <a href="http://qt-project.org/">Qt cross-platform application framework</a>.</p>
+<div style="width: 360px; float: right; padding: 1ex; margin: 1ex;"><img src="https://dot.kde.org/sites/dot.kde.org/files/mascot_20140702_konqui-group_wee.png" /><br /><div align="center">KDE app dragons</div>
+</div>
+<p>This release marks the beginning of a new style of releases replacing the threesome of KDE Workspaces, Platform and Applications in the 4 series which ended with the latest <a href="https://www.kde.org/announcements/announce-4.14.3.php">KDE Applications update last month</a>.</p>
+<ul><li> The Platform has now morphed into KDE Frameworks 5, releasing new features and bugfixes monthly.</li>
+<li> The Workspaces have become Plasma 5, delivering feature releases every 3 months and monthly bug fixes in between.</li>
+<li> The remaining applications and supporting libraries make up KDE Applications with feature releases expected every 4 months and monthly bugfix releases in between. We expect the porting of applications to Qt 5 and Frameworks 5 to happen over the next year or two.</li>
+<li> The KDE software on independent release cycles will remain as is, with porting to Frameworks 5 and Qt5 coming at various points in time. Examples include many well known open source applications like <a href="http://www.kdenlive.org">Kdenlive</a>, <a href="https://community.kde.org/Incubator/Projects/Rkward">Calligra</a>, <a href="http://amarok.kde.org">Amarok</a>, <a href="https://www.kde.org/applications/office/kile/">Kile</a>, <a href="http://www.tellico-project.org">Tellico</a> and some new projects like <a href="https://dot.kde.org/2014/12/11/gcompris-joins-kde-incubator-and-launches-fundraiser">GCompris</a> and <a href="https://community.kde.org/Incubator/Projects/Rkward">Rkward</a>.</li>
+</ul><!--break--><p>The release includes the first KDE Frameworks 5-based versions of <a href="http://www.kate-editor.org">Kate</a> and <a href="https://www.kde.org/applications/utilities/kwrite/">KWrite</a>, <a href="https://www.kde.org/applications/system/konsole/">Konsole</a>, <a href="https://www.kde.org/applications/graphics/gwenview/">Gwenview</a>, <a href="http://edu.kde.org/kalgebra">KAlgebra</a>, <a href="http://edu.kde.org/kanagram">Kanagram</a>, <a href="http://edu.kde.org/khangman">KHangman</a>, <a href="http://edu.kde.org/kig">Kig</a>, <a href="http://edu.kde.org/parley">Parley</a>, <a href="https://www.kde.org/applications/development/kapptemplate/">KApptemplate</a> and <a href="https://www.kde.org/applications/utilities/okteta/">Okteta</a>. Some libraries are also ready for KDE Frameworks 5 use: analitza and libkeduvocdocument.</p>
+<p><a href="http://api.kde.org/4.x-api/kdegraphics-apidocs/libs/libkface/libkface/html/index.html">Libkface</a> is new in this release; it is a library to enable face detection and face recognition in photographs.</p>
+<p>The <a href="http://kontact.kde.org">Kontact Suite</a> is now in Long Term Support in the 4.14 version while developers are focusing on a port to KDE Frameworks 5 with renewed energy.</p>
+<p>Some of the new features in this release include:</p>
+<ul><li><a href="http://edu.kde.org/kalgebra">KAlgebra</a> has a new <a href="https://play.google.com/store/apps/details?id=org.kde.kalgebramobile&amp;hl=en">Android version</a> thanks to KDE Frameworks 5 and is now able to <a href="http://www.proli.net/2014/09/18/touching-mathematics/">print its graphs in 3D</a></li>
+<li><a href="http://edu.kde.org/kgeography">KGeography</a> has a new map for <a href="http://en.wikipedia.org/wiki/Bihar">Bihar</a>.</li>
+<li>The document viewer <a href="http://okular.kde.org">Okular</a> now has support for latex-synctex reverse searching in dvi and some small improvements in the ePub support.</li>
+<li><a href="http://umbrello.kde.org">Umbrello</a>&#8212;the KDE UML modeller&#8212;has many new features too numerous to list here.</li>
+</ul><p>See the <a href="https://www.kde.org/announcements/fulllog_applications-14.12.0.php">full list of changes</a> in KDE Applications 14.12.</p>
+<p>The April release of KDE Applications 15.04 will include more new features, as well as more applications ported to the modular KDE Frameworks 5.</p>
+<h2>Spread the Word</h2>
+<p>Non-technical contributors are an important part of KDE&#8217;s success. While proprietary software companies have huge advertising budgets, KDE depends on people like you talking with other people! Even for those who are not software developers, there are many ways to support our community and our product. Report bugs. Encourage others to join the KDE Community. Or <a href="https://relate.kde.org/civicrm/contribute/transact?reset=1&amp;id=5">support the nonprofit organization behind the KDE community</a>.</p>
+<p>Please spread the word on the Social Web. Submit stories to news sites, use channels like delicious, digg, reddit, and twitter. Upload screenshots of your new set-up to services like Facebook, Flickr, ipernity and Picasa, and post them to appropriate groups. Create screencasts and upload them to YouTube, Blip.tv, and Vimeo. Please tag posts and uploaded materials with "KDE". This makes them easy to find, and gives the KDE Promo Team a way to analyze coverage for the 14.12 KDE Applications release.<br />
+Follow what is happening on the social web at the KDE live feed, <a href="http://buzz.kde.org">buzz.kde.org</a>. This site aggregates real-time activity from Twitter, YouTube, flickr, PicasaWeb, blogs, and other social networking sites.</p>
+<h2>Learning more and getting started</h2>
+<p>Find more details and download links in <a href="https://www.kde.org/announcements/announce-applications-14.12.0.php">the announcement on the KDE website</a>.</p>
+</div></div></div><div class="field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-above clearfix"><h3 class="field-label">Dot Categories: </h3><ul class="links"><li class="taxonomy-term-reference-0"><a href="https://dot.kde.org/category/dot-categories/kde-official-news">KDE Official News</a></li></ul></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">December 16, 2014</h3>
+<div class="channelgroup dot">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-096f0b4f feed-" id="item-fd41220b">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://dot.kde.org/frontpage">KDE Dot News </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://dot.kde.org/2014/12/16/plasma-512-bugfix-release">20:13, Tuesday, 16 December UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://dot.kde.org/2014/12/16/plasma-512-bugfix-release">Plasma 5.1.2 Bugfix Release</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p><a href="https://www.kde.org/announcements/plasma-5.1.2.php">Plasma 5.1.2</a> is the December output from our desktop team. It's a bugfix release which adds several dozen fixes and the latest translations.</p>
+<p>Some highlights include:</p>
+<ul><li>The Breeze icons licence has been clarified as LGPL 3+.
+</li><li>The remaining battery time in PowerDevil now updates correctly.
+</li><li>VirtualBox shell resizing fixed.
+</li><li>The free space notifier icon hides correctly when space becomes available again.
+</li><li>Dr Konqi updated for future proofing.
+</li></ul><p>This is the final update to Plasma 5 for this year, we'll see you again next year with a new feature release at the end of January.</p>
+<!--break--></div></div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">December 12, 2014</h3>
+<div class="channelgroup dot">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-096f0b4f feed-" id="item-21ae158c">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://dot.kde.org/frontpage">KDE Dot News </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://dot.kde.org/2014/12/12/release-kde-frameworks-550">15:12, Friday, 12 December UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://dot.kde.org/2014/12/12/release-kde-frameworks-550">Release of KDE Frameworks 5.5.0</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>KDE today announces the release of <a href="https://www.kde.org/announcements/kde-frameworks-5.5.0.php">KDE Frameworks 5.5.0</a>.</p>
+<p>KDE Frameworks are 60 addon libraries to Qt which provide a wide variety of commonly needed functionality in mature, peer reviewed and well tested libraries with friendly licensing terms. For an introduction see the Frameworks 5.0 release announcement.</p>
+<p>This release is part of a series of planned monthly releases making improvements available to developers in a quick and predictable manner.</p>
+<h3>Attica</h3>
+<ul><li>Use all of QT_PLUGIN_PATH paths rather than just QLibraryInfo path to look for plugins</li>
+</ul><h3>KActivities</h3>
+<ul><li>Fix plugin loading with KDE_INSTALL_USE_QT_SYS_PATHS ON</li>
+</ul><h3>KCMUtils</h3>
+<ul><li>Restore KStandardGuiItems to get consistent icons and tooltips</li>
+</ul><h3>KCodecs</h3>
+<ul><li>Introduce KEmailAddress class for email validation</li>
+<li>Use more robust implementation of MIME codecs taken from the KMime library</li>
+<li>Add KCodecs::encodeRFC2047String()</li>
+</ul><h3>KCompletion</h3>
+<ul><li>Fix PageUp/Down actions in the completion popup box</li>
+</ul><h3>KCoreAddons</h3>
+<ul><li>Add KTextToHTML class for plaintext-&gt;HTML conversion</li>
+<li>Add KPluginMetaData::metaDataFileName()</li>
+<li>Allow to read KPluginMetaData from .desktop files</li>
+<li>Kdelibs4Migration now gives priority to distro-provided KDE4_DEFAULT_HOME</li>
+</ul><h3>KDeclarative</h3>
+<ul><li>Use Qt's method of blocking for component completion rather than our own</li>
+<li>Make it possible to delay initialization of object incubated from QmlObject</li>
+<li>Add guard when trying to access root object before component is complete</li>
+</ul><h3>KEmoticons</h3>
+<ul><li>Add KEmoticonsIntegrationPlugin for KTextToHTML from KCoreAddons</li>
+</ul><h3>KHTML</h3>
+<ul><li>A number of forward-ported fixes from kdelibs, no API changes.</li>
+</ul><h3>KIO</h3>
+<ul><li>Fix Size columns being empty in the KFileWidget detailed views</li>
+<li>Do not drop ASN passed to KRun when executing desktop files</li>
+<li>Fix passing of DESKTOP_STARTUP_ID to child process in kioexec</li>
+<li>Fix compilation with Qt 5.2, which also fixes a race condition</li>
+<li>KFileItem: cleanup overlay icon usage    </li>
+<li>Implement back/forward side mouse buttons to navigate in the history</li>
+<li>Allow user to cancel out of the certificate accept duration dialog box.</li>
+</ul><h3>KJobWidgets</h3>
+<ul><li>Fix compilation with Qt 5.2.0</li>
+</ul><h3>KNewStuff</h3>
+<ul><li>Also allow absolute filepaths for configfile parameter.</li>
+<li>Fix compilation on Windows</li>
+</ul><h3>KNotifications</h3>
+<ul><li>Make KNotificationPlugin a public class</li>
+<li>KPassivePopup - Set default hide delay</li>
+</ul><h3>KRunner</h3>
+<ul><li>Add a simple cli tool to run a query on all runners</li>
+</ul><h3>KService</h3>
+<ul><li>Fix KPluginTrader::query() for old JSON</li>
+<li>Deprecate kservice_desktop_to_json for kcoreaddons_desktop_to_json</li>
+<li>Implement KPluginTrader::query() using KPluginLoader::findPlugins()</li>
+<li>Fix KPluginInfo::entryPath() being empty when not loaded from .desktop</li>
+</ul><h3>KTextEditor</h3>
+<ul><li>Fix bug #340212: incorrect soft-tabs alignment after beginning-of-line</li>
+<li>Add libgit2 compile-time check for threads support</li>
+</ul><h3>KWidgetsAddons</h3>
+<ul><li>Add class KSplitterCollapserButton, a button which appears on the side of</li>
+<p>  a splitter handle and allows easy collapsing of the widget on the opposite side</p>
+<li>Support monochrome icon themes (such as breeze)</li>
+</ul><h3>KWindowSystem</h3>
+<ul><li>Add KStartupInfo::createNewStartupIdForTimestamp</li>
+<li>Add support for more multimedia keys</li>
+<li>Add support for initial mapping state of WM_HINTS</li>
+<li>Drop incorrect warnings when using KXMessages without QX11Info</li>
+</ul><h3>Plasma Framework</h3>
+<ul><li>Fix compilation with Qt 5.2.0</li>
+<li>Fix the platformstatus kded module</li>
+<li>Migrate BusyIndicator, ProgressBar to QtQuick.Controls</li>
+<li>Add thumbnailAvailable property to PlasmaCore.WindowThumbnail</li>
+</ul><h3>Solid</h3>
+<ul><li>Fix warning: No such signal org::freedesktop::UPower::Device...</li>
+</ul><h3>Extra cmake modules</h3>
+<ul><li>Set CMAKE_INSTALL_SYSCONFDIR to /etc when CMAKE_INSTALL_PREFIX is /usr (instead of /usr/etc)</li>
+<li>Enable -D_USE_MATH_DEFINES on Windows</li>
+</ul><h3>Frameworkintegration</h3>
+<ul><li>Implement standardButtonText().</li>
+<li>Fix restoring the view mode and sizes in the file dialog</li>
+</ul></div></div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">December 11, 2014</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-53dfd83a feed-" id="item-3666fc7d">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/koushik-s.jpg"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://skoushik.wordpress.com/tag/kde/feed/">Koushik S (skoushik) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://skoushik.wordpress.com/2014/12/11/digikam-season-of-kde-update/">21:30, Thursday, 11 December UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://skoushik.wordpress.com/2014/12/11/digikam-season-of-kde-update/">digiKam: Season of KDE Update</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>I&#8217;ve been slow on updating the progress of the project &#8212; I apologize for that. I&#8217;m working on implementing an improved noise estimation function for digiKam.</p>
+<p>Currently, I&#8217;m working on a CLI version of the implementation to better understand the noise estimation process. The implementation consists of calculating the gradient covariance matrix of the image. For an image patch y, it&#8217;s defined as follows:</p>
+<p><img alt="C_{y}=G_{y}^T*G_{y} " class="latex" src="https://s0.wp.com/latex.php?latex=C_%7By%7D%3DG_%7By%7D%5ET%2AG_%7By%7D+&#038;bg=ffffff&#038;fg=474747&#038;s=0" title="C_{y}=G_{y}^T*G_{y} " /></p>
+<p>where <img alt="G_{y} = &#92;left[&#92;begin{array}{cc} D_{hy} &amp; D_{vy} &#92;&#92; &#92;end{array}&#92;right] " class="latex" src="https://s0.wp.com/latex.php?latex=G_%7By%7D+%3D+%5Cleft%5B%5Cbegin%7Barray%7D%7Bcc%7D+D_%7Bhy%7D+%26+D_%7Bvy%7D+%5C%5C+%5Cend%7Barray%7D%5Cright%5D+&#038;bg=ffffff&#038;fg=474747&#038;s=0" title="G_{y} = &#92;left[&#92;begin{array}{cc} D_{hy} &amp; D_{vy} &#92;&#92; &#92;end{array}&#92;right] " /></p>
+<p><img alt="D_{hy} " class="latex" src="https://s0.wp.com/latex.php?latex=D_%7Bhy%7D+&#038;bg=ffffff&#038;fg=474747&#038;s=0" title="D_{hy} " /> and <img alt="D_{vy}" class="latex" src="https://s0.wp.com/latex.php?latex=D_%7Bvy%7D&#038;bg=ffffff&#038;fg=474747&#038;s=0" title="D_{vy}" /> are the horizontal and vertical derivatives of the image patch respectively. The resulting matrix is then decomposed to get the eigen values.</p>
+<p>To put it briefly, the gradient of the image patch gives us the differences in pixels. We then decompose the covariance matrix to get eigen values whose values represent the strength of the image patch. Specifically, the larger the maximum eigen value, the richer the texture is, in the dominant direction.</p>
+<p>I came across an OpenCV function which handles all of this and returns the eigen values (and vectors).</p>
+<p>cornerEigenValsAndVecs calculates the eigen values and vectors for a given blocksize and aperture size.</p>
+<p>The function returns the result represented in a 6-channel image &#8212; the first two containing the eigen values, and the others &#8212; the eigen vectors corresponding to those eigen values.</p>
+<p>For testing this, I&#8217;ve applied a noise with uniform distribution on an image, and calculated the eigen values for the resulting image.</p>
+<p><a href="https://skoushik.files.wordpress.com/2014/12/test_eigen.png"><img alt="test_eigen" class="alignnone size-medium wp-image-60" height="133" src="https://skoushik.files.wordpress.com/2014/12/test_eigen.png?w=300&#038;h=133" width="300" /></a></p>
+<p>Further tests have to made to check whether the retrieved results match well with that of the algorithm, and proceed to select the &#8220;weak textured patches&#8221;.</p><br />  <a href="http://feeds.wordpress.com/1.0/gocomments/skoushik.wordpress.com/37/" rel="nofollow"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/skoushik.wordpress.com/37/" /></a> <img alt="" border="0" height="1" src="https://pixel.wp.com/b.gif?host=skoushik.wordpress.com&#038;blog=69672506&#038;post=37&#038;subd=skoushik&#038;ref=&#038;feed=1" width="1" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><div class="channelgroup dot">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-096f0b4f feed-" id="item-29b0859e">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://dot.kde.org/frontpage">KDE Dot News </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://dot.kde.org/2014/12/11/gcompris-joins-kde-incubator-and-launches-fundraiser">17:00, Thursday, 11 December UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://dot.kde.org/2014/12/11/gcompris-joins-kde-incubator-and-launches-fundraiser">GCompris Joins the KDE incubator and Launches a Fundraiser</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><div><img src="http://gcompris.net/incoming/gcompris-logo-square.png" /></div>
+<p><a href="http://gcompris.net/index-en.html">GCompris</a> has joined the <a href="https://community.kde.org/Incubator">KDE incubator</a>. GCompris is the high quality educational software suite comprising numerous activities for children aged 2 to 10, and well known by parents and teachers all over the world.</p>
+<p>GCompris was started in 2000 by Bruno Coudoin as a Free Software project. Originally written in GTK+, the project developers decided in early 2014 to make a radical change and rewrite it in Qt Quick. The main motivation is the ability of the Qt platform to address the desktop and the tablet market from a single code base.</p>
+<p>In order to get the great level of support from a strong developer community, <a href="https://community.kde.org/Incubator">GCompris joined the KDE incubator</a>.</p>
+<p>The rewrite is going smoothly; 86 educational activities of the 140 have been ported to Qt Quick. A release on Android is planned for December 2014 with the help of the KDE translation teams to make sure it is properly localized. Other platforms will follow.</p>
+<h2>Fundraiser for graphics redesign</h2>
+<p>Currently the graphics are one of the weakest parts of GCompris, as they were mostly done by the developers, using free graphics assets and sparse graphic artist contributions.</p>
+<p>To address this problem, Timoth&#233;e Giet, a talented graphics artist proposed himself to work on a complete graphics redesign.  He is a long standing Free Software contributor, active member of the <a href="https://krita.org/">Krita</a> team and recognized member of the KDE community. Making new graphics for more than 100 activities is a big task, so a fundraiser has been set up.</p>
+<p>The project is not only about creating new background images but consists of a whole graphical rework. At first a graphics charter will be defined as none currently exists in GCompris. This will drive the project towards a unified style that it lacks today. Usability will be a primary emphasis, so that children find their way easily in each activity.</p>
+<p>If you want to help, please consider <a href="http://igg.me/at/gcompris-unified-graphics">making a donation</a>.</p>
+</div></div></div><div class="field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-above clearfix"><h3 class="field-label">Dot Categories: </h3><ul class="links"><li class="taxonomy-term-reference-0"><a href="https://dot.kde.org/category/dot-categories/graphics-and-art">Graphics and Art</a></li></ul></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">December 08, 2014</h3>
+<div class="channelgroup spanish">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-908dfc29 feed-" id="item-0e0eff7a">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/anum.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="http://anu-mittal.blogspot.com/feeds/posts/default">Anu Mittal (anuM) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="http://anu-mittal.blogspot.com/2014/12/and-december-begins-sok-2014.html">18:10, Monday, 08 December UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="http://anu-mittal.blogspot.com/2014/12/and-december-begins-sok-2014.html">And December begins -Sok 2014</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<div dir="ltr" style="text-align: left;"><div style="text-align: left;">The very first step for porting application to kf5 is to port first the root CMakeLists.txt files and for that my mentor suggested first to learn about CMake,which has been very helpful .</div><div style="text-align: left;">I have asked for developers access at KDE TechBase so that i can share my code on KDE Repositories, waiting for the acceptance and soon will start updating files there.</div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><div class="channelgroup dot">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-096f0b4f feed-" id="item-103f1faa">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://dot.kde.org/frontpage">KDE Dot News </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://dot.kde.org/2014/12/08/randa-meetings-2014-another-great-success">15:53, Monday, 08 December UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://dot.kde.org/2014/12/08/randa-meetings-2014-another-great-success">Randa Meetings 2014 - Another Great Success</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>It's been quite some time since the <a href="http://community.kde.org/Sprints/Randa/2014">Randa Meetings 2014</a> and even this year's edition of the KDE Community Summit called <a href="http://akademy.kde.org">Akademy</a> has already happened, but it's still nice to look back and see what was accomplished at this KDE Tech Summit in the <a href="http://www.randa.ch">middle of the Swiss Alps</a>.</p>
+<p>And before we tell you about the seven groups that participated in the meetings this year (and because of the different participating groups and thus a collection of several meetings under the same roof, the event is called "Randa Meetings" with a plural s ;-), we send a big <a href="https://www.kde.org/fundraisers/randameetings2014">thank you to all the supporters and people</a> who made this gathering possible. It's because of you that we were able to work hard for a whole week and make the software you love even better. There was a range of participants of various ages, countries and KDE projects. The group picture shows that some KDE contributors brought their families and non-techie partners; they didn't need to decide between either family holidays or hacking for KDE.</p>
+<div style="float: center; padding: 1ex; margin: 1ex;"><img src="https://community.kde.org/images.community/4/4f/Randa_group_pic_preview.jpeg" /><br />2014 Group picture, by Martin Klapetek (CC-BY-SA)</div>
+<h3>The KDE Edu group brought students and mentors together</h3>
+<p>From the KDE education group we had people from <a href="http://edu.kde.org/rocs">Rocs</a>, the graph tool, from <a href="http://edu.kde.org/kig">Kig</a>, KDE's geometry teaching tool, from <a href="http://edu.kde.org/artikulate">Artikulate</a>, the new language acoustic learning tool, from <a href="http://edu.kde.org/kstars">KStars</a>, the KDE astronomy tool and of course from <a href="http://marble.kde.org">Marble</a>, which doesn't need any explanation ;-). Two Google Summer of Code students for Marble saw their mentors for the first time in Randa and thus got a stronger bonding with our awesome community. At least one of them found another playground in KDE: GCompris.</p>
+<p><a>GCompris</a> is a new and still young (at least for the Qt version) member of the KDE family. Bruno Coudoin and his colleagues met in Randa to make great progress on porting the more than 140 activities in GCompris to Qt and KDE technologies. Their main focus is currently to finish a first version for Android and thus Smartphones and Tablets. Bruno even did some live user-testing (of course with kids!) during lunch time. But besides the normal hacking on KDE educational software one other focus was the <a href="http://api.kde.org/frameworks-api/frameworks5-apidocs/">porting of the applications to KDE Frameworks 5 (KF5)</a>. Some of the them will be released as a KF5-based version in December as part of the <a href="https://techbase.kde.org/Schedules/Applications/14.12_Release_Schedule">KDE Applications 14.12 release</a>.</p>
+<h3>Different applications ported to KDE Frameworks 5</h3>
+<p>One other application that was ported to KF5 is <a href="http://www.kmymoney.org">KMyMoney</a>, one of our finance tools. The developers also worked on their Windows port. <a href="https://www.kde.org/applications/graphics/gwenview/">Other applications are Gwenview</a>, which has since gained a <a href="http://agateau.com/2014/habemus-maintainer/">new maintainer</a> and Jungle, a fresh video player.</p>
+<p>Porting to and working on KDE Frameworks was a general focus at this year's Randa Meetings. We tried to push forward Windows and Mac (unfortunately we weren't able to bring many KDE Mac people to Randa this year) variants and worked on a more coherent developer story and thus a KDE SDK. The port of Kate and KDevelop to KF5 made great progress and their developers even achieved making it start on Windows. Besides the porting work, this group also got some GSoC students together with their mentors and thus there was some integration of their work on CLang support and QML/JS.</p>
+<div style="float: center; padding: 1ex; margin: 1ex;"><img src="https://dot.kde.org/sites/dot.kde.org/files/mascot_konqi-commu-randa_1.png" /><br />Picture of the new Randa Konqi: with a white star and an Edelweiss like on the flag of <a href="http://www.randa.ch">Randa</a>. Thanks a lot to the artist Tyson Tan!</div>
+<h3>The KDE Multimedia group worked on many different things</h3>
+<p>Alongside and integrated with all this work and groups some other teams participated at the meetings. They are almost part of the inventory of the Randa Meetings ;-). Amarok and the KDE Multimedia team worked on bug triage (cleaning up more than 200 bugs!), polishing their handbook and Phonon. During this intense week we saw the <a href="http://www.dvratil.cz/2014/08/hacking-my-way-through-randa/">release of the GStreamer Phonon backend</a>. KMix, the KDE mixer application got another strong push forward.</p>
+<p>And another multimedia application found its way to Randa: <a href="http://www.kdenlive.org">Kdenlive</a>, our great non-linear video editor. The project lacked some direction recently and so a face-to-face meeting of some old and some new contributors was a logical step to take. With Till Theato and Simon Eugster some oldsters of the project could help to document and explain the current code and state to the new maintainer Vincent Pinon. Interestingly enough we learned during the meetings that Vincent's wife Lucie is using Kdenlive in her professional work and as she was in Randa as well we took the opportunity to make a short interview with her (Thanks Fran&#231;oise Wybrecht for doing the interview and Myriam Schweingruber for the translation. You can <a href="https://dot.kde.org/sites/dot.kde.org/files/Interview-Lucie-Robin-French.txt">download the French version</a> of the interview.</p>
+<h3>Lucie Robin lives in Voiron near Grenoble - France and works as a professional video maker with Kdenlive.</h3>
+<div style="float: right; padding: 1ex; margin: 1ex;"><img src="https://dot.kde.org/sites/dot.kde.org/files/Lucie-Robin.jpg" width="350px" /><br />Lucie with her daughter and Konqi in the background</div>
+<p>What brought you to open source?</p>
+<p><i>Despite being an alien to the open source world, I discovered it through my Linux-using husband.</i></p>
+<p>What pushed you to use free software?</p>
+<p><i>As a video maker, I needed professional video software. Since most software in this field are over pricey, my husband suggested to try Kdenlive back in 2011.</i></p>
+<p>After having used it for three years, what is your overall impression?</p>
+<p><i>I got aware very quickly that Kdenlive is an answer to professional needs. But let's be honest, its use is full of pitfalls and inconsistencies, which could have discouraged me more than once. But luckily I discovered the philosophy behind free software which kept me going.</i></p>
+<h3>New energy for Kdenlive and a new KDE Book</h3>
+<p>The Kdenlive team spend most of their time discussing and setting the <a href="https://kdenlive.org/node/9182">roadmap</a> for the future. At the end of the meetings we decided to bring Kdenlive even closer to KDE and thus start an <a href="https://community.kde.org/Incubator/Projects/Kdenlive">incubation process</a> for them. And thanks to Fran&#231;oise, Lucie and Kdenlive you can <a href="https://www.youtube.com/watch?v=yua6M9jqoEk&amp;feature=youtu.be">watch</a> yourself how it looked at the Randa Meetings 2014.</p>
+<p>Another group came to Randa to work on a new edition of our <a href="https://www.flossmanuals.net/kde-guide/">KDE Guide</a>. After some problems with internet connectivity (ever heard of this problem at sprints or conferences? ;-) they decided to scratch the planned working process and to quickly develop a new one so they could work offline and integrate the <a href="http://books.kde.org">new book</a> directly with KDE source code and extract live snippets from it. They had a great start in Randa but it's not yet done. So if you're an expert in one of the KDE Frameworks, please help and submit a paragraph, short text or chapter.</p>
+<p>In addition to these bigger groups some smaller teams and single developers were in Randa and worked on their projects. One of them is the <a href="https://userbase.kde.org/Gluon">Gluon</a> group. Developing a way of creating and playing games, they worked on a KF5 port, and also had a lot of discussion of their future directions and plans. And <a href="https://projects.kde.org/projects/playground/www/qmlweb">QMLWeb</a>, a JavaScript library, is currently a one man project with Anton Kreuzkamp working hard to improve the code and connect with new people.</p>
+<h3>An amazing event that should be repeated</h3>
+<p>Organization-wise we tried something new this year to connect the different groups participating at the Randa Meetings even more. During lunch and dinner one person of each group had to tell the others in a few sentences what they are currently working on. So everybody in Randa was more or less aware of what was discussed in the other groups and when they should connect and talk with them. But we learned something else too: doing this talks two times a day was not necessary and so we plan to do it only once a day in 2015.</p>
+<p>For even more information about the Randa Meetings 2014 and some personal views, see <a href="https://community.kde.org/Sprints/Randa/2014#Blog_posts_and_other_news_about_the_meeting">a list of blog posts</a> and <a href="https://community.kde.org/Sprints/Randa/2014#Picture_collections_about_the_meeting">picture collections</a>. It was an amazing time and we got great feedback for the organizational work and thus are looking forward to 2015 and more very productive, successful and inspiring meetings and sprints. So please support us!</p>
+<p><a href="https://www.kde.org/fundraisers/yearend2014/"><img alt="fundraiser banner" height="300" src="https://www.kde.org/images/teaser/bannerFundraiser2014.png" width="830" /></a></p>
+<p>PS: There is another <a href="http://www.kdeblog.com/resumen-del-sprint-randa-2014.html">great summary in Portuguese</a> of what happened in Randa this year.</p>
+<p>[<strong>Updated Dec 8 2014:</strong> Clarified the variety of the Randa Meetings]</p>
+</div></div></div><div class="field field-name-taxonomy-vocabulary-1 field-type-taxonomy-term-reference field-label-above clearfix"><h3 class="field-label">Dot Categories: </h3><ul class="links"><li class="taxonomy-term-reference-0"><a href="https://dot.kde.org/category/dot-categories/sprints">Sprints</a></li></ul></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">December 07, 2014</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-d282bf7c feed-" id="item-70562397">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/Souvik-Das.jpg"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://dassouvik.wordpress.com/feed/">Souvik Das (sd__) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://dassouvik.wordpress.com/2014/12/07/sok-project-update-kanagram-2/">16:06, Sunday, 07 December UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://dassouvik.wordpress.com/2014/12/07/sok-project-update-kanagram-2/">SOK Project &#8211; Kanagram-Introducing 2-player option #2</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Its been a week since my exams got over and I am working on the project Kanagram for Season of KDE 2014. It feels nice to explore the open-source programming, as I get to learn many of the new things like qt5 and qml on the go. The mentors are very helpful, and work progress is what I would call quite good. Hoping to have a wonferful time ahead.</p><br />  <a href="http://feeds.wordpress.com/1.0/gocomments/dassouvik.wordpress.com/9/" rel="nofollow"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/dassouvik.wordpress.com/9/" /></a> <img alt="" border="0" height="1" src="https://pixel.wp.com/b.gif?host=dassouvik.wordpress.com&#038;blog=80059610&#038;post=9&#038;subd=dassouvik&#038;ref=&#038;feed=1" width="1" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-24a1afe5 feed-" id="item-ddd86603">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/garvit-khatri.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="http://garvitdelhi.blogspot.com/feeds/posts/default">Garvit Khatri (garvitdelhi) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="http://garvitdelhi.blogspot.com/2014/12/my-experience-so-far.html">00:33, Sunday, 07 December UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="http://garvitdelhi.blogspot.com/2014/12/my-experience-so-far.html">My Experience so far</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<div dir="ltr" style="text-align: left;">Its being quite a while that sok has started, though I was not so  active for the first half of the winter because of my university exams.I started working on  my project in December. It was all new experience getting selected into sok. Before  getting into sok I was a web developer and contributed to typo3 neos  (the content management system), I was more into php and js stuff  rather than being into c++. I had used c++ only for learning algorithms,  data structures or at maximum for competitive programming. when i got to  know about sok i started learning the Qt framework and tried building  few apps, and that experienced was awesome I never imagined the power it  had and how easy it was for me to learn it. After I made few apps I  submitted my proposal to kde SoK and finally got selected for one of my  two ideas proposed.<br /><br />My Idea was to port kturtle project  to kf5. So far I have made my development environment ready like  building kf5 (though I was stuck at errors in 10 packages)  so I choose binaries instead of building it. Recently i studied about  cmake and now I am porting CMakeLists.txt for kturtle, I have asked for  developer access so that i can push my code on server-side kde repo. As  soon as I get access I will add my repo details here.<span class="HOEnZb"><span style="color: #888888;"><br /></span></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<br><p><a href="index1.html" class="btn btn-mat"><span class="icon-kdeArrowLeft"></span> Older blog entries</a></p>
+
+        <hr class="blueline">
+        <div>
+        	<p>
+            Planet KDE is made from the blogs of KDE's contributors. The opinions it contains are those of the contributor. This site is powered by <a href="http://offog.org/code/rawdog.html">Rawdog</a> and <a href="https://launchpad.net/rawdog-rss">Rawdog RSS</a>. Feed readers can read Planet KDE with <a href="rss20.xml">RSS</a>, <a href="foafroll.xml">FOAF</a> or <a href="opml.xml">OPML</a>.
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade peeps" id="peeps" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="modal-title" id="myModalLabel">People Aggregated</h2>
+                </div>
+                <div class="modal-body">
+                    <table class="table" id="feeds">
+<tr id="feedsheader">
+<th>Feed</th><th>RSS</th><th>Last fetched</th><th>Next fetched after</th>
+</tr>
+<tr class="feedsrow">
+<td><a href="http://saikrishna17394.github.io/">Sai Krishna (saikrishna17394)</a></td>
+<td><a class="xmlbutton" href="http://saikrishna17394.github.io/feed.xml">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://aarseeaeron.wordpress.com">Aarsee Aeron (aarsee)</a></td>
+<td><a class="xmlbutton" href="https://aarseeaeron.wordpress.com/feed/">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="http://aditya.bhatts.org">Aditya Bhatt (adityab)</a></td>
+<td><a class="xmlbutton" href="http://aditya.bhatts.org/tag/kde-planet/feed/?mrss=off&amp;tag=kde-planet">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="http://www.aelog.org">Elvis Angelaccio (elvisangelaccio)</a></td>
+<td><a class="xmlbutton" href="http://www.aelog.org/tag/kde/feed/">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/135">Andi Clemens (aclemens)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/?q=blog/135/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://dassouvik.wordpress.com">Souvik Das (sd__)</a></td>
+<td><a class="xmlbutton" href="https://dassouvik.wordpress.com/feed/">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="http://davidrosca.blogspot.com/search/label/planetkde">David Rosca (nowrep)</a></td>
+<td><a class="xmlbutton" href="http://davidrosca.blogspot.com/feeds/posts/default/-/planetkde">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="http://anu-mittal.blogspot.com/search/label/Planet%20KDE">Anu Mittal (anuM)</a></td>
+<td><a class="xmlbutton" href="http://anu-mittal.blogspot.com/feeds/posts/default/-/Planet%20KDE">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/3">Gilles Caulier (cgilles)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/?q=blog/3/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/144">Dimitri Popov</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/blog/144/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://kunalghosh.wordpress.com">kunal ghosh (kunalghosh)</a></td>
+<td><a class="xmlbutton" href="https://kunalghosh.wordpress.com/tag/kde/feed/">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/147">Frederic Coiffier (fcoiffier)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/blog/147/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/150">Gabriel Voicu (gvoicu)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/blog/150/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/11">Gerhard Kulzer (gkulzer)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/?q=blog/11/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://thegreatercode.wordpress.com">Utkarsh Simha (usimha)</a></td>
+<td><a class="xmlbutton" href="https://thegreatercode.wordpress.com/feed/">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/148">Holger Foerster (foerster)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/blog/148/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td>Risto Saukonpaa (fri13)</td>
+<td><a class="xmlbutton" href="https://www.digikam.org/?q=blog/134/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td>Nicolas Lecureuil (nlecureuil)</td>
+<td><a class="xmlbutton" href="https://www.digikam.org/?q=blog/142/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td>Francesco Riosa (riosa)</td>
+<td><a class="xmlbutton" href="https://www.digikam.org/?q=blog/154/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td>Angelo Naselli (anaselli)</td>
+<td><a class="xmlbutton" href="https://www.digikam.org/blog/130/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://ianda.eu">Christian D&#225;vid (chris_hd)</a></td>
+<td><a class="xmlbutton" href="http://ianda.eu/tag/planetkde/feed/">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="http://garvitdelhi.blogspot.com/">Garvit Khatri (garvitdelhi)</a></td>
+<td><a class="xmlbutton" href="http://garvitdelhi.blogspot.in/feeds/posts/default">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/145">Jens Muller (jmueller)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/blog/145/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/141">Julien Narboux (jnarboux)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/?q=blog/141/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://dot.kde.org/frontpage">KDE Dot News</a></td>
+<td><a class="xmlbutton" href="https://dot.kde.org/rss.xml">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="http://kshitijblogs.blogspot.com/search/label/SoK%2714">Kshitij Gupta (kshitij8)</a></td>
+<td><a class="xmlbutton" href="http://kshitijblogs.blogspot.com/feeds/posts/default/-/SoK%2714">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="http://kstplot.blogspot.com/">Kst News</a></td>
+<td><a class="xmlbutton" href="http://kstplot.blogspot.com/feeds/posts/default/">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/143">Johannes Wienke (languitar)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/?q=blog/143/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/8">Marcel Wiesweg (mwiesweg)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/?q=blog/8/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/149">Martin Klapetek (mck182)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/blog/149/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/152">Mohamed Malik</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/blog/152/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="http://pinak.github.io">Pinak Ahuja (pinak)</a></td>
+<td><a class="xmlbutton" href="http://pinak.github.io/feed.kde.xml">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="http://subhajitmukherjee.wordpress.com">Subhajit Mukherjee (bukai)</a></td>
+<td><a class="xmlbutton" href="https://subhajitmukherjee.wordpress.com/feed/">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://skoushik.wordpress.com">Koushik S (skoushik)</a></td>
+<td><a class="xmlbutton" href="https://skoushik.wordpress.com/tag/kde/feed/">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+</table>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade socfeeds" id="socfeeds" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="row">
+            	<div class="col-md-12">
+            		<center>
+	                    <a class="twitter-timeline" href="https://twitter.com/hashtag/kde" data-widget-id="559456680266567680">#kde Tweets</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+						</script>
+	                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <br>
+                        <a class="twitter-timeline" href="https://twitter.com/kdecommunity" data-widget-id="560371561471807489">Tweets by @kdecommunity</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	                	<br>
+	                	<button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>
+                	</center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade addmore" id="addmore" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="modal-title" id="myModalLabel">Add your Blog</h2>
+                </div>
+                <div class="modal-body">
+                    <p>If you are a KDE contributor you can have your blog on Planet KDE. Blog content should be mostly KDE themed, English language and not liable to offend. If you have a general blog you may want to set up a tag and subscribe the feed for that tag only to Planet KDE.</p>
+
+                    <p>We also include feeds in different categories, currently Dot News, Project News feeds, User Blogs, french Language, Spanish Language, Polish Language and Portuguese Language KDE blogs. If you have a feed which falls into these categories (or another non-English language) please file a bug as below.</p>
+
+                    <p>Planet KDE is kept in <a href="https://projects.kde.org/projects/websites/planet-kde-org">KDE's
+          Git</a>. If you have an account you can add or edit your own feed:</p>
+
+                    <ul>
+                        <li><em>git clone kde:websites/planet-kde-org</em>
+                        </li>
+
+                        <li>Put your hackergotchi in <em>website/hackergotchi/</em>. A hackergotchi should be a photo of your face smaller than 80x80 pixels with a transparent background. <em>git add</em> the file.</li>
+
+                        <li>At the end of the <em>planetkde/config</em> file add your details (the name in brackets is your IRC nick):</li>
+                        <div id="addmebox">
+                            feed 45m http://path.to/my/feed.rss define_name Konqi Konqueror (konqi) define_face hackergotchi/konqi.png define_facewidth 80 define_faceheight 80
+                        </div>
+
+                        <li><em>git commit -a; git push</em>
+                        </li>
+                    </ul>
+
+                    <p>If you want to add a Twitter microblog to the Microblogging sidebar add <em>define_microblog true</em> and follow your name with [twitter]. Currently only Twitter is known to work, please contact Jonathan Riddell before adding non-Twitter microblogs to check it works.</p>
+
+                    <p>If you do not have a Git account, <a href="http://bugs.kde.org/enter_bug.cgi?product=planet%20kde">file
+          a bug in Bugzilla</a> listing your name, Git account (if you have one), IRC nick (if you have one), RSS or Atom feed and what you do in KDE. Attach a photo of your face for hackergotchi.</p>
+
+                    <h3>Blog Classes</h3>
+
+                    <p>The default class for blogs is English language personal blogs. Other classes are:</p>
+                    <uL>
+                        <li>Spanish language: <pre>define_feedclass spanish</pre>
+                        </li>
+                        <li>Portugese language: <pre>define_feedclass portuguese</pre>
+                        </li>
+                        <li>Chinese lanugage: <pre>define_feedclass chinese</pre>
+                        </li>
+                        <li>Polish lanugae: <pre>define_feedclass polish</pre>
+                        </li>
+                        <li>Italian lanugae: <pre>define_feedclass italian</pre>
+                        </li>
+                        <li>French lanugae: <pre>define_feedclass french</pre>
+                        </li>
+                        <li>KDE User blogs: <pre>define_feedclass user</pre>
+                        </li>
+                        <li>KDE News feeds: <pre>define_feedclass news</pre>
+                        </li>
+                        <li>KDE Dot News: <pre>define_feedclass dot</pre>
+                        </li>
+                    </ul>
+
+                    <h2>Planet KDE Guidelines</h2>
+
+                    <p>Planet KDE is one of the public faces of the KDE project and is read by millions of users and potential contributors. The content aggregated at Planet KDE is the opinions of its authors, but the sum of that content gives an impression of the project. Please keep in mind the following guidelines for your blog content and read the
+                        <a href="http://www.kde.org/code-of-conduct/">KDE Code of Conduct</a>. The KDE project reserves the right to remove an inappropriate blog from the Planet. If that happens multiple times, the Community Working Group can be asked to consider what needs to happen to get your blog aggregated again.</p>
+
+                    <p>If you are unsure or have queries about what is appropriate contact the KDE Community Working Group.</p>
+
+                    <h3>Blogs should be KDE themed</h3>
+
+                    <p>The majority of content in your blog should be about KDE and your work on KDE. Blog posts about personal subjects are also encouraged since Planet KDE is a chance to learn more about the developers behind KDE. However blog feeds should not be entirely personal, if in doubt set up a tag for Planet KDE and subscribe the feed from that tag so you can control what gets posted.</p>
+
+                    <h3>Posts should be constructive</h3>
+
+                    <p>Posts can be positive and promote KDE, they can be constructive and lay out issues which need to be addressed, but blog feeds should not contain useless, destructive and negative material. Constructive criticism is welcome and the occasional rant is understandable, but a feed where every post is critical and negative is unsuitable. This helps to keep KDE overall a happy project.</p>
+
+                    <h3>You must be a KDE contributor</h3>
+
+                    <p>Only have your blog on Planet KDE if you actively contribute to KDE, for example through code, user support, documentation etc.</p>
+
+                    <h3>It must be a personal blog, or in a blog class</h3>
+
+                    <p>Planet KDE is a collection of blogs from KDE contributors.</p>
+
+
+
+                    <h3>Do not inflame</h3>
+
+                    <p>KDE covers a wide variety of people and cultures. Profanities, prejudice, lewd comments and content likely to offend are to be avoided. Do not make personal attacks or attacks against other projects on your blog.</p>
+
+                    <p>For further guidance on good practice see the <a href="http://www.kde.org/code-of-conduct/">KDE Code of Conduct</a>.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--h2>Configure Planet KDE</h2>
+         <p>You can customise your view of Planet KDE using the selections below</p>
+                       <a href="javascript:toggledot();">KDE.News<img src="images/dialog-ok.png" alt="" width="22" height="22" class="dot" style="float: left" /></a><br clear="all" />
+                       <a href="javascript:togglenews();">Project news<img src="images/dialog-ok.png" alt="" width="22" height="22" class="news" style="float: left" /></a><br clear="all" />
+                       <a href="javascript:toggleuser();">KDE user blogs<img src="images/dialog-ok.png" alt="" width="22" height="22" class="user" style="float: left" /></a><br clear="all" />
+                       <a href="javascript:togglechinese();">Chinese language blogs<img src="images/dialog-ok.png" alt="" width="22" height="22" class="chinese" style="float: left" /></a><br clear="all" />
+                       <a href="javascript:toggleitalian();">Italian language blogs<img src="images/dialog-ok.png" alt="" width="22" height="22" class="italian" style="float: left" /></a><br clear="all" />
+                       <a href="javascript:togglepolish();">Polish language blogs<img src="images/dialog-ok.png" alt="" width="22" height="22" class="polish" style="float: left" /></a><br clear="all" />
+                       <a href="javascript:toggleportuguese();">Portuguese language blogs<img src="images/dialog-ok.png" alt="" width="22" height="22" class="portuguese" style="float: left" /></a><br clear="all" />
+                       <a href="javascript:togglespanish();">Spanish language blogs<img src="images/dialog-ok.png" alt="" width="22" height="22" class="spanish" style="float: left" /></a><br clear="all" />
+                       <a href="javascript:togglefrench();">Les blogs en fran&#231;ais<img src="images/dialog-ok.png" alt="" width="22" height="22" class="french" style="float: left" /></a><br clear="all" /-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("img").addClass("img img-responsive imcent");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,2054 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--link rel="stylesheet" href="rawdog.css" type="text/css" title="Fixed Width" /-->
+    <link rel="stylesheet" href="bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="main.css" type="text/css" />
+    <!--link rel="alternate stylesheet" href="rawdog-variable.css" type="text/css" title="Variable Width" /-->
+    <title>Planet KDE</title>
+    <link rel="alternate" type="application/rss+xml" title="Planet KDE" href="http://planetKDE.org/rss20.xml" />
+
+    <!--[if IE 6]>
+	<style type="text/css">
+	#header, #content, #footer, #planetheader
+	{
+	background-image: none;
+	}
+	#header {  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bg-header.png', sizingMethod='crop'); }
+	#content {  padding-right: 13px; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bg-content.png', sizingMethod='scale') }
+
+	#footer { padding: 10px 25px 0 25px; width: 750px; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bg-footer.png', sizingMethod='scale'); }
+	</style>
+	<![endif]-->
+    <script language="javascript">
+        //In Mozilla, WebKit(?) Coming in IE9, in HTML5
+        if (document.addEventListener) {
+            document.addEventListener("DOMContentLoaded", applyConfig, false);
+        }
+
+        function createCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+d.toUTCString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+        /*
+        function createCookie(name, value, days) {
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                var expires = "; expires=" + date.toGMTString();
+            } else var expires = "";
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+        */
+
+        function readCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1);
+                if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+            }
+            return "";
+        }
+
+        function eraseCookie(name) {
+            createCookie(name, "", -1);
+        }
+
+        function toggle() {
+            var ele = document.getElementById("feeddiv");
+            if (ele.style.display == "block") {
+                ele.style.display = "none";
+            } else {
+                ele.style.display = "block";
+            }
+        }
+
+        function toggleaddme() {
+            var ele = document.getElementById("addme");
+            if (ele.style.display == "block") {
+                ele.style.display = "none";
+            } else {
+                ele.style.display = "block";
+            }
+        }
+
+        function toggleconfig() {
+            var ele = document.getElementById("config");
+            if (ele.style.display == "block") {
+                ele.style.display = "none";
+            } else {
+                ele.style.display = "block";
+            }
+        }
+
+        function toggledot() {
+            var ele = document.getElementsByClassName("dot");
+            for (var i = 0, j = ele.length; i < j; i++)
+                if (ele[i].style.display == "block") {
+                    ele[i].style.display = "none";
+                    document.getElementById("toggledot").checked = false;
+                    createCookie("dot", "none", 360)
+                } else {
+                    ele[i].style.display = "block";
+                    document.getElementById("toggledot").checked = true;
+                    createCookie("dot", "block", 360)
+                }
+        }
+
+        function togglefrench() {
+            console.log("french");
+            var ele = document.getElementsByClassName("french");
+            for (var i = 0, j = ele.length; i < j; i++)
+                if (ele[i].style.display == "block") {
+                    ele[i].style.display = "none";
+                    document.getElementById("togglefrench").checked = false;
+                    createCookie("french", "none", 360)
+                } else {
+                    ele[i].style.display = "block";
+                    document.getElementById("togglefrench").checked = true;
+                    createCookie("french", "block", 360)
+                }
+        }
+
+        function togglespanish() {
+            var ele = document.getElementsByClassName("spanish");
+            for (var i = 0, j = ele.length; i < j; i++)
+                if (ele[i].style.display == "block") {
+                    ele[i].style.display = "none";
+                    document.getElementById("togglespanish").checked = false;
+                    createCookie("spanish", "none", 360)
+                } else {
+                    ele[i].style.display = "block";
+                    document.getElementById("togglespanish").checked = true;
+
+                    createCookie("spanish", "block", 360)
+                }
+        }
+
+        function togglepolish() {
+            var ele = document.getElementsByClassName("polish");
+            for (var i = 0, j = ele.length; i < j; i++)
+                if (ele[i].style.display == "block") {
+                    ele[i].style.display = "none";
+                    document.getElementById("togglepolish").checked = false;
+                    createCookie("polish", "none", 360)
+                } else {
+                    ele[i].style.display = "block";
+                    document.getElementById("togglepolish").checked = true;
+                    createCookie("polish", "block", 360)
+                }
+        }
+
+        function toggleportuguese() {
+            var ele = document.getElementsByClassName("portuguese");
+            for (var i = 0, j = ele.length; i < j; i++)
+                if (ele[i].style.display == "block") {
+                    ele[i].style.display = "none";
+                    document.getElementById("toggleportuguese").checked = false;
+                    createCookie("portuguese", "none", 360)
+                } else {
+                    ele[i].style.display = "block";
+                    document.getElementById("toggleportuguese").checked = true;
+                    createCookie("portuguese", "block", 360)
+                }
+        }
+
+        function toggleitalian() {
+            var ele = document.getElementsByClassName("italian");
+            for (var i = 0, j = ele.length; i < j; i++)
+                if (ele[i].style.display == "block") {
+                    ele[i].style.display = "none";
+                    document.getElementById("toggleitalian").checked = false;
+                    createCookie("italian", "none", 360)
+                } else {
+                    ele[i].style.display = "block";
+                    document.getElementById("toggleitalian").checked = true;
+                    createCookie("italian", "block", 360)
+                }
+        }
+
+        function togglechinese() {
+            var ele = document.getElementsByClassName("chinese");
+            for (var i = 0, j = ele.length; i < j; i++)
+                if (ele[i].style.display == "block") {
+                    ele[i].style.display = "none";
+                    document.getElementById("togglechinese").checked = false;
+                    createCookie("chinese", "none", 360)
+                } else {
+                    ele[i].style.display = "block";
+                    document.getElementById("togglechinese").checked = true;
+                    createCookie("chinese", "block", 360)
+                }
+        }
+
+        function togglenews() {
+            var ele = document.getElementsByClassName("news");
+            for (var i = 0, j = ele.length; i < j; i++)
+                if (ele[i].style.display == "block") {
+                    ele[i].style.display = "none";
+                    document.getElementById("togglenews").checked = false;
+                    createCookie("news", "none", 360)
+                } else {
+                    ele[i].style.display = "block";
+                    document.getElementById("togglenews").checked = true;
+                    createCookie("news", "block", 360)
+                }
+        }
+
+        function toggleuser() {
+            var ele = document.getElementsByClassName("user");
+            for (var i = 0, j = ele.length; i < j; i++)
+                if (ele[i].style.display == "block") {
+                    ele[i].style.display = "none";
+                    document.getElementById("toggleuser").checked = false;
+                    createCookie("user", "none", 360)
+                } else {
+                    ele[i].style.display = "block";
+                    document.getElementById("toggleuser").checked = true;
+                    createCookie("user", "block", 360)
+                }
+        }
+
+        /*onLoad show microblog block if it was shown before*/
+        function applyConfig() {
+            if (document.cookie === "") {
+                createCookie("dot", "block", 360);
+                createCookie("french", "none", 360);
+                createCookie("spanish", "none", 360);
+                createCookie("polish", "none", 360);
+                createCookie("portuguese", "none", 360);
+                createCookie("italian", "none", 360);
+                createCookie("chinese", "none", 360);
+                createCookie("news", "block", 360);
+                createCookie("user", "block", 360);
+            };
+
+            var ele = document.getElementsByClassName("dot");
+            var dot = readCookie("dot");
+            if (dot == "block") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "block");
+                document.getElementById("toggledot").checked = true;
+            };
+            if (dot == "none") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "none");
+                document.getElementById("toggledot").checked = false;
+            };
+            var ele = document.getElementsByClassName("french");
+            var french = readCookie("french");
+            if (french == "block") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "block");
+                document.getElementById("togglefrench").checked = true;
+            };
+            if (french == "none") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "none");
+                document.getElementById("togglefrench").checked = false;
+            };
+            var ele = document.getElementsByClassName("spanish");
+            var spanish = readCookie("spanish");
+            if (spanish == "block") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "block");
+                document.getElementById("togglespanish").checked = true;
+            };
+            if (spanish == "none") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "none");
+                document.getElementById("togglespanish").checked = false;
+            };
+            var ele = document.getElementsByClassName("polish");
+            var polish = readCookie("polish");
+            if (polish == "block") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "block");
+                document.getElementById("togglepolish").checked = true;
+            };
+            if (polish == "none") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "none");
+                document.getElementById("togglepolish").checked = false;
+            };
+            var ele = document.getElementsByClassName("portuguese");
+            var portuguese = readCookie("portuguese");
+            if (portuguese == "block") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "block");
+                document.getElementById("toggleportuguese").checked = true;
+            };
+            if (portuguese == "none") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "none");
+                document.getElementById("toggleportuguese").checked = false;
+            };
+            var ele = document.getElementsByClassName("italian");
+            var italian = readCookie("italian");
+            if (italian == "block") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "block");
+                document.getElementById("toggleitalian").checked = true;
+            };
+            if (italian == "none") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "none");
+                document.getElementById("toggleitalian").checked = false;
+            };
+            var ele = document.getElementsByClassName("news");
+            var news = readCookie("news");
+            if (news == "block") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "block");
+                document.getElementById("togglenews").checked = true;
+            };
+            if (news == "none") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "none");
+                document.getElementById("togglenews").checked = false;
+            };
+            var ele = document.getElementsByClassName("user");
+            var user = readCookie("user");
+            if (user == "block") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "block");
+                document.getElementById("toggleuser").checked = true;
+            };
+            if (user == "none") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "none");
+                document.getElementById("toggleuser").checked = false;
+            };
+            var ele = document.getElementsByClassName("chinese");
+            var chinese = readCookie("chinese");
+            if (chinese == "block") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "block");
+                document.getElementById("togglechinese").checked = true;
+            };
+            if (chinese == "none") {
+                for (var i = 0, j = ele.length; i < j; i++)
+                    (ele[i].style.display = "none");
+                document.getElementById("togglechinese").checked = false;
+            };
+        }
+    </script>
+</head>
+
+
+<body onDOMContentLoaded="javascript:applyConfig();" onLoad="javascript:applyConfig();">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-kdeMenuIcon"></span>
+                </button>
+                <a class="navbar-brand" href="./index.html"><span class="icon-kdeLogo"></span> Planet KDE</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#peeps" data-toggle="modal" data-target="#peeps">People Aggregated</a>
+                    </li>
+                    <li><a href="#addmore" data-toggle="modal" data-target="#addmore">Add your Blog</a>
+                    </li>
+                    <li><a href="#socfeeds" data-toggle="modal" data-target="#socfeeds">Microblogging Feed</a>
+                    </li>
+                    <li><a href="http://dot.kde.org/">KDE Dot News</a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Configure Feed <span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="javascript:toggledot();"><input id="toggledot" type="checkbox">&nbsp; KDE.News</a></li>
+                        <li><a href="javascript:togglenews();"><input id="togglenews" type="checkbox">&nbsp; Project news</a></li>
+                        <li><a href="javascript:toggleuser();"><input id="toggleuser" type="checkbox">&nbsp; KDE user blogs</a></li>
+                        <li><a href="javascript:togglechinese();"><input id="togglechinese" type="checkbox">&nbsp; Chinese language blogs</a></li>
+                        <li><a href="javascript:toggleitalian();"><input id="toggleitalian" type="checkbox">&nbsp; Italian language blogs</a></li>
+                        <li><a href="javascript:togglepolish();"><input id="togglepolish" type="checkbox">&nbsp; Polish language blogs</a></li>
+                        <li><a href="javascript:toggleportuguese();"><input id="toggleportuguese" type="checkbox">&nbsp; Portuguese language blogs</a></li>
+                        <li><a href="javascript:togglespanish();"><input id="togglespanish" type="checkbox">&nbsp; Spanish language blogs</a></li>
+                        <li><a href="javascript:togglefrench();"><input id="togglefrench" type="checkbox">&nbsp; Les blogs en fran&#231;ais</a></li>
+                      </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="http://www.kde.org/community/donations/" id="donateLink">Donate</a>
+                    </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div class="container">
+        <!--div class="row">
+            <div class="col-lg-4 col-xs-offset-4">
+                <img src="images/header.png" class="img img-responsive">
+            </div>
+        </div>
+        <hr style="height:10px; background-color: #333;"-->
+         <div class="day">
+<h3 class="dayform">July 14, 2010</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-cc229df7 feed-" id="item-a27920cb">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/kunalghosh.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://kunalghosh.wordpress.com/tag/kde/feed/">kunal ghosh (kunalghosh) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://kunalghosh.wordpress.com/2010/07/14/a-quick-status-update-on-qtscript-integration-in-digikam/">23:18, Wednesday, 14 July UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://kunalghosh.wordpress.com/2010/07/14/a-quick-status-update-on-qtscript-integration-in-digikam/">A Quick Status update on QtScript integration in Digikam.</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Hi all, in the gsoc-branch of digikam we have been able to get a very basic implementation of QtScript Working.<br />
+Its in its infancy right now &#8220;a work in progress&#8221;.<br />
+The screen shot below shows the result after a tiny for-loop.<br />
+<a href="https://kunalghosh.files.wordpress.com/2010/07/scriptdemo.png"><img alt="The script console screen shot." class="aligncenter size-medium wp-image-153" height="187" src="https://kunalghosh.files.wordpress.com/2010/07/scriptdemo.png?w=300&#038;h=187" title="scriptdemo" width="300" /></a></p>
+<p>More to come ! Stay tuned <span class="wp-smiley wp-emoji wp-emoji-smile" title=":)">:)</span></p><br />  <a href="http://feeds.wordpress.com/1.0/gocomments/kunalghosh.wordpress.com/152/" rel="nofollow"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/kunalghosh.wordpress.com/152/" /></a> <img alt="" border="0" height="1" src="https://pixel.wp.com/b.gif?host=kunalghosh.wordpress.com&#038;blog=2660518&#038;post=152&#038;subd=kunalghosh&#038;ref=&#038;feed=1" width="1" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">July 11, 2010</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-0a87cf6b feed-" id="item-90088a47">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/gvoicu.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/150">Gabriel Voicu (gvoicu) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/532">15:02, Sunday, 11 July UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/532">GSoC update: Reverse Geotagging widget is ready!</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Hello everyone,</p>
+
+<p>I'm very happy to announce you that the reverse geotagging widget is finished! This was the first part and maybe the most important part of my project in this year Google Summer of Code, so I'm glad to see it working. The reverse geotagging widget will be included in kipi-plugins 2.0 release which should be around december 2010. Also, I would like to mention that the world map, the image list and the other widgets(except Reverse Geotagging widget of course) from Geolocation widget are the work of Michael G. Hansen(my GSoC mentor).</p><p><a href="https://www.digikam.org/node/532" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">June 24, 2010</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-d7cdb872 feed-" id="item-43828acd">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/adityab.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="http://aditya.bhatts.org/tag/kde-planet/feed/?mrss=off&tag=kde-planet">Aditya Bhatt (adityab) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="http://aditya.bhatts.org/2010/06/23/digikam-gsoc-progress-libkface-is-almost-ready/">04:30, Thursday, 24 June UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="http://aditya.bhatts.org/2010/06/23/digikam-gsoc-progress-libkface-is-almost-ready/">digiKam GSoC progress: libkface is almost ready</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Ah well, today marks a month since the official GSoC coding period started.</p>
+<p><strong>Brief intro</strong>: I&#8217;m working on implementing automatic tagging of faces for digiKam, with face detection and recognition. For that, I&#8217;ve been working on a library named libface that does the detection and training/recognition.</p>
+<p>At some point, it was deemed necessary to make a Qt wrapper for libface, so that Qt/KDE programs could easily use it. This has been now (almost) done, and the resulting library is named libkface. libkface will be put somewhere in kdegraphics/libs as soon as the API freeze is over (I think), and will be usable not only by&#160;digiKam, but also by other programs like KPhotoAlbum.</p>
+<p>We&#8217;re also going to keep the lib(k)face database in a shared directory, so that all programs that may use it can share the same training data. That way, a user migrating from digiKam to KPhotoAlbum (hypothetical, with face recog) would not have to retrain libkface with his entire collection.</p>
+<p>In&#160;branches/extragear/graphics/digikam/libkface/test/gui/, I have made (with help from Alex) a simple GUI for playing with libkface:</p>
+<div class="wp-caption aligncenter" id="attachment_111" style="width: 642px;"><a href="http://adityabhatt.files.wordpress.com/2010/06/2face.png"><img alt="Two-Face Guy" class="size-full wp-image-111" src="http://adityabhatt.files.wordpress.com/2010/06/2face.png?w=700" title="Two-Face Guy" /></a><p class="wp-caption-text">Two-Face Guy</p></div>
+<p>It has a few buttons for the usual operations. Mind you, this is NOT going to be the way digiKam will present it&#8217;s interface to you, so don&#8217;t be afraid <span class="wp-smiley wp-emoji wp-emoji-bigsmile" title=":D">:D</span>. With my last commit, I have added support in libface for &#8220;tunable accuracy&#8221; for face detection. Look at the slider above the photo &#8211; you can set the accuracy of detection on a Five-point scale. 1 gives you very low accuracy, but insanely high speed. Setting the accuracy to 5 gives you very high accuracy, but very low speed.</p>
+<p>From what I&#8217;ve observed :</p>
+<p>Accuracy of 1 : ~0.8 seconds.</p>
+<p>Accuracy of&#160;2 : ~2.1 seconds</p>
+<p>Accuracy of&#160;3 : ~4 seconds</p>
+<p>Accuracy of&#160;4 : ~7 seconds</p>
+<p>Accuracy of&#160;5 : ~13-15 seconds</p>
+<p>The default accuracy is kept as 3.</p>
+<p>This is a slight improvement from when I blogged about it last time. A nice use-case for this is &#8211; if you have a weak/slow computer, you can set the accuracy to 2. 1 is waaay too less, only for waaay slow computers, but in that case you probably shouldn&#8217;t be using face detection anyway. My laptop isn&#8217;t exactly powerful, and 3 works best. For those of you with newer laptops, you can go for 4. 5 is for those who have obscenely large amounts of processing power.</p>
+<p>In the screenshot above, the red frame and the nice little black rectangle you can see is the embryo of the tagging widget I&#8217;m making. You can edit the name and all. In the next few days, I&#8217;ll be adding Tick/Cross buttons near the text, and making the face rectangle resizable.</p>
+<p>In all, this week was quite productive, and I must also thank Marcel (patches, code review), Gilles (Porting libkface from qmake to CMake), and Alex (CMake porting and some code) for their help.</p><br />  <a href="http://feeds.wordpress.com/1.0/gocomments/adityabhatt.wordpress.com/109/" rel="nofollow"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/adityabhatt.wordpress.com/109/" /></a> <img alt="" border="0" height="1" src="http://pixel.wp.com/b.gif?host=aditya.bhatts.org&#038;blog=10529951&#038;post=109&#038;subd=adityabhatt&#038;ref=&#038;feed=1" width="1" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">June 17, 2010</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-13e40a21 feed-" id="item-75a791ca">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/mck182.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/149">Martin Klapetek (mck182) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/526">16:24, Thursday, 17 June UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/526">GSoC: explaining digiKam's non-destructive editing concept</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Hi digiKamers, hi KDErs, hi planet,</p>
+<p>few days ago I blogged about the progress of non-destructive editing in digiKam. According to your comments, I take it that there is some misunderstaning in the whole concept. So let me explain it to you :)</p>
+<p>The non-destructive editing will be done in such way, that if (and only if) you do some edit to some image, there is automatically created new file, which is a copy of the original with applied changes <strong><em>and</em></strong> with list of edits you've made saved in metadata. Next edit you do, is again applied to the same already-created version and the list of edits in metadata is updated. This is done for example for you to be able to edit the edited file with some external app, let's say GIMP. If there would be only the list of edits stored somewhere, you wouldn't be able to edit it with nothing else until you'd export it from digiKam.</p>
+<p>However, when you do some non-reproducible changes, like using some effect, which uses random values for initialization, we need to preserve this exact output, because it can't be reproduced in the same way (thanks for the randomness), so this gets saved again to the same file, but next edit you'll do, will need to go to new file. This will still be presented as one version in digiKam. But there is some ideas about adjusting the nondeterministic filters in such way, that even those could be reproduced when the proper values are stored. This approach would be much better, but I'm not sure if that could be done. But we'll definitely look into it.</p>
+<p>About the "Originals" folder. As I wrote, this is supposed to be <strong><em>fully customizable</em></strong>. Think about some photos you take, you pull out the card from your camera, stick it to your PC/notebook/netbook/whatever, do some changes in your digiKam and then you want to fly away with the card to give some presentation. But you want to show only the better versions (the edited ones) and not go through three almost-same pictures in presentation again and again. That's why there will be this option, to move the originals into some other folder, so you can still have them present, but they won't get in your way when not using digiKam. Also think about mobile phones. You connect your phone to your PC, do some changes and then you want to show your friends some photos you take, but again, you don't want to show the originals, you want to show only the better versions. Think about having 100 pictures and that you'll do some edits (autolevels for example) to 50 of them. Then you would have 150 images in your mobile gallery and you would show every second picture twice. Again, that's what the "Originals" folder is for. And again again, it will be customizable. Or optional if you want. So you can just turn it off completely and your images will stay all in the same place.</p>
+<p>Then there is the version management. Every edit you do to the original file, will create another version. If you edit the already edited version, the it's simply saved to the already created version file. Only when editing the original you'll get a new version. Or you'll have a possibility to 'fork' it to manually to create a new version. So for example you do several crops to your images. You simply open the original, do one crop, new version is there, saved, ready for other operations. You switch back to the original, you do different crop and another version gets created, again, every other edit you'll do will be saved in this same file with updated metadata. No one-effect-one-file-thing. Then you should be able to display all your versions along. Something like virtual album. So you can see all your cropped images next to them. But not only cropped, imagine you do some color changes or some other effects. Then you can see all your versions next to each other and pick up the best.</p>
+<p>Next thing is GUI. There will be some kind of indicator, that you have more than one version, or that you have done some edits and you're able to revert them. The looks of this is not clear yet. But we're open to any proposals or mockups you may have. Also, with every opened version, you'll see a list of changes you've made and you should be able to remove any edit in the list. It would be cool if you could simply change the edit's values and have it reapplied, but that will probably take some more time to accomplish. But I'd like to see that happened.</p>
+<p>And if you're thinking about buttons in the editor GUI, Save As... definitely won't disappear. Probably Save button could go away as it will be automatically saved after each applied (meaning you click Ok) effect. Instead of Save button there could be a Fork button, which would create completely new version (copy of the current edited version). Other changes in the UI haven't been decided yet. I'm focusing on the foundation right now, GUI will come later (but soon;)</p>
+<p>That's basically how the non-destructive editing will be done in digiKam. Hopefully it's much clearer now to all of you :)</p>
+<p>Marty</p>
+<p><a href="https://www.digikam.org/node/526" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">June 15, 2010</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-13e40a21 feed-" id="item-f9b744a5">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/mck182.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/149">Martin Klapetek (mck182) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/524">23:00, Tuesday, 15 June UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/524">GSoC: update on digiKam's non-destructive image editing</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Hi all,</p>
+<p>little update about the progress that has been made. So far, there are no visible changes to the user yet (if you don't count tons of new debug stuff on console), all work has been done under the hood. The good news is, that the basics for non-destructive editing has already landed in the codebase. You can now use Brightness/Contrast/Gamma tool and the Autolevels tool in such way, that it will automatically create new version of the edited image, apply the changes on the new version, move the original version to "Originals" folder located in original image's path (will be fully configurable) and save the new version as {originalImageName}<strong><em>_v1</em></strong>.{originalImageFormatExtension}.</p>
+<p>There is no GUI yet, which would be able to manipulate with versions and used filters on them, but that's all on plan and I believe, that some basic GUI for reverting the image to its original state could be done at the end of next week. You will find it as a next tab in the right sidebar in digiKam's Image Editor, although the exact appereance of this UI is still a work-in-progress. But as soon as there will be something usable, I promise to bring you some screenshots ;)</p>
+<p>Stay tuned,<br />
+Marty</p>
+<p>Oh yeah and to answer the question "What about editing done with other programs?" - well, this is kinda tricky. It will definitely be possible to revert back to the original image when you edit some of the versions and not the original itself, it should also be possible to just revert this one change. But if you edit the image, that has no version present (and thus not backuped the original, ie. you edit THE original), there's no way to revert back unless we duplicate all of your images, which is rather unwanted. It could be possible to do so, when you open the image in some external app <strong><em>from</em></strong> digiKam, but most probably not if you open it directly.</p>
+<p><a href="https://www.digikam.org/node/524" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">May 11, 2010</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-0a87cf6b feed-" id="item-c6177d68">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/gvoicu.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/150">Gabriel Voicu (gvoicu) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/515">18:24, Tuesday, 11 May UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/515">GSoC: Reverse Geocoding and Improved Map Search project for digiKam</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Hello to all digikam and KDE fans!
+</p>
+
+<p>
+My name is Gabriel Voicu, I am 20 years old and I come from Bucharest, Romania where I'm studying Computer Science and Engineering at University Politehnica of Bucharest. I enjoy programming, playing basket-ball and spending time with my girlfriend.
+</p>
+
+<p>
+I was very happy when I saw that I was accepted to this year Google Summer of Code with the project "Reverse Geocoding and Improved Map Search" because I consider this feature very useful when talking about images geotagging. 
+</p><p><a href="https://www.digikam.org/node/515" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-cc229df7 feed-" id="item-1531722b">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/kunalghosh.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://kunalghosh.wordpress.com/tag/kde/feed/">kunal ghosh (kunalghosh) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://kunalghosh.wordpress.com/2010/05/11/yay-i-am-on-the-planet/">14:49, Tuesday, 11 May UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://kunalghosh.wordpress.com/2010/05/11/yay-i-am-on-the-planet/">Yay !! i am on the planet !</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>It feels great to be on planet KDE.<br />
+This opportunity came as a pleasant surprise , Season of KDE.<br />
+Putting aside my project proposal for GSoC &quot;Integration of Face Recognition in Digikam&quot; as<br />
+one of my fellow (now a GSoC er on the same project). I have decided to focus my attention<br />
+on &quot;QtScript integration in Digikam&quot;. More on this in a while.</p><br />  <a href="http://feeds.wordpress.com/1.0/gocomments/kunalghosh.wordpress.com/150/" rel="nofollow"><img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/kunalghosh.wordpress.com/150/" /></a> <img alt="" border="0" height="1" src="https://pixel.wp.com/b.gif?host=kunalghosh.wordpress.com&#038;blog=2660518&#038;post=150&#038;subd=kunalghosh&#038;ref=&#038;feed=1" width="1" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">May 01, 2010</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-13e40a21 feed-" id="item-cf29fe62">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/mck182.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/149">Martin Klapetek (mck182) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/513">03:15, Saturday, 01 May UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/513">GSoC: Non-destructive image editing for digiKam</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Hello to all the great KDE people and especially digiKam fans! </p>
+<p>My full name is Martin Klapetek, but everyone calls me Marty and I can be found on most services like IM or IRC by the name mck182. I'm 22 and I'm from Czech republic and ever since I started with Linux, I immediately become a huge fan of KDE (3.5 back then). I'm a terrible musician (playing guitar, bass guitar, sometimes even piano [you don't want to be there]), promising art painter and hopefully-soon-to-be graduated college student with bachelor's degree in Computer Science.</p>
+<p>I've been accepted to this year's Google Summer of Code with project to enable non-destructive image editing and image versioning for digiKam.</p>
+<p>I'm very keen on taking photos and I've been using Google's Picasa for organizing the quantum of pictures I've taken. But the Linux version was more and more unusable lately for me, mainly because problems with multilibs (I'm running 64bit system and Picasa needs 32bit Qt libs and I'm using non-official-distro Qt packages, so there were some conflicts) and also because I hate it's wine-ish look &amp; feel (&amp; speed) and non-integrationess. So I've decided to use something more KDE fashioned and the sight was set on digiKam.</p>
+<p>I like Picasa's possibility to edit your images in any way and then anytime you come back and feel like it's not good enough, you can simply reset the image to its original state and start over. This is the feature I'd like to bring to digiKam during this summer. This will go along with feature for having multiple versions with different modifications of one image and easily switching between them.</p>
+<p>The non-destructive editing will work fully automatized. Now when you do some changes eg. use some filters or adjust levels, you need to save your image first and if you just save, you lose the original. With the non-destructive editing, it will automatically create new version from the original and it will store all the changes there, all without bothering user about saving the image and without actually touching the original. Every time you switch to the original and start new modifications, it will create another version alongside with the first one. Each version will also be manually forkable to another new version. </p>
+<p>That's in short my project for GSoC 2010. I'm very excited to finally do some real work for KDE and to contribute to the world of open source. I'm looking forward to work with the already-shown-to-be-awesome people from digiKam team and especially with Marcel Wiesweg, my mentor :)</p>
+<p>I wish happy coding and lots of fun to all the accepted students. Let's make KDE proud of us :)</p>
+<p>Marty</p>
+<p>PS: More detailed posts will come when the real work will start ;)</p>
+<p><a href="https://www.digikam.org/node/513" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">March 23, 2010</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-0e89fa9e feed-" id="item-c5c2bccc">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/foerster.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/148">Holger Foerster (foerster) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/509">01:30, Tuesday, 23 March UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/509">digiKam with another database backend than SQLite</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Last summer I saw <a href="https://bugs.kde.org/show_bug.cgi?id=127321">bug #127321</a> an thought, this can be done by me (partly at least).<br />
+After some (successful) prototypic implementation, most of the time where spent into smooth integration in the existing<br />
+project:</p>
+<ul>
+<li>adding a solution for migrating from SQLite to MySQL and vice versa</li>
+<li>add possibiliy to start an own database server</li>
+<li>and bug fixing...</li>
+</ul>
+<p>Because only a few persons trying out this work (which resides atm. in a dedicated branch), the most bugs are possible undiscovered.</p>
+<p>So if you are brave enough to crash your whole existing database structure (images are not touched), have a little amount of free time or you would like<br />
+to have the future right now and you are able to compile your version by yourself: You are the right person :)</p>
+<p><a href="https://www.digikam.org/node/509" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">February 25, 2010</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-36274fc4 feed-" id="item-afc7b3a2">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/147">Frederic Coiffier (fcoiffier) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/503">16:03, Thursday, 25 February UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/503">New exporter for Piwigo galleries</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Dear digiKam users,</p>
+<p>A new export plugin has been added to the Kipi-plugins development<br />
+trunk: an export to <a href="http://piwigo.org">Piwigo</a> plugin!</p>
+<p><a href="http://www.flickr.com/photos/47673652@N02/4385033317/" title="Piwigo plugin in Digikam de fcoiffie, sur Flickr"><img alt="Piwigo plugin in Digikam" height="410" src="http://farm5.static.flickr.com/4062/4385033317_d57a6c86b9.jpg" width="500" /></a></p>
+<p>Some of you may not know Piwigo yet: it's a powerful web gallery based<br />
+on usual PHP/MySQL technologies. It's a good solution if you want to<br />
+self-host your photos and avoid third-parties services like Picasa or<br />
+Flickr. It can be compared to Menalto Gallery, which is already<br />
+supported by Kipi-plugins, even if I find Piwigo lighter and more<br />
+complete when it comes to browsing capabilities (hierarchical<br />
+categories, tags or chronology).</p>
+<p><a href="https://www.digikam.org/node/503" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">February 09, 2010</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-e627ca1d feed-" id="item-33f4835c">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/jmueller.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/145">Jens Muller (jmueller) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/501">03:35, Tuesday, 09 February UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/501">Picasaweb plugin refreshed</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Dear all digiKam fans and users!</p>
+
+<p>The ui of the picasaweb exporter gains some love and is refreshed in current trunk. 
+Its look now fits to other kipi export plugins with imagelistview support showing you the current processing element 
+and a non-modal progressbar to let you work on your next photos while uploading.</p>
+
+<a href="http://www.flickr.com/photos/47251968@N04/4338420625/" title="pw upload3 von tschensinger bei Flickr"><img alt="pw upload3" height="397" src="http://farm5.static.flickr.com/4049/4338420625_bd8e612b4b.jpg" width="500" /></a>
+
+<p>Besides the exporter, a basic importer has been added, to let you download all your favourite albums.</p><p><a href="https://www.digikam.org/node/501" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">February 01, 2010</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-107d700e feed-" id="item-8102b971">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/languitar.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/143">Johannes Wienke (languitar) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/498">17:22, Monday, 01 February UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/498">Porting to Qt4 and its model view concept - testers needed</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p><a href="http://www.flickr.com/photos/digikam/4321468889/" title="digiKam1.2.0 by cauliergilles, on Flickr"><img alt="digiKam1.2.0" height="400" src="http://farm5.static.flickr.com/4017/4321468889_199fa9123f.jpg" width="500" /></a>
+
+<p>During the last two months Marcel and I ported all tree views in digiKam from Qt3 to Qt4 and its model view concept. These changes are now included in the svn trunk. The new code still needs some serious testing and we would appreciate your help on this.</p>
+
+<p>Some parts of the current digiKam release still rely on old Qt3 support classes. Most prominent are the various tree views in the main view, e.g. for selecting an album to show in the central icon view or filtering by tag. My job since the coding sprint was to port these tree views to Qt4 using the model view concept introduced there. Marcel already wrote the models some time ago so that I could start my work on a solid foundation. This work was done in a separate feature branch for the last two months. Now, after the 1.1.0 release, this branch is merged back into trunk and ready to be included in the next release of digiKam.</p>
+
+<p>But as usual with GUI changes this can introduce some regressions as user interfaces are hard to test automatically. Therefore we would really like you to test the current trunk code including these changes before releasing the next version of digiKam. Try to find as many bugs as you can that we have introduced here. ;)</p>
+
+<p>If you are not yet familiar on how to test current development code, <a href="http://www.digikam.org/drupal/download/KDE4">this page</a> gives you a short introduction how to get and compile digiKam from source. For reporting bugs please use the normal <a href="https://bugs.kde.org/">KDE bug tracker</a>.</p>
+<p><a href="https://www.digikam.org/node/498" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">January 25, 2010</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-d6f0a09a feed-" id="item-96079195">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/jnarboux.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/141">Julien Narboux (jnarboux) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/496">21:36, Monday, 25 January UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/496">New tool to add vignetting</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Accordingly with KDE bugzilla entries <a href="https://bugs.kde.org/show_bug.cgi?id=177827">#177827</a> and <a href="https://bugs.kde.org/show_bug.cgi?id=218906">#218906</a>, i have slightly modified the vignetting tool, now you can add vignetting to your pictures:</p>
+<p><a href="http://www.flickr.com/photos/julien_narboux/4281258900/" title="Adding vignetting to a picture using Digikam by JulienNarboux, on Flickr"><img alt="Adding vignetting to a picture using Digikam" height="386" src="http://farm5.static.flickr.com/4036/4281258900_373b5ff95f.jpg" width="500" /></a></p>
+<p>Vignetting can be used as a creative tool to focus attention to the center of the picture.</p>
+<p>This feature will be included in digiKam 1.1.0. I hope you will like it. Please provide feedback !</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">November 28, 2009</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-af22ab17 feed-" id="item-14c1af09">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/aclemens.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/135">Andi Clemens (aclemens) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/487">14:01, Saturday, 28 November UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/487">Notes about "Modifiers" in the digiKam rename tool</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Some users have asked me what modifiers are. They don't seem to know this concept in a renaming tool and are a little bit confused by it.<br />
+I will try to explain what the modifiers do and why I implemented the renaming tool in such a way.<br />
+<a href="http://www.flickr.com/photos/26732399@N05/4139674915/" title="Modifiers in digiKam rename tool von andiclemens bei Flickr"><img alt="Modifiers in digiKam rename tool" height="166" src="http://farm3.static.flickr.com/2755/4139674915_5a1aabcd4d.jpg" width="500" /></a> </p>
+<h2>Update: Error Handling</h2>
+<p><a href="https://www.digikam.org/node/487" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">November 21, 2009</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-af22ab17 feed-" id="item-cd5d5d7b">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/aclemens.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/135">Andi Clemens (aclemens) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/485">19:27, Saturday, 21 November UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/485">Renaming in digiKam has syntax highlighting now</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Just a quick comment that renaming in digiKam is capable of using syntax highlighting now. It should be easier to decipher a renaming string this way :-)<br />
+A quick demo video can be found here: </p>
+<p>
+... as well as some screenshots:</p>
+<p><a href="https://www.digikam.org/node/485" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">September 19, 2009</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-af22ab17 feed-" id="item-64a94516">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/aclemens.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/135">Andi Clemens (aclemens) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/480">17:46, Saturday, 19 September UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/480">New renaming tool for digiKam</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p><a href="http://www.flickr.com/photos/26732399@N05/3933368807/" title="advancedRenameWdget von andiclemens bei Flickr"><img alt="advancedRenameWdget" height="100" src="http://farm4.static.flickr.com/3436/3933368807_b3f423f081.jpg" width="500" /></a></p>
+<p>In the past renaming images in digiKam was not very powerful. Most users (me too) renamed their images with KRename, a quite powerful batch renamer. But calling KRename from the "Open With..." dialog in digiKam was not very intuitive, it just felt wrong.</p>
+<p>digiKam can manage nearly every piece of information found in an image, therefore it would be nice to have all this information available for file renaming, too, since renaming is one of the basic managing tasks.</p>
+<p><a href="https://www.digikam.org/node/480" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">May 06, 2009</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-af22ab17 feed-" id="item-d9eee752">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/aclemens.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/135">Andi Clemens (aclemens) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/445">19:02, Wednesday, 06 May UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/445">New 'auto-correction-mode' for the Free Rotation image plugin</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>A few weeks ago I added a new feature to the Free-Rotation imageplugin: 'Automatic (Horizon) Correction'.</p>
+<p><a href="http://www.flickr.com/photos/26732399@N05/3507603498/" title="digiKam - FreeRotation auto mode von andiclemens bei Flickr"><img alt="digiKam - FreeRotation auto mode" height="236" src="http://farm4.static.flickr.com/3373/3507603498_914da80328_o.gif" width="457" /></a></p>
+<p>This is nothing new, Gimp and Photoshop (and for sure other applications) have such a feature, too.<br />
+You set two points in the preview widget and hit "Adjust" to rotate the image accordingly to these markers.</p>
+<p><a href="https://www.digikam.org/node/445" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">November 10, 2008</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-af22ab17 feed-" id="item-0ee0a0e8">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/aclemens.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/135">Andi Clemens (aclemens) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/384">16:01, Monday, 10 November UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/384">New kipi-plugin: Automatically remove red-eyes (in batch mode)</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Some years ago, we had an addition to our family and I took a lot of photos in that time. During the months I had taken nearly 2000 images of the newborn, but most of them had red-eyes on it.<br />
+This happens quite a lot with little children since their pupils don't close that fast and the light of the camera flash is reflected by the eye.</p>
+<p><a href="http://www.flickr.com/photos/26732399@N05/3004014710/" title="new batch red eyes removal tool von andiclemens bei Flickr"><img alt="new batch red eyes removal tool" height="302" src="http://farm4.static.flickr.com/3293/3004014710_0fe2c73b5e.jpg" width="500" /></a></p>
+<p><a href="https://www.digikam.org/node/384" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">July 17, 2008</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-05f430f5 feed-" id="item-a25c17bc">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/gkulzer.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/11">Gerhard Kulzer (gkulzer) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/360">23:27, Thursday, 17 July UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/360">Non-review</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p><a href="http://www.ubuntuproductivity.com/journal/ubuntu/07/2008/ubuntu-photo-manager-experiment/">Here</a> is a joke of a review titled <strong>'Ubuntu Photo Manager Experiment'</strong>. It even fails at wanting to compare FOSS software against Aperture as it compares mainly non-FOSS programs. It ignores digiKam and ufraw, krita.<br />
+But read the reader comments below the article and on <a href="http://tech.slashdot.org/article.pl?sid=08/07/10/1518225&amp;from=rss">Slashdot</a>: digiKam is by far the recommended solution!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-b0450bd5 feed-" id="item-8a86515a">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/mwiesweg.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/8">Marcel Wiesweg (mwiesweg) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/359">02:40, Thursday, 17 July UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/359">digikam 0.9.4 release</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Dear all digiKam fans and users!<br /></p>
+<p>The digiKam development team is happy to release version 0.9.4. The digiKam tarball can be downloaded from <a href="http://sourceforge.net/project/showfiles.php?group_id=42641">SourceForge</a>.<br />
+Noteworthy features added since the last stable release include auto-gamma and auto-whitebalance support for RAW files in 16bit mode, displaying the number of contained items in the overview for all albums, usability improvements, as usual a lot of bug fixes - see below for a complete list of new features and fixed bugs.</p>
+<p><br /></p>
+<p><a href="https://www.digikam.org/node/359" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">July 09, 2008</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-b0450bd5 feed-" id="item-d25ababe">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/mwiesweg.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/8">Marcel Wiesweg (mwiesweg) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/357">00:16, Wednesday, 09 July UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/357">digiKam's New Search Functions: A screencast</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>For the upcoming 0.10 version we have taken the step to completely rewrite the searching functionality, both the backend and the user interface. Our new database layout allows us to offer much more search options, as we now store in the database what we consider useful to the photographer, and storing in the database is prerequisite for searching.</p>
+<p>The old search interface from the current stable KDE3 line 0.9 allowed to create quite complex logically combined queries, but had only a limited amount of information about a picture that it could actually search. When adding a lot more options, the UI would not scale well.</p>
+<p><a href="https://www.digikam.org/node/357" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">July 06, 2008</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-af22ab17 feed-" id="item-0187f3e8">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/aclemens.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/135">Andi Clemens (aclemens) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/355">22:25, Sunday, 06 July UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/355">digiKam 0.9.4-rc2 release</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Dear all digiKam fans and users!<br /><br />
+
+The digiKam development team is happy to release 0.9.4-rc2. The digiKam tarball can be downloaded from <a href="http://sourceforge.net/project/showfiles.php?group_id=42641">SourceForge</a>.
+
+<br />
+<a href="http://www.flickr.com/photos/digikam/2644896417/" title="digikam-0.9.4-rc2 by cauliergilles, on Flickr"><img alt="digikam-0.9.4-rc2" height="400" src="http://farm4.static.flickr.com/3016/2644896417_96a3ac039c.jpg" width="500" /></a>
+<br />
+
+<h5>NEW FEATURES (since 0.9.3):</h5><br />
+
+<b>General</b>  : external libsqlite3 dependency removed. sqlite3 source code is now included in digiKam core (see B.K.O #160966).<br />
+<b>General</b>  : English words review in whole GUI by Oliver D&#246;rr.<p><a href="https://www.digikam.org/node/355" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">March 09, 2008</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-05f430f5 feed-" id="item-2b3266f8">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/gkulzer.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/11">Gerhard Kulzer (gkulzer) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/303">16:02, Sunday, 09 March UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/303">digiKam 0.9.4-beta1 release</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Dear all digiKam fans and users!</p>
+<p>The digiKam development team is happy to release 0.9.4-beta1. The digiKam tarball can be downloaded from <a href="http://sourceforge.net/project/showfiles.php?group_id=42641">SourceForge</a> as well.</p>
+<p><strong>Note!</strong> This release works only with the latest libkdcraw and libkexiv2. You either have to compile them freshly from svn or wait a few days until the tarballs become available.</p>
+<p>NEW FEATURES:</p>
+<p>General   :<br />
+1. Color theme scheme are pervasively applied in graphical interfaces, giving digiKam a real <a href="http://www.digikam.org/?q=node/302">Pro-look</a> when dark schemes are selected.<br />
+1a. Color theme scheme can be changed from either Editor or LightTable.</p>
+<p><a href="https://www.digikam.org/node/303" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">February 19, 2008</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-05f430f5 feed-" id="item-ced95928">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/gkulzer.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/11">Gerhard Kulzer (gkulzer) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/300">01:40, Tuesday, 19 February UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/300">Wanted: new slogan, logo and website design</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>DigiKam has come a long way since the early beginnings in 2002. It has come of age and deserves new cloths or a new 'corporate design' in today's parlance. </p>
+<p>To find a new slogan, a new logo, iconized slash screen and web design has been itching me and others for quite a while now. But those are sensitive and difficult subjects, in particular for us amateurs in that field. </p>
+<p><strong>A contest is herewith opened</strong> to create such new cloths, closing end of march 2008. We shall then make a pre-selection and vote on the best candidates. I will act as coordinator and point of contact. Please supply your proposals to gerhard at kulzer dot net.</p>
+<p>Guide lines:</p>
+<ul>
+<li>Photography and FOSS should be the general context.</li>
+</ul><p><a href="https://www.digikam.org/node/300" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">February 16, 2008</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-05f430f5 feed-" id="item-45a3bd94">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/gkulzer.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/11">Gerhard Kulzer (gkulzer) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/297">14:29, Saturday, 16 February UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/297">digiKam on Mac Special CD-ROM of Heise c't magazine</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>The German computer magazine c't will publish a special issue (subject: Mac) which includes a CD ROM with corresponding freeware and shareware programs (publishing date: April 2008). Your software "digiKam" has been pre-selected to be put on this CD ROM.</p>
+<p>-&gt; <a href="http://www.heise.de/software/download/special/macs_finest/19_2">Link</a> to the magazine's introduction of digiKam.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">December 22, 2007</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-05f430f5 feed-" id="item-23d2185a">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/gkulzer.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/11">Gerhard Kulzer (gkulzer) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/280">23:48, Saturday, 22 December UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/280">digiKam 0.9.3 release (final)</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Dear all digiKam users,<br />
+the team is really proud to deliver just in time for Xmas the final. The tarball can be downloaded from <a href="http://sourceforge.net/project/showfiles.php?group_id=42641">SourceForge</a>. Don't forget to update Exiv2 to last stable release 0.15 for digiKam to compile successfully.</p>
+<p>Many, many thanks go to Gilles, Marcel, Arnd, Mik, Fabien and all the others who worked hard to create this great new release. This release sends a big parcel of useability improvements under your Xmas tree: If it was not already, organizing and navigation have become a snap now with the quick filters, drag&amp;drop and GOTO features on top of an optimized lightable.</p>
+<p><b>digiKam 0.9.3 - Release date: 2007-12-23</b></p>
+<p><a href="https://www.digikam.org/node/280" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">December 09, 2007</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-05f430f5 feed-" id="item-ef150957">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/gkulzer.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/11">Gerhard Kulzer (gkulzer) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/278">02:25, Sunday, 09 December UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/278">digiKam 0.9.3-rc1 Release</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>The digiKam team releases <a href="http://digikam3rdparty.free.fr/0.9 releases/digikam-0.9.3-rc1.tar.bz2">0.9.3-rc1</a>. The  tarball can preferably be downloaded from <a href="http://sourceforge.net/project/showfiles.php?group_id=42641">SourceForge</a>.</p>
+<p>There is again a <u>new</u> very practical <u>feature</u> integrated:<br />
+In the Albums/Tags/Searches/TagsFilter sidebars the is a <b>live filter</b> at the<br />
+bottom that lets you search for a string in Albums/Tags/Searches/TagsFilter<br />
+hierarchy, much as amarok does it int he collections.</p>
+<p>A word on <u>stability</u>. I know that many of you wait until a 'stable' sees the<br />
+day of light in order to upgrade digiKam. I will not tell you to do<br />
+otherwise. But! I update digikam daily per cron job from svn since 4 years </p>
+<p><a href="https://www.digikam.org/node/278" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">November 23, 2007</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-b0450bd5 feed-" id="item-1c0bce9f">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/mwiesweg.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/8">Marcel Wiesweg (mwiesweg) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/270">02:38, Friday, 23 November UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/270">git-svn</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>Anyone watching digikam's commit messages (I dont know if that's anyone except the core team) might have noticed that since some time I tend to commit in bursts, several within a few seconds, but only a few times a week. The reason I am using git-svn now for my local working copy.</p>
+<p>I started with that when I was on holidays and had no internet connection for two weeks. Then git-svn allowed me to commit offline, creating a de-facto local branch and merging later.<br />
+I really like this. I can commit when I want, before things are ready to publish, and complete it later, still having good commit messages and splitting the commit so that the others can still review and the patch does not get overly big.</p>
+<p>My favorite killer feature of git is: "git grep". It is really fast, much faster than simply grepping on the svn source directory. I dont know why, but I like that even more.</p>
+<p>One annoying point in the beginning was the "svn up" equivalent. "git-svn rebase" requires all local changes committed, which "svn up" does not. Git's features to the rescue: Create a temporary commit, rebase, and reset the commit afterwards.<br />
+I added this to my ~/.bashrc:<br />
+<code><br />
+#drop-in replacement for svn up<br />
+function git-svn-up {<br />
+git-commit -a -m "Temporary commit" &amp;&amp; git-svn rebase &amp;&amp; git-reset --mixed HEAD^<br />
+}</code></p>
+<p>#use after you have resolved conflicts<br />
+function git-svn-rebase-continue {<br />
+git-rebase --continue &amp;&amp; git-reset --mixed HEAD^<br />
+}<br />
+<code></code></p>
+<p><a href="https://www.digikam.org/node/270" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">November 21, 2007</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-05f430f5 feed-" id="item-bdb96861">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/gkulzer.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/11">Gerhard Kulzer (gkulzer) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/263">17:41, Wednesday, 21 November UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/263">digiKam 0.9.3-beta3 Release + doc(en)</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>The digiKam releases <a href="http://digikam3rdparty.free.fr/0.9 releases/digikam-0.9.3-beta3.tar.bz2">0.9.3-beta3</a> and its English documentation. The  tarballs can preferably be downloaded from <a href="http://sourceforge.net/project/showfiles.php?group_id=42641">SourceForge</a>.</p>
+<p><u>New Features</u></p>
+<ol>
+<li> The main window has yet another <b>live filter</b>: The new <b>string search</b> filters the current view (album/collection, date, tags, search) on substrings within file name, caption, and tags. This feature is really convenient and completes the file type filter and rating filter introduced in previous 0.9.3-betas.</li>
+<li>Several usability improvements in the <b>Light Table</b></li>
+<li>A <b>green tint</b> has been added to the b&amp;w conversion plugin</li>
+</ol>
+<p><a href="https://www.digikam.org/node/263" target="_blank">read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<div class="day">
+<h3 class="dayform">November 03, 2007</h3>
+<div class="channelgroup ">
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+		    <div class="box" class="item feed-b0450bd5 feed-" id="item-fde186de">
+			    	
+			    <div class="row" style="border-bottom:1px solid #BDC3C7; margin-bottom:1%;">
+			    	<div class="col-md-1 col-xs-3" style="margin-bottom:1%;">
+			    		 <img src="hackergotchi/mwiesweg.png"/> 
+			    	</div>
+			    	<div class="col-md-11 col-xs-9" style="margin-top:1%;">
+			    		<div class="row">
+			    			<div class="col-md-8">
+					    		<a href="https://www.digikam.org/blog/8">Marcel Wiesweg (mwiesweg) </a>
+					    	</div>
+					    	<div class="col-md-4 dtdate">
+					    		<a href="https://www.digikam.org/node/259">00:16, Saturday, 03 November UTC</a>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="col-md-12 col-xs-12">
+					    		<h4><a class="boxh2" href="https://www.digikam.org/node/259">Hello to the planet</a></h4>
+					    	</div>
+					    </div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-xs-12 descript">
+						<p>I noted that thanks to clee I have been added to planet.kde.org now as well. This requires just another "Hello to the planet" message to introduce me briefly.</p>
+<p>I am one of the developers of Digikam for about two years now (it's really so long already? Can't believe. Time is running.). Main fields of my work have been e.g. multithreaded image loading and recently the database upgrade we are currently busy with for our KDE4 version.<br />
+Yes, not much is more sweet than a mutex and a cond var.</p>
+<p>In daily life I am a medical student at the university of Essen, Germany, in the 4th year now, learning for exams and working on my MD thesis in physiological chemistry. No, no computer science, physics or mathematics background here ;-)</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+<br><p><a href="index4.html" class="btn btn-mat"><span class="icon-kdeArrowLeft"></span> Older blog entries</a></p>
+
+        <hr class="blueline">
+        <div>
+        	<p>
+            Planet KDE is made from the blogs of KDE's contributors. The opinions it contains are those of the contributor. This site is powered by <a href="http://offog.org/code/rawdog.html">Rawdog</a> and <a href="https://launchpad.net/rawdog-rss">Rawdog RSS</a>. Feed readers can read Planet KDE with <a href="rss20.xml">RSS</a>, <a href="foafroll.xml">FOAF</a> or <a href="opml.xml">OPML</a>.
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade peeps" id="peeps" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="modal-title" id="myModalLabel">People Aggregated</h2>
+                </div>
+                <div class="modal-body">
+                    <table class="table" id="feeds">
+<tr id="feedsheader">
+<th>Feed</th><th>RSS</th><th>Last fetched</th><th>Next fetched after</th>
+</tr>
+<tr class="feedsrow">
+<td><a href="http://saikrishna17394.github.io/">Sai Krishna (saikrishna17394)</a></td>
+<td><a class="xmlbutton" href="http://saikrishna17394.github.io/feed.xml">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://aarseeaeron.wordpress.com">Aarsee Aeron (aarsee)</a></td>
+<td><a class="xmlbutton" href="https://aarseeaeron.wordpress.com/feed/">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="http://aditya.bhatts.org">Aditya Bhatt (adityab)</a></td>
+<td><a class="xmlbutton" href="http://aditya.bhatts.org/tag/kde-planet/feed/?mrss=off&amp;tag=kde-planet">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="http://www.aelog.org">Elvis Angelaccio (elvisangelaccio)</a></td>
+<td><a class="xmlbutton" href="http://www.aelog.org/tag/kde/feed/">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/135">Andi Clemens (aclemens)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/?q=blog/135/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://dassouvik.wordpress.com">Souvik Das (sd__)</a></td>
+<td><a class="xmlbutton" href="https://dassouvik.wordpress.com/feed/">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="http://davidrosca.blogspot.com/search/label/planetkde">David Rosca (nowrep)</a></td>
+<td><a class="xmlbutton" href="http://davidrosca.blogspot.com/feeds/posts/default/-/planetkde">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="http://anu-mittal.blogspot.com/search/label/Planet%20KDE">Anu Mittal (anuM)</a></td>
+<td><a class="xmlbutton" href="http://anu-mittal.blogspot.com/feeds/posts/default/-/Planet%20KDE">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/3">Gilles Caulier (cgilles)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/?q=blog/3/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/144">Dimitri Popov</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/blog/144/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://kunalghosh.wordpress.com">kunal ghosh (kunalghosh)</a></td>
+<td><a class="xmlbutton" href="https://kunalghosh.wordpress.com/tag/kde/feed/">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/147">Frederic Coiffier (fcoiffier)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/blog/147/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/150">Gabriel Voicu (gvoicu)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/blog/150/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/11">Gerhard Kulzer (gkulzer)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/?q=blog/11/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://thegreatercode.wordpress.com">Utkarsh Simha (usimha)</a></td>
+<td><a class="xmlbutton" href="https://thegreatercode.wordpress.com/feed/">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/148">Holger Foerster (foerster)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/blog/148/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td>Risto Saukonpaa (fri13)</td>
+<td><a class="xmlbutton" href="https://www.digikam.org/?q=blog/134/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td>Nicolas Lecureuil (nlecureuil)</td>
+<td><a class="xmlbutton" href="https://www.digikam.org/?q=blog/142/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td>Francesco Riosa (riosa)</td>
+<td><a class="xmlbutton" href="https://www.digikam.org/?q=blog/154/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td>Angelo Naselli (anaselli)</td>
+<td><a class="xmlbutton" href="https://www.digikam.org/blog/130/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://ianda.eu">Christian D&#225;vid (chris_hd)</a></td>
+<td><a class="xmlbutton" href="http://ianda.eu/tag/planetkde/feed/">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="http://garvitdelhi.blogspot.com/">Garvit Khatri (garvitdelhi)</a></td>
+<td><a class="xmlbutton" href="http://garvitdelhi.blogspot.in/feeds/posts/default">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/145">Jens Muller (jmueller)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/blog/145/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/141">Julien Narboux (jnarboux)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/?q=blog/141/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://dot.kde.org/frontpage">KDE Dot News</a></td>
+<td><a class="xmlbutton" href="https://dot.kde.org/rss.xml">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="http://kshitijblogs.blogspot.com/search/label/SoK%2714">Kshitij Gupta (kshitij8)</a></td>
+<td><a class="xmlbutton" href="http://kshitijblogs.blogspot.com/feeds/posts/default/-/SoK%2714">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="http://kstplot.blogspot.com/">Kst News</a></td>
+<td><a class="xmlbutton" href="http://kstplot.blogspot.com/feeds/posts/default/">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/143">Johannes Wienke (languitar)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/?q=blog/143/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/8">Marcel Wiesweg (mwiesweg)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/?q=blog/8/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/149">Martin Klapetek (mck182)</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/blog/149/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://www.digikam.org/blog/152">Mohamed Malik</a></td>
+<td><a class="xmlbutton" href="https://www.digikam.org/blog/152/feed">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="http://pinak.github.io">Pinak Ahuja (pinak)</a></td>
+<td><a class="xmlbutton" href="http://pinak.github.io/feed.kde.xml">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="http://subhajitmukherjee.wordpress.com">Subhajit Mukherjee (bukai)</a></td>
+<td><a class="xmlbutton" href="https://subhajitmukherjee.wordpress.com/feed/">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+<tr class="feedsrow">
+<td><a href="https://skoushik.wordpress.com">Koushik S (skoushik)</a></td>
+<td><a class="xmlbutton" href="https://skoushik.wordpress.com/tag/kde/feed/">XML</a></td>
+<td>20:39, Thursday, 29 January</td>
+<td>20:54, Thursday, 29 January</td>
+</tr>
+</table>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade socfeeds" id="socfeeds" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="row">
+            	<div class="col-md-12">
+            		<center>
+	                    <a class="twitter-timeline" href="https://twitter.com/hashtag/kde" data-widget-id="559456680266567680">#kde Tweets</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+						</script>
+	                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <br>
+                        <a class="twitter-timeline" href="https://twitter.com/kdecommunity" data-widget-id="560371561471807489">Tweets by @kdecommunity</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	                	<br>
+	                	<button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>
+                	</center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade addmore" id="addmore" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="modal-title" id="myModalLabel">Add your Blog</h2>
+                </div>
+                <div class="modal-body">
+                    <p>If you are a KDE contributor you can have your blog on Planet KDE. Blog content should be mostly KDE themed, English language and not liable to offend. If you have a general blog you may want to set up a tag and subscribe the feed for that tag only to Planet KDE.</p>
+
+                    <p>We also include feeds in different categories, currently Dot News, Project News feeds, User Blogs, french Language, Spanish Language, Polish Language and Portuguese Language KDE blogs. If you have a feed which falls into these categories (or another non-English language) please file a bug as below.</p>
+
+                    <p>Planet KDE is kept in <a href="https://projects.kde.org/projects/websites/planet-kde-org">KDE's
+          Git</a>. If you have an account you can add or edit your own feed:</p>
+
+                    <ul>
+                        <li><em>git clone kde:websites/planet-kde-org</em>
+                        </li>
+
+                        <li>Put your hackergotchi in <em>website/hackergotchi/</em>. A hackergotchi should be a photo of your face smaller than 80x80 pixels with a transparent background. <em>git add</em> the file.</li>
+
+                        <li>At the end of the <em>planetkde/config</em> file add your details (the name in brackets is your IRC nick):</li>
+                        <div id="addmebox">
+                            feed 45m http://path.to/my/feed.rss define_name Konqi Konqueror (konqi) define_face hackergotchi/konqi.png define_facewidth 80 define_faceheight 80
+                        </div>
+
+                        <li><em>git commit -a; git push</em>
+                        </li>
+                    </ul>
+
+                    <p>If you want to add a Twitter microblog to the Microblogging sidebar add <em>define_microblog true</em> and follow your name with [twitter]. Currently only Twitter is known to work, please contact Jonathan Riddell before adding non-Twitter microblogs to check it works.</p>
+
+                    <p>If you do not have a Git account, <a href="http://bugs.kde.org/enter_bug.cgi?product=planet%20kde">file
+          a bug in Bugzilla</a> listing your name, Git account (if you have one), IRC nick (if you have one), RSS or Atom feed and what you do in KDE. Attach a photo of your face for hackergotchi.</p>
+
+                    <h3>Blog Classes</h3>
+
+                    <p>The default class for blogs is English language personal blogs. Other classes are:</p>
+                    <uL>
+                        <li>Spanish language: <pre>define_feedclass spanish</pre>
+                        </li>
+                        <li>Portugese language: <pre>define_feedclass portuguese</pre>
+                        </li>
+                        <li>Chinese lanugage: <pre>define_feedclass chinese</pre>
+                        </li>
+                        <li>Polish lanugae: <pre>define_feedclass polish</pre>
+                        </li>
+                        <li>Italian lanugae: <pre>define_feedclass italian</pre>
+                        </li>
+                        <li>French lanugae: <pre>define_feedclass french</pre>
+                        </li>
+                        <li>KDE User blogs: <pre>define_feedclass user</pre>
+                        </li>
+                        <li>KDE News feeds: <pre>define_feedclass news</pre>
+                        </li>
+                        <li>KDE Dot News: <pre>define_feedclass dot</pre>
+                        </li>
+                    </ul>
+
+                    <h2>Planet KDE Guidelines</h2>
+
+                    <p>Planet KDE is one of the public faces of the KDE project and is read by millions of users and potential contributors. The content aggregated at Planet KDE is the opinions of its authors, but the sum of that content gives an impression of the project. Please keep in mind the following guidelines for your blog content and read the
+                        <a href="http://www.kde.org/code-of-conduct/">KDE Code of Conduct</a>. The KDE project reserves the right to remove an inappropriate blog from the Planet. If that happens multiple times, the Community Working Group can be asked to consider what needs to happen to get your blog aggregated again.</p>
+
+                    <p>If you are unsure or have queries about what is appropriate contact the KDE Community Working Group.</p>
+
+                    <h3>Blogs should be KDE themed</h3>
+
+                    <p>The majority of content in your blog should be about KDE and your work on KDE. Blog posts about personal subjects are also encouraged since Planet KDE is a chance to learn more about the developers behind KDE. However blog feeds should not be entirely personal, if in doubt set up a tag for Planet KDE and subscribe the feed from that tag so you can control what gets posted.</p>
+
+                    <h3>Posts should be constructive</h3>
+
+                    <p>Posts can be positive and promote KDE, they can be constructive and lay out issues which need to be addressed, but blog feeds should not contain useless, destructive and negative material. Constructive criticism is welcome and the occasional rant is understandable, but a feed where every post is critical and negative is unsuitable. This helps to keep KDE overall a happy project.</p>
+
+                    <h3>You must be a KDE contributor</h3>
+
+                    <p>Only have your blog on Planet KDE if you actively contribute to KDE, for example through code, user support, documentation etc.</p>
+
+                    <h3>It must be a personal blog, or in a blog class</h3>
+
+                    <p>Planet KDE is a collection of blogs from KDE contributors.</p>
+
+
+
+                    <h3>Do not inflame</h3>
+
+                    <p>KDE covers a wide variety of people and cultures. Profanities, prejudice, lewd comments and content likely to offend are to be avoided. Do not make personal attacks or attacks against other projects on your blog.</p>
+
+                    <p>For further guidance on good practice see the <a href="http://www.kde.org/code-of-conduct/">KDE Code of Conduct</a>.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--h2>Configure Planet KDE</h2>
+         <p>You can customise your view of Planet KDE using the selections below</p>
+                       <a href="javascript:toggledot();">KDE.News<img src="images/dialog-ok.png" alt="" width="22" height="22" class="dot" style="float: left" /></a><br clear="all" />
+                       <a href="javascript:togglenews();">Project news<img src="images/dialog-ok.png" alt="" width="22" height="22" class="news" style="float: left" /></a><br clear="all" />
+                       <a href="javascript:toggleuser();">KDE user blogs<img src="images/dialog-ok.png" alt="" width="22" height="22" class="user" style="float: left" /></a><br clear="all" />
+                       <a href="javascript:togglechinese();">Chinese language blogs<img src="images/dialog-ok.png" alt="" width="22" height="22" class="chinese" style="float: left" /></a><br clear="all" />
+                       <a href="javascript:toggleitalian();">Italian language blogs<img src="images/dialog-ok.png" alt="" width="22" height="22" class="italian" style="float: left" /></a><br clear="all" />
+                       <a href="javascript:togglepolish();">Polish language blogs<img src="images/dialog-ok.png" alt="" width="22" height="22" class="polish" style="float: left" /></a><br clear="all" />
+                       <a href="javascript:toggleportuguese();">Portuguese language blogs<img src="images/dialog-ok.png" alt="" width="22" height="22" class="portuguese" style="float: left" /></a><br clear="all" />
+                       <a href="javascript:togglespanish();">Spanish language blogs<img src="images/dialog-ok.png" alt="" width="22" height="22" class="spanish" style="float: left" /></a><br clear="all" />
+                       <a href="javascript:togglefrench();">Les blogs en fran&#231;ais<img src="images/dialog-ok.png" alt="" width="22" height="22" class="french" style="float: left" /></a><br clear="all" /-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("img").addClass("img img-responsive imcent");
+        });
+    </script>
+</body>
+
+</html>
