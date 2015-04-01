@@ -76,6 +76,8 @@ nav a:focus {
 
 .navbar-default .navbar-nav > .active a{
  	background-color: transparent;
+ 	text-decoration: overline;
+ 	font-weight: 500;
 }
 
  .navbar-default .navbar-nav > .active > a, 
@@ -83,3 +85,4 @@ nav a:focus {
  .navbar-default .navbar-nav > .active > a:focus {
     background-color: transparent;
  }
+ 

@@ -6,10 +6,10 @@ highlighter:      pygments
 permalink: /:categories/:title
 
 # Setup
-title:            Ranveer Aggarwal | Blog
-tagline:          'A repository of ideas'
+title:            Ranveer Aggarwal
+tagline:          'My Personal Webspace'
 description:      'A Repository of Ideas and Thoughts.'
-url:              http://blog.ranveeraggarwal.com
+url:              http://www.ranveeraggarwal.com
 baseurl:          /
 
 author:
@@ -20,7 +20,7 @@ author:
 paginate:         5
 
 # Custom vars
-version:          1.0.1
+version:          1.1.0
 
 github:
   repo:           https://github.com/ranveeraggarwal/ranveeraggarwal.github.io
