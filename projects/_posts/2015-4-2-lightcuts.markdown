@@ -2,6 +2,7 @@
 layout: project
 categories: projects
 title: "Lightcuts"
+tyf: Project
 ---
 
 Here we have implemented Lightcuts: A scalable approach to illumination by Bruce Walter, Sebastian Fernandez, Adam Arbree, Kavita Bala, Mike Donikian, Don Greenberg, presented at Siggraph 2015.  

@@ -18,6 +18,7 @@ author:
   email:		  ranveeraggarwal@gmail.com
 
 paginate:         6
+paginate_path: 	  "blog/page:num/"
 
 # Custom vars
 version:          1.1.0

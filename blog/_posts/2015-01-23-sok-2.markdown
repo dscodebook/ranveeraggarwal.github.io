@@ -1,0 +1,53 @@
+---
+layout: post
+title: "Season of KDE 2014 Post #2: Nearing Completion"
+categories: kde
+tyf: Blogpost
+---
+
+With the season nearing its end, the project I have been on for the past couple of months is almost ready to be deployed. What was the project? Good question! My project was to upgrade, rejuvenate and beautify the very platform on which this post is supposed to be aggregated (I guess if you're reading this, you already know what I'm talking about), our very own Planet KDE. Here's a description of what I was supposed to do in a previous blogpost: http://blog.ranveeraggarwal.com/posts/kde/sok-0/
+
+##Progress
+I'm going to highlight the key changes I've made:
+
+* Flattened the design: Gradients? Marquees? Our friends of the 90's. It's the age of flat-ism and minimalism. Adapting the design philosophy compliant with today's, I have tried to keep things minimalistic, using CSS from several open-sourced sources (No, I do not wget!), and also writing some myself.
+* Mobile-first design: With the number of mobile internet users growing exponentially by the day, why not make something that looks good on your handset? Nobody likes to pinch and scroll in all sorts of directions possible to view the content they want. So, the new design takes care to remove the horizontal scroll to the extent possible and wrapping as much content as possible on your mobile screen. **Even the images!** Yes, you heard it right. Your images contract with the device size. All this was made possible through the sincere efforts of the creators of CSS3 and also, the developers of Twitter Bootstrap.
+* Cards: Google+ does it. Material design has it. It looks good. Why not PlanetKDE. Well, your posts are now cards. Non-swipe-able, sadly, but they do a good job of separating content.
+* Popups: Not a very ingenious idea, it's been around for quite some time. The point being, group content of relevance - separate irrelevant content.
+
+Basically, the whole thing has a new look. Why isn't it up yet? Well, since it's going to be used by the community, I figured, why not let the community decide what more can be done with it?
+
+##To Do
+* Add microblogging feed
+* Support for multiple languages
+
+##Pics or it Didn't Happen! (The Screenshots)
+Here are a few screenshots from the desktop version:  
+
+<img src="http://i.imgur.com/jm18K04.png">
+
+<img src="http://i.imgur.com/QnPNwDR.png">
+
+<img src="http://i.imgur.com/sCYEfko.png">
+
+Also, a few screenshots from the mobile version:  
+
+<table>
+	<tr>
+		<td>
+			<img src="http://i.imgur.com/ZmDtsKu.png">			
+		</td>
+		<td>
+			<img src="http://i.imgur.com/ABwp8hK.png">			
+		</td>
+		<td>
+			<img src="http://i.imgur.com/vzkwMAD.png">	
+		</td>
+	</tr>
+	
+</table>
+
+Any reviews/suggestions would be appreciated :)
+
+##Experience with KDE till now
+I'm being mentored by Jonathan Riddell. He and other members of the community have been really helpful. There were times when I got stuck, and didn't know what to do. I could log into IRC anytime and ask people for help and they readily did. This process has been a great learning experience.

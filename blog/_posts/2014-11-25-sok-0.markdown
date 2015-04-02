@@ -1,0 +1,30 @@
+---
+layout: post
+title: "Season of KDE 2014 Post #0"
+category: kde
+tyf: Blogpost
+---
+
+**Project Name:** Revamp planetkde.org
+
+**A Brief Description:** For the uninitiated, Planet KDE is KDE's Blog aggregator, i.e. it displays feeds from the blogs of KDE contributors on one common web platform.
+
+It's been in existence since 2008, and uses Rawdog (A Python-based RSS Aggregator). It renders all the content on to a single HTML file, which can be customized.
+
+Basically, what I'm trying to do is to revamp the existing website, in the following ways:
+
+Upgrade Rawdog to its newest version
+Give the website a new look and feel, with mobile compatibility
+Add social network feeds to it, if the APIs permit
+
+**Timeline:** So here is what I have roughly planned:
+
+Firstly, I'll read through the rawdog docs, and try a small implementation locally.
+Next, I'll go through the existing source code, and see how it is written, especially the rawdog-HTML/CSS integration.
+After the basic requirement of aggregating blogs is done, I'll go through the API documentations of social networking websites and work on the integration with the website, again locally.
+After understanding how things work in the above two steps, I'll make a rough mockup of the new design and that can be discussed and improved upon.
+Then I'll develop the front-end part of the website
+After that is done, add rawdog and the social network APIs to it.
+Finalizing the code, adding finishing touches, adding new features if possible
+
+**Status:** Currently getting familiar with Rawdog

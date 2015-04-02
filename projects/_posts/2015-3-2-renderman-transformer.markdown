@@ -2,6 +2,7 @@
 layout: project
 categories: projects
 title: "Photorealistic Rendering Using Renderman"
+tyf: Project
 ---
 ####Problem Statement:
 To render a transformer in Renderman with the following effects:
