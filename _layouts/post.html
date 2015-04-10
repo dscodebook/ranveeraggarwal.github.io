@@ -4,16 +4,18 @@
   {% include head.html %}
 
   <body>
-
-    {% include nav.html %}
-
+  	{% include blogtop.html %}
     <div class="container">
     	<div class="col-md-12">
-	    	<h3>{{ page.title }}</h3>
+    		<hr>
+	    	<h2 class="jumbo">{{ page.title }}</h2>
 	    	<hr>
-	      	{{ content }}
+	    	<div class="maincontent">
+	      		{{ content }}
+	      	</div>
       	</div>
     </div>
+    {% include blogbottom.html %}
 
   </body>
 </html>

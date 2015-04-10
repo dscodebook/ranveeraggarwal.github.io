@@ -8,6 +8,8 @@
 
 body {
 	font-family: 'Raleway', sans-serif;
+	/*font-family: 'Droid Serif', serif;*/
+	
 }
 
 nav a {
@@ -93,3 +95,27 @@ nav a:focus {
  	background-position: center;
  	top: 0;
  }
+
+.breadcrumb {background: rgba(255, 255, 255, 1); border: 1px solid rgba(255, 255, 255, 1); border-radius: 0px; display: block;}
+.breadcrumb li {font-size: 15px;}
+.breadcrumb a {color: #777;}
+.breadcrumb a:hover {color: rgba(0, 0, 0, 1);}
+.breadcrumb>.active {color: rgba(0, 0, 0, 1);}
+.breadcrumb>li+li:before {color: rgba(204, 204, 204, 1); content: "\2771\00a0";}
+
+.jumbo {font-size: 40px;
+		font-weight: 700;}
+.mumbo {font-size: 28px;}
+h2{
+	font-size: 20px;
+}
+
+
+.maincontent{
+	font-family: 'Lato', sans-serif;
+}
+.maincontent p{font-size: 20px;}
+.maincontent h2{
+	font-size: 32px;
+	padding-top: 8px;
+}
