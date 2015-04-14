@@ -20,6 +20,10 @@ author:
 paginate:         6
 paginate_path: 	  "blog/page:num/"
 
+#gems
+gems:
+  		- jekyll-sitemap
+
 # Custom vars
 version:          1.1.0
 
