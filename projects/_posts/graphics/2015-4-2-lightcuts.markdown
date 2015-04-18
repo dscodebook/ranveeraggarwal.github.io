@@ -69,7 +69,20 @@ We ran both non-lightcut and lightcut version for 200 and 1000 lights placed ran
 	<tr>
 		<td><b>Light sources</b></td>
 		<td><b>Vanilla PBRT</b></td>
-		<td><b>Lightcuts Implementation</b></td>
+		<td><b>Lightcuts</b></td>
+	</tr>
+	<tr>
+		<td>200</td>
+		<td>
+			real	7m10.402s    
+			user	50m4.347s    
+			sys		0m1.324s    
+		</td>
+		<td>
+			real	8m28.759s    
+			user	55m59.575s    
+			sys	2m27.774s    
+		</td>
 	</tr>
 	<tr>
 		<td>1000</td>
@@ -91,14 +104,25 @@ Here are the generated images:
 	<tr>
 		<td><b>Sources</b></td>
 		<td><b>Vanilla PBRT</b></td>
-		<td><b>Lightcuts Implementation</b></td>
+		<td><b>Lightcuts</b></td>
+	</tr>
+	<tr>
+		<td>
+			200
+		</td>
+		<td>
+			<img class="img-responsive" src="/assets/images/projects/lightcuts/v200.jpg">
+		</td>
+		<td>
+			<img class="img-responsive" src="/assets/images/projects/lightcuts/l200.jpg">
+		</td>
 	</tr>
 	<tr>
 		<td>
 			1000
 		</td>
 		<td>
-			<img class="img-responsive" src="/assets/images/projects/lightcuts/l1000.jpg">
+			<img class="img-responsive" src="/assets/images/projects/lightcuts/v1000.jpg">
 		</td>
 		<td>
 			<img class="img-responsive" src="/assets/images/projects/lightcuts/l1000.jpg">
@@ -107,7 +131,7 @@ Here are the generated images:
 </table>
 
 ##Conclusion
-So, as we see, as the number of light sources increase, the time to render decreases. This is because now, instead of having to contribute illumination from all light sources, the program has to compute illumination only from a few representative light sources, thereby reducing the amount of computation required.
+So, as we see, as the number of light sources increase, the render time increases but at a rate lesser as compared to Vanilla PBRT. This is because now, instead of having to contribute illumination from all light sources, the program has to compute illumination only from a few representative light sources, thereby reducing the amount of computation required.
 
 ##Further Work
 The current implementation doesn’t reuse the geometric and material terms already calculated for the parent node with the same representative light. Reusing it should improve speed by around 20%.
