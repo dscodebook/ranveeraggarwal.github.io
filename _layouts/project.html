@@ -5,15 +5,18 @@
 
   <body>
 
-    {% include nav.html %}
-
+    {% include projecttop.html %}
     <div class="container">
-    	<div class="col-md-12">
-	    	<h3>{{ page.title }}</h3>
-	    	<hr>
-	      	{{ content }}
-      	</div>
+      <div class="col-md-12">
+        <hr>
+        <h2 class="jumbo">{{ page.title }}</h2>
+        <hr>
+        <div class="maincontent">
+            {{ content }}
+          </div>
+        </div>
     </div>
+    {% include projectbottom.html %}
 
   </body>
 </html>
