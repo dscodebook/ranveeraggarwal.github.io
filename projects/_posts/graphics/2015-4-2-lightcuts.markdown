@@ -62,7 +62,7 @@ We wrote a Python script to generate random light sources and used them to compa
 
 ##Results
 We ran both non-lightcut and lightcut version for 200 and 1000 lights placed randomly in a 100x100x100 cube in the scene. Here are the results.
-<table class="table">
+<table class="table table-bordered">
 	<tr>
 		<td><b>Light sources</b></td>
 		<td><b>Vanilla PBRT</b></td>
@@ -84,7 +84,7 @@ We ran both non-lightcut and lightcut version for 200 and 1000 lights placed ran
 </table>
 
 Here are the generated images:
-<table class="table">
+<table class="table table-bordered">
 	<tr>
 		<td><b>Light sources</b></td>
 		<td><b>Vanilla PBRT</b></td>
