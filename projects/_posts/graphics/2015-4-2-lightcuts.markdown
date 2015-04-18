@@ -9,6 +9,8 @@ comments: true
 Abhinav Gupta    
 Ranveer Aggarwal
 
+**Guide:** Prof. Parag Chaudhuri
+
 ##Introduction
 Here we have implemented Lightcuts: A scalable approach to illumination by Bruce Walter, Sebastian Fernandez, Adam Arbree, Kavita Bala, Mike Donikian, Don Greenberg, presented at Siggraph 2005.    
 
@@ -105,3 +107,7 @@ Here are the generated images:
 
 ##Conclusion
 So, as we see, as the number of light sources increase, the time to render decreases. This is because now, instead of having to contribute illumination from all light sources, the program has to compute illumination only from a few representative light sources, thereby reducing the amount of computation required.
+
+##Credits
+* Bruce Walter, Sebastian Fernandez, Adam Arbree, Kavita Bala, Mike Donikian, Don Greenberg for their amazing work on this paper
+* Matt Pharr and Greg Humphreys for building pbrt
