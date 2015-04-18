@@ -3,6 +3,7 @@ layout: project
 categories: projects
 title: "Lightcuts"
 tyf: Project
+comments: true
 ---
 
 Abhinav Gupta    
@@ -29,7 +30,7 @@ in the src/ folder and generate the binaries.
 ##Running
 In the root directory, run
 
-	./src/bin/pbrt scenes/&lt;filename&gt;
+	./src/bin/pbrt scenes/<filename>
 
 The image will be generated in a file called &lt;filename&gt;.exr
 
@@ -88,7 +89,6 @@ Here are the generated images:
 		<td><b>Light sources</b></td>
 		<td><b>Vanilla PBRT</b></td>
 		<td><b>Lightcuts Implementation</b></td>
-		<td><b>Diff of the images</b></td>
 	</tr>
 	<tr>
 		<td>
@@ -100,8 +100,8 @@ Here are the generated images:
 		<td>
 			<img class="img-responsive" src="/assets/images/projects/lightcuts/l1000.jpg">
 		</td>
-		<td>
-			<img class="img-responsive" src="/assets/images/projects/lightcuts/l1000.jpg">
-		</td>
 	</tr>
 </table>
+
+##Conclusion
+So, as we see, as the number of light sources increase, the time to render decreases. This is because now, instead of having to contribute illumination from all light sources, the program has to compute illumination only from a few representative light sources, thereby reducing the amount of computation required.
