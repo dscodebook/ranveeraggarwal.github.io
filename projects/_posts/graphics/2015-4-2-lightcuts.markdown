@@ -109,6 +109,15 @@ Here are the generated images:
 ##Conclusion
 So, as we see, as the number of light sources increase, the time to render decreases. This is because now, instead of having to contribute illumination from all light sources, the program has to compute illumination only from a few representative light sources, thereby reducing the amount of computation required.
 
+##Further Work
+The current implementation doesn’t reuse the geometric and material terms already calculated for the parent node with the same representative light. Reusing it should improve speed by around 20%.
+
+Other types of lights can be supported if we can write a bounding function for their geometric term.
+
+Other types of materials can be supported if we can write a reasonable bounding function for their BRDF.
+
+The current implementation breaks down other features of PBRT. Careful re-work can possibly integrate lightcuts (with whatever level of support) into PBRT such that features incompatible with lightcuts can work separately.
+
 ##Credits
 * Bruce Walter, Sebastian Fernandez, Adam Arbree, Kavita Bala, Mike Donikian, Don Greenberg for their amazing work on this paper
 * Matt Pharr and Greg Humphreys for building pbrt
