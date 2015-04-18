@@ -114,7 +114,7 @@ h2{
 .maincontent{
 	font-family: 'Lato', sans-serif;
 }
-.maincontent p{font-size: 20px;}
+.maincontent {font-size: 20px;}
 .maincontent h2{
 	font-size: 32px;
 	padding-top: 8px;

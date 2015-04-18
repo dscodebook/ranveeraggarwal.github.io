@@ -38,6 +38,7 @@ The image will be generated in a file called &lt;filename&gt;.exr
 
 ##Behind the Scenes
 We implemented our own light node data structure. The data structure consists of the following:
+
 * Pointer to the representative light
 * Total intensity of the cluster
 * Bounding Box Coordinates
@@ -88,7 +89,7 @@ We ran both non-lightcut and lightcut version for 200 and 1000 lights placed ran
 Here are the generated images:
 <table class="table table-bordered">
 	<tr>
-		<td><b>Light sources</b></td>
+		<td><b>Sources</b></td>
 		<td><b>Vanilla PBRT</b></td>
 		<td><b>Lightcuts Implementation</b></td>
 	</tr>
