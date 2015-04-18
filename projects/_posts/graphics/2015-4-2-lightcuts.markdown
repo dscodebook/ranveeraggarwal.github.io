@@ -74,27 +74,27 @@ We ran both non-lightcut and lightcut version for 200 and 1000 lights placed ran
 	<tr>
 		<td>200</td>
 		<td>
-			real	7m10.402s    
-			user	50m4.347s    
-			sys		0m1.324s    
+			real	7m 10.402s    
+			user	50m 4.347s    
+			sys		0m 1.324s    
 		</td>
 		<td>
-			real	8m28.759s    
-			user	55m59.575s    
-			sys	2m27.774s    
+			real	8m 28.759s    
+			user	55m 59.575s    
+			sys		2m 27.774s    
 		</td>
 	</tr>
 	<tr>
 		<td>1000</td>
 		<td>
-			real	34m36.050s    
-			user	255m57.447s    
-			sys		0m6.578s   
+			real	34m 36.050s    
+			user	255m 57.447s    
+			sys		0m 6.578s   
 		</td>
 		<td>
-			real	29m2.530s    
-			user	168m41.736s    
-			sys		0m6.004s    
+			real	29m 2.530s    
+			user	168m 41.736s    
+			sys		0m 6.004s    
 		</td>
 	</tr>
 </table>
