@@ -1,0 +1,27 @@
+---
+layout: post
+title: "Programming Humor"
+categories: humor
+tyf: Blogpost
+---
+
+A friend of mine claimed to be an *expert in computers*. Further, he asked me to throw any Computer Science term at him, and he'd tell me its meaning in a jiffy.    
+I’m going to illustrate a few of the answers that I got from him.
+
+* Argument: The thing that two people get in when they disagree
+* Function: A procedure to do something; alternatively a party
+* Environment: Surrounding
+* String: A material consisting of threads of some material twisted together
+* Thread: a long, thin strand of cotton, nylon, or other fibres used in sewing or weaving.
+* Statement: Something you say
+
+At this point, I received a call from a batchmate, who was stuck on an assignment. I guess when you say, “Dude! Check if the parent is killing the child correctly” over the phone, it’s bound to raise some eyebrows.
+
+* Constant Variable: An oxymoron?
+* Bug: A creature that is small and crawls
+* Runtime: Time when you should go for running?
+* Heap: A random *stack* of objects
+* Python: Obviously a kind of snake
+* RTFM: Kamasutra 
+
+Contributions from Dheerendra.
