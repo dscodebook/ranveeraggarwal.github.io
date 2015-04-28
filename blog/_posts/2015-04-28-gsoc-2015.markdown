@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Google Summer of Code (GSoC) 2015 with KDE"
-categories: foss, kde, gsoc
+categories: gsoc
 tyf: Blogpost
 ---
 
