@@ -1,0 +1,29 @@
+---
+layout: post
+title: "GSoC ’15 Post #1: Package and Publish!"
+date: 2015-6-5 07:02:56 +0530
+categories: gsoc
+type: blog
+---
+
+Yes, this is the first post, even though the title may mislead you.
+
+Being someone who moves around very frequently, I had imagined I was an expert in packaging. That was until I started programming, and encountered a whole new kind of packaging, i.e., packaging code. Unlike what the previous two sentences may seem to imply, packaging and publishing packages on Linux isn’t very non-trivial.
+
+## But I haven’t started coding yet. What am I packaging?
+
+I am working with Packagekit, a system designed to make installing and updating software on your computer easier and Libpackagekit-qt, Qt bindings for PackageKit. Well, due to reasons unknown (to me), Ubuntu’s repositories provide an old version of Packagekit by default (Debian’s have the latest version though), and Jonathan and I agreed to go forward with the latest one. So, on a repo (ppa:ranveeraggarwal/packagekit-test), I uploaded the latest versions of packagekit and libpackagekit-qt with Jonathan’s help. Now, a simple `sudo apt-get` fetches both the packages.
+
+## What did I learn?
+
+Well, packaging. I’m not an expert in packaging yet, but I do know most of the steps/tools that I’m going to illustrate here:
+
+* Firstly, the debian/ directory. It has most of the information required for packaging. I don’t know how to create one, so apt-get source-d it and copied the debian/ directory of the old code in the new source code directory. This directory had some patches which were probably done on the older version for it to work with Ubuntu.
+* Next, the changelog was to be updated. For this, running dch -i in the parent directory of debian/ does most of the job for you. Update it, save and quit.
+* Next task was to figure out patches from the old package that were still relevant to the new one. For this, a tool called quilt was used. Now, in the top level directory, doing quilt push applies patches to the upstream tar. Many a times, there were errors, since the directory to which the patch was to be applied or the piece of code to which the patch was to be applied no longer existed. Sometimes the patches were already incorporated in the newer version. So, those patches were simply removed. And finally, everything worked out.
+* Next up, was building the package. For this a tool called debuild was used. After taking care of all the dependencies as mentioned in debian/control, everything compiled successfully, and the package was ready.
+* Last step, sign and ship! So, after creating PGP keys on my machine and signing the package using debsign, I used dput to upload the package on the ppa, and after a mail saying successful build, I could see the package on launchpad.
+
+## What’s next?
+
+Well, I did the above for both Packagekit and Libpackagekit-qt and installed the latest version using `sudo apt-get`. Packagekit was tested to be working, and right now, I’m gong to build a small application that’s going to test Libpackagekit-qt. Then I’m going to proceed to Dolphin to implement 3rd party package install on it.

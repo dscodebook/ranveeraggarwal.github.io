@@ -1,0 +1,13 @@
+---
+layout: post
+title: "GSoC ’15 Post #2: More Packaging and Compiling"
+date: 2015-6-25 07:02:56 +0530
+categories: gsoc
+type: blog
+---
+
+The previous post had a small section wherein I described code packaging and publishing. I had thought that that part was over and proceeded with using the packages for further work. After lots of unsuccessful attempts and shots in the dark, a discussion with my mentor brought to light the fact that there was some issue in the packages I had created and therefore, the code using those wasn’t compiling. This set me back by almost a week, and then, after successfully packaging libpackagekit-qt5, I managed to compile a small application that uses it.
+
+Now, the next task allotted was to figure out how PackageKit works, and after some discussion on #PackageKit and using the documentation (which I have mirrored here), I have embarked upon the task of making things work using it and understanding how it works properly, as it forms the core of the whole project – along with Appstream.
+
+After this is done, I’ll start working on Appstream, post which, I’ll be using these libraries on Dolphin.

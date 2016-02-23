@@ -1,0 +1,26 @@
+---
+layout: post
+title: "GSoC ’15 Post #3: Install-ed!"
+date: 2015-7-3 07:02:56 +0530
+categories: gsoc
+type: blog
+---
+
+After familiarising myself with PackageKit-Qt last week, I started working on a small application that uses it this week. The aim was simple – to create an application that uses PackageKit to install packages. Thanks to detailed guides [here (PackageKit reference)](http://www.freedesktop.org/software/PackageKit/gtk-doc/) and [here (PackageKit-Qt API docs)](http://sites.ranveeraggarwal.com/mirrors/packagekit-qt2-ref-guide/) pointed to by ximion, I was able to build a KF5 application that takes user input, asks for password and installs the application the user typed in. The application can be found [here (git)](http://quickgit.kde.org/?p=scratch%2Franveeraggarwal%2Fbare-pkqt-installer.git).
+
+## The Application
+The application has a simple interface – a lineEdit and two pushButtons.
+
+<img src="http://i.imgur.com/SsojDvy.png" class="img-responsive">
+
+Once the user input has been stored into a QString variable (this is the package name), the next step is to resolve the name to a package ID. The package ID is basically the package name with some more data (related to the system on which the package is being installed). For example, package ID for the package geany turns out to be
+
+    geany;1.24.1+dfsg-1build1;amd64;vivid
+    geany;1.24.1+dfsg-1build1;i386;vivid
+
+To resolve the package names to package IDs, PackageKit provides a function named resolve. Resolve emits package IDs, which when fed to the function packageInstall installs the packages on the system. That’s it. All you need to know to build your application is the functions and what they emit.
+
+## Next Up
+Now, I have all the tools ready to start working on the applications.
+
+Next, I’m working on Dolphin to integrate PackageKit into it to install Samba. I have run into some building issues, but hopefully they’ll be solved soon and once that’s done, I’ll just have to replicate what I did in the above application there.

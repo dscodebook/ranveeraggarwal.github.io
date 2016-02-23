@@ -1,0 +1,15 @@
+---
+layout: post
+title: "GSoC ’15 Post #6: It works!"
+date: 2015-7-30 02:02:56 +0530
+categories: gsoc
+type: blog
+---
+And finally, package install on the first application stands done and dusted. It was a long journey – from building a mini application to porting to fixing several issues. But finally, things went well and Dolphin now successfully installs Samba using PackageKit-Qt.
+
+## How to test it?
+Install Dolphin from the master branch and KDE Network-Filesharing from frameworks. Now, right click anywhere, get to the share tab and bam! There it is.
+<img src="http://i.imgur.com/ZyKXzOy.png" class="img-responsive">
+
+## What’s next?
+K3b is the next application on the list. As of now, I have compilation issues, but as soon as I fix them, the implementation can proceed smoothly.

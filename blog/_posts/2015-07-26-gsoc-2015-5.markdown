@@ -1,0 +1,15 @@
+---
+layout: post
+title: "GSoC ’15 Post #5: Port Complete – Time for the Real Deal"
+date: 2015-7-26 02:02:56 +0530
+categories: gsoc
+type: blog
+---
+With loads of help from people on #kde-devel, we finally managed to complete the KDE Network Filesharing port to KF5. Wasn’t easy, given that this was my first time porting frameworks, but it was real fun. Apart from apol’s blogpost shared in my last post, here’s another post that was immensely helpful to me while porting: [Porting a KControl Module to KF5](Porting a KControl Module to KF5).
+
+[kde-dev-scripts](https://projects.kde.org/projects/kde/kdesdk/kde-dev-scripts) has a kf5 bit wherein there are perl scripts that would help in porting fast (did most of my work actually). When everything worked successfully, there was a linking error which wasn’t getting fixed even after hours of googling. Turned out to be a moc header include issue, as pointed out by bshah on #kde-devel and fixing that, everything was a success.
+
+##Up next
+I now need to replace kpackagekit that Samba currently uses with packagekit-qt, and this involves plugging in the code I wrote earlier (Post \#3) into it. This would probably complete the Samba bit of my work.
+
+This is turning out to be a great learning experience and KDE Code no longer seems alien to me. With almost a month to go, I am positive that I would be able to get good results.

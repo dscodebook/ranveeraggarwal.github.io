@@ -1,0 +1,16 @@
+---
+layout: post
+title: "GSoC Post #7: KCM Access Done!"
+date: 2015-8-6 02:02:56 +0530
+categories: gsoc
+type: blog
+---
+It’s been a while since my last post, but that doesn’t mean there hasn’t been any progress. So, last I was working with K3b to install codecs. Well, while after loads of issues, I finally got it to build and compile properly, but then, we noticed that K3b still uses Kdelibs4. So that means, Packagekit-Qt4 will have to be used. But since my machine wasn’t equiped with Packagekit-Qt4 or Kdelibs, I thought of moving over to an application that uses KF5.
+
+## KCM Access
+KCM Access has a nice screen reader tab wherein you can begin the on-screen narration. It has a checkbox which remains that way, even if the screen reader isn’t installed. So my task here was to add a button to install orca if it isn’t already and disable the checkbox in this case. Again, this button would install orca via PackageKit-Qt5 using the method similar to the one previously used.
+
+It’s done and under review!
+
+## Next Up
+As soon as this is reviewed, I’ll go over to the next application, which as of now can be any of KCM Locale or K3b.

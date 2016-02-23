@@ -1,0 +1,18 @@
+---
+layout: post
+title: "GSoC ’15 Post #4: Porting to KF5"
+date: 2015-7-19 07:02:56 +0530
+categories: gsoc
+type: blog
+---
+
+As of now, I am working on Dolphin and Samba and trying to get Samba installed through PackageKit-Qt instead of KPackageKit which it currently uses.
+
+The biggest issue here is porting – the KDE Network Filesharing repository is currently not on KF5, which would make it impossible to work with PackageKit-Qt5, which is currently being used all across. So, a newbie porter, I’ve been working with Jonathan to port things properly and fix as many bugs as I encounter while doing so.
+
+There might be additional bugfixes required with KIO or FileProperties, and they’ll be fixed as they come up.
+
+Here are a few resources that I found extremely useful while porting
+
+* [Porting Notes](https://community.kde.org/Frameworks/Porting_Notes)
+* [Porting your project to qt5/kf5 by apol](http://www.proli.net/2014/06/21/porting-your-project-to-qt5kf5/)

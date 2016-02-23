@@ -1,0 +1,34 @@
+---
+layout: post
+title: "GSoC ’15: A Summary"
+date: 2015-8-6 12:00:00 +0530
+categories: gsoc
+type: blog
+---
+It seems like yesterday when I was an open source newbie on IRC, equipped with the knowledge of programming in C++, learnt through university courses. Little did I know that writing programs is just the prologue of the process called software engineering. Not wary of things like building, good practices and writing code that doesn’t just run on my machine, but on the machines of all those who are affected by it, I started the summer struggling through cmakes and compiler errors and understanding code that was written well, just not by me.
+
+<img src="http://i.imgur.com/2TiPasP.jpg" class="img-responsive">
+
+Step 1 was packaging software and publishing it on launchpad. My mentor, Jonathan Riddell taught me this process by going through instructions step by step, and every time, giving me knowledge about tools that I wasn’t aware about. After a lot of failed attempts in sending patches upstream, I finally managed to get PackageKit and PackageKit-Qt5 pushed on to launchpad, and they built successfully. This was done because in everything following this, these two applications would be required. And this was a success because I didn’t face any problems in the subsequent parts of the project. The packages can be found [here](https://launchpad.net/~ranveeraggarwal/+archive/ubuntu/kpackages). I have also described a sequence of steps as learnt in the process in an earlier blogpost.
+
+<img src="http://i.imgur.com/SsojDvy.png" class="img-responsive">
+
+The next part of my summer was spent in understanding KDE terminology, how KDE software works, how to make KDE software work (pun intended), and understanding PackageKit by pinging a lot of people on IRC. After making a compilation of KDE documentation for myself and playing around with Frameworks 5 and Qt, I started working on making an application that would install a given package via PackageKit. This involved understanding the PackageKit API and also PackageKit-Qt, a Qt Wrapper for PackageKit. Building this application took more time than was estimated, but at the end of this exercise, I was pretty much well versed on using PackageKit and building a Frameworks application. This application has been put on KDE’s git repositories and would be helpful to anyone who’d want to do this exercise in the future.
+
+Until this point, I was working on code written by myself. Now was the time to get into a real working application. This was Dolphin. I spent some time experimenting with Dolphin, and working out on how to make it install Samba. Later realizing I had set out on the wrong path, the real place to work it out was KDE-Network-Filesharing. Now, Network-Filesharing wasn’t on KF5 yet and this seemed like a good opportunity to learn some porting, the code for Filesharing not being too large in volume. So, after spending a lot of time on some well written blog posts by people who had done it previously and archived mailing lists (those are real life savers) and also the porting scripts, I was able to successfully port Network-Filesharing to KF5 and it’s now on the frameworks branch. Though it still needs kdelibs4 support, most of it is on KF5 and uses Qt5.
+
+<img src="http://i.imgur.com/ZyKXzOy.png" class="img-responsive">
+
+Next up was the task of using what I had learnt in the initial phases (installing software) and using it to do some actual work. And so, after getting a good hang of the Filesharing code, I managed to make it PackageKit compliant and now it installs Samba via PackageKit-Qt5.
+
+Next, I took up Plasma-Desktop and package installs for KCMs, specifically access and locale.
+
+<img src="http://i.imgur.com/S5R7hH9.png" class="img-responsive">
+
+First, I took up KCM access. Now KCM access has this option of enabling a screen reader. The problem? The option stays there even if the screen reader isn’t installed. So, the idea was to have that option only when a screen reader is installed, and if it isn’t, disable that option and have a button to install screen reader. Again, some Qt magic and using my past implementation of PackageKit, this was done – and now, it works as expected.
+
+Next up was K3b. Now, K3b needs some codecs which need an interface for installing. Again, this has been implemented using PackageKit, but the UI part is on the todo list. Thereafter I started working on locale (now known as translations). Here, instead of using PackageKit, the idea was to use libKubuntu, which is a more stable way of doing it, and had been done previously. Yet again, this has been partly implemented, and I hope to complete its implementation soon (this took some time give that this wasn’t the usual PackageKit implementation).
+
+And this pretty much summarizes up the summer. The most challenging part in it all? Working out how each application, programmed differently by different work. The most fun and interesting part? Same. Thanks to exposure to a variety of codebases, I can now work on most KDE applications easily and the learning curve wouldn’t be as steep.
+
+I am indebted to my mentor Jonathan Riddell and all the people on #kde-devel, #packagekit and #kubuntu-devel without the help of whom I would still have been stuck on compiling my first codebase. It’s an amazing community and they are really very helpful. Even the easiest of my doubts were met by great enthusiasm and not once was I not given a response for an issue I faced. This is something that is not very common on IRC. Hats off to the KDE community for that! Google Summer of Code ’15 has been an amazing experience, and I will surely stick around the community as a contributor for as long as would be possible :)

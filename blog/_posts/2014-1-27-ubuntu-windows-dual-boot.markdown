@@ -7,7 +7,7 @@ type: blog
 ---
 Dual booting Windows and Ubuntu has always been a painful task. With the advent of **Secure Boot** this pain has now reached the next level. So what do we do? Using VM isn't an option thanks to performance issues.
 
-<img src="http://3.bp.blogspot.com/-1pOdeS95c3g/UxgVZBcufTI/AAAAAAAAA-I/tFV6eplRFYE/s1600/Windows_8.1_Adds+Unity-Style_Search_Feature.png">
+<img src="http://3.bp.blogspot.com/-1pOdeS95c3g/UxgVZBcufTI/AAAAAAAAA-I/tFV6eplRFYE/s1600/Windows_8.1_Adds+Unity-Style_Search_Feature.png" class="img-responsive">
 
 After numerous experimenting on my poor laptop (I guess I used to screw it up almost once a month) I finally found a foolproof (almost!) working method.
 
@@ -33,7 +33,7 @@ Here are the steps (Assuming you have Windows running on UEFI firmware):
 
 * And then do a **Recommended Repair**.
 
-<img src="http://pix.toile-libre.org/upload/original/1335260967.png" width="400" height="224" />
+<img src="http://pix.toile-libre.org/upload/original/1335260967.png" class="img-responsive"/>
 
 And that's it! Check out your system by restarting and trying to boot into all your OSs (Windows would most probably be labelled as *Windows UEFI Boot Loader*).
 
