@@ -1,22 +1,9 @@
 ---
 layout: page
-title: Research
+title: Research &amp; Academics
 permalink: /research/
 description: My contributions to Computer Science.
 ---
-{% for post in site.posts %}
-{% if post.type == "research" %}
-<div class="row">
-    <div class="col-lg-8 col-lg-offset-2">
-        <p><bd>{{ post.date | date: "%b %-d, %Y" }}</bd></p>
-        <h4><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
-        <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
-        <p><a href="{{ post.url | prepend: site.baseurl }}">Continue Reading...</a></p>
-        <hr>
-    </div>
-</div>
-{% endif %}
-{% endfor %}
 
 <div class="row">
     <div class="col-lg-8 col-lg-offset-2 centered">
