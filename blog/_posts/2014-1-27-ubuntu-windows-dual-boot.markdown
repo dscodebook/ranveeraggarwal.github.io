@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Dual Booting Windows with Ubuntu"
+title:  "Dual Booting Windows with Ubuntu"
+date:   2014-1-27 15:04:20 +0530
 categories: tutorials
-tyf: Tutorial
+type: blog
 ---
-
 Dual booting Windows and Ubuntu has always been a painful task. With the advent of **Secure Boot** this pain has now reached the next level. So what do we do? Using VM isn't an option thanks to performance issues.
 
 <img src="http://3.bp.blogspot.com/-1pOdeS95c3g/UxgVZBcufTI/AAAAAAAAA-I/tFV6eplRFYE/s1600/Windows_8.1_Adds+Unity-Style_Search_Feature.png">
@@ -22,20 +22,18 @@ Here are the steps (Assuming you have Windows running on UEFI firmware):
 * Now you have installed Ubuntu, the only thing remains is to fix the boot. Upon restart, you will see all options on the GRUB menu, but the Windows options won't work. For that you need to do something.
 * To fix your boot, you will need to install **boot-repair**. To do this, fire up a terminal and type:
 
-```
-sudo add-apt-repository ppa:yannubuntu/boot-repair && sudo apt-get update
 
-```
-and press <kbd>Enter</kbd>. And then type:
+        sudo add-apt-repository ppa:yannubuntu/boot-repair && sudo apt-get update
 
-```
-sudo apt-get install -y boot-repair && (boot-repair &)
+    and press <kbd>Enter</kbd>. And then type:
 
-```
-and press <kbd>Enter</kbd>.
+        sudo apt-get install -y boot-repair && (boot-repair &)
+
+    and press <kbd>Enter</kbd>.
 
 * And then do a **Recommended Repair**.
-<img src="{{ site.baseurl }}public/img/tut/uefi-ub/uefi1.png" width="400" height="224" /> 
+
+<img src="http://pix.toile-libre.org/upload/original/1335260967.png" width="400" height="224" />
 
 And that's it! Check out your system by restarting and trying to boot into all your OSs (Windows would most probably be labelled as *Windows UEFI Boot Loader*).
 

@@ -1,0 +1,30 @@
+<div id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <h4>My Bunker</h4>
+                <p>
+                    Room Number 265,<br/>
+                    Hostel 3, <br/>
+                    IIT Bombay, Mumbai.
+                </p>
+            </div><!-- /col-lg-4 -->
+
+            <div class="col-lg-4">
+                <h4>My Links</h4>
+                <p>
+                    {% if site.github_username %}<a href="https://github.com/{{ site.github_username }}">Github</a><br/>{% endif %}
+                    {% if site.facebook_username %}<a href="https://facebook.com/{{ site.facebook_username }}">Facebook</a><br/>{% endif %}
+                    {% if site.twitter_username %}<a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a><br/>{% endif %}
+                </p>
+            </div><!-- /col-lg-4 -->
+
+            <div class="col-lg-4">
+                <h4>About This Site</h4>
+                <p>{{ site.description }}</p>
+            </div><!-- /col-lg-4 -->
+
+        </div>
+
+    </div>
+</div>
