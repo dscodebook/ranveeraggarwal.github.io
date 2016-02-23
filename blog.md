@@ -6,7 +6,7 @@ description: This is where I write.
 ---
 {% for post in site.posts %}
 {% if post.type == "blog" %}
-<div class="row">
+<div class="row mt">
     <div class="col-lg-8 col-lg-offset-2">
         <p><bd>{{ post.date | date: "%b %-d, %Y" }}</bd></p>
         <h4>{{ post.title }}</h4>
@@ -17,7 +17,7 @@ description: This is where I write.
 </div>
 {% endif %}
 {% endfor %}
-<div class="row">
+<div class="row mt">
     <div class="col-lg-8 col-lg-offset-2">
         <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
     </div>   
