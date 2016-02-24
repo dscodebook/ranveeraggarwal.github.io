@@ -21,7 +21,8 @@ markdown: kramdown
 permalink: /:categories/:title
 
 # Gems
-# gems: [jekyll-paginate]
+gems:
+  - jekyll-sitemap
 
 # Pagination
 # paginate:   6
