@@ -9,7 +9,7 @@
 title: Ranveer Aggarwal
 email: ranveeraggarwal@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  This website is powered by Jekyll and BlackTie.co and hosted on Github.
+  Ranveer Aggarwal's Homepage. A repository of writings, experiences and code.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://ranveeraggarwal.com" # the base hostname & protocol for your site
 twitter_username: ranveeraggarwal
