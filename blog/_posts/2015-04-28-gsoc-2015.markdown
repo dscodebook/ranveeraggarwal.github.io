@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blogpost
 title: "Google Summer of Code (GSoC) 2015 with KDE"
 date: 2015-4-28 15:04:20 +0530
 categories: gsoc

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blogpost
 title: "GSoC Post #7: KCM Access Done!"
 date: 2015-8-6 02:02:56 +0530
 categories: gsoc

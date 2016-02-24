@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2> {{ page.title }} </h2>
+            <p>
+                {% if page.date %}
+                <bd>
+                    {{ page.date | date: "%b %-d, %Y" }}
+                </bd>
+                {% endif %}
+                <br>
+                <bt>
+                    TAGS:
+                    {% for tag in page.categories %}
+                    {% if tag != "blog" %}
+                    <a href="/blog/{{ tag }}">#{{ tag }}</a>
+                    {% endif %}
+                    {% endfor %}
+                </bt>
+            </p>
+            <hr>
+            {{content}}
+            <hr>
+            <p><a href="/blog/">&lt; Back</a></p>
+        </div>
+
+    </div><!-- /row -->
+</div> <!-- /container -->

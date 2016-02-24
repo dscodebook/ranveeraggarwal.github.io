@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blogpost
 title: "GSoC ’15 Post #6: It works!"
 date: 2015-7-30 02:02:56 +0530
 categories: gsoc

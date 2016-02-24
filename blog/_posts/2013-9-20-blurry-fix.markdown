@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blogpost
 title:  "Fix for Blurry, Hard-to-read text problem in Windows 8.1"
 date:   2013-9-20 20:04:20 +0530
 categories: tutorials

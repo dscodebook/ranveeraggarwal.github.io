@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blogpost
 title: "GSoC ’15 Post #2: More Packaging and Compiling"
 date: 2015-6-25 07:02:56 +0530
 categories: gsoc

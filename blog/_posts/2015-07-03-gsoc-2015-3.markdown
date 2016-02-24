@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blogpost
 title: "GSoC ’15 Post #3: Install-ed!"
 date: 2015-7-3 07:02:56 +0530
 categories: gsoc

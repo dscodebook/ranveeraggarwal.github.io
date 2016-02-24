@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blogpost
 title: "GSoC ’15 Post #4: Porting to KF5"
 date: 2015-7-19 07:02:56 +0530
 categories: gsoc

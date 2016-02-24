@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blogpost
 title: "JEE: Making a Choice"
 date: 2015-6-18 07:56:56 +0530
 categories: blogpost

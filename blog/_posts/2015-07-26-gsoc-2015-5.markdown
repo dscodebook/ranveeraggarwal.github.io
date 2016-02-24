@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blogpost
 title: "GSoC ’15 Post #5: Port Complete – Time for the Real Deal"
 date: 2015-7-26 02:02:56 +0530
 categories: gsoc

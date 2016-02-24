@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blogpost
 title: "Getting Started With Jekyll on Github Pages "
 date: 2014-2-26 15:04:20 +0530
 categories: tutorials

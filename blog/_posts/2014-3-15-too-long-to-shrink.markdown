@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blogpost
 title: "Shrinking a Volume Taking Too Long?"
 date: 2014-3-15 15:02:20 +0530
 categories: tutorials

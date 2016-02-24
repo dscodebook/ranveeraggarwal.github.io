@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blogpost
 title: "GSoC ’15: A Summary"
 date: 2015-8-6 12:00:00 +0530
 categories: gsoc

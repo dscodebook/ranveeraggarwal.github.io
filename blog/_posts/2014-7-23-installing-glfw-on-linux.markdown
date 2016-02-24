@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blogpost
 title: "Installing GLFW on Ubuntu"
 date:   2014-7-23 12:04:20 +0530
 categories: tutorials

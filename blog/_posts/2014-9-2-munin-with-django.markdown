@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blogpost
 title: "Monitoring Django Based Website with Munin"
 date: 2014-9-2 05:04:20 +0530
 categories: tutorials

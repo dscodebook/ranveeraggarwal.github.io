@@ -1,11 +1,12 @@
 ---
 layout: page
-title: Projects
-permalink: /projects/
-description: My work so far.
+title: Experience
+permalink: /experience/
+description: Out in the real world.
 ---
+
 {% for post in site.posts %}
-{% if post.type == "project" %}
+{% if post.type == "experience" %}
 <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
         <p><bd>{{ post.date | date: "%b %-d, %Y" }}</bd></p>

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blogpost
 title: "Season of KDE 2014 Post #3: Mission Accomplished!"
 date: 2015-2-9 15:04:20 +0530
 categories: kde
