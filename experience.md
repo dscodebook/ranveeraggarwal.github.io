@@ -2,7 +2,7 @@
 layout: page
 title: Experience
 permalink: /experience/
-description: Out in the real world.
+description: This is where I get my skills from.
 ---
 
 {% for post in site.posts %}
