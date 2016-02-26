@@ -15,6 +15,7 @@ url: "http://ranveeraggarwal.com" # the base hostname & protocol for your site
 twitter_username: ranveeraggarwal
 github_username:  ranveeraggarwal
 facebook_username:  ranveeraggarwal
+stackoverflow_username: ranveer
 
 # Build settings
 markdown: kramdown
